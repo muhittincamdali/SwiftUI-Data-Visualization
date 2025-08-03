@@ -244,8 +244,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Documentation/](Documentation/)
-- **Examples**: [Examples/](Examples/)
+- **Documentation**: [Documentation/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/master/Documentation)
+- **Examples**: [Examples/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/master/Examples)
 - **Issues**: [GitHub Issues](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/discussions)
 
