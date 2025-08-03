@@ -2,8 +2,8 @@
 
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS%2015.0%2B-blue.svg)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/CHANGELOG.md)
 
 <div align="center">
   <img src="https://img.shields.io/badge/SwiftUI-Data-Visualization-Advanced%20Charts%20%26%20Analytics-brightgreen?style=for-the-badge&logo=swift" alt="SwiftUI Data Visualization">
@@ -222,7 +222,7 @@ The framework includes comprehensive testing:
 
 ## 🌟 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/CONTRIBUTING.md) for guidelines.
 
 ### Development Setup
 
@@ -234,7 +234,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -244,8 +244,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Documentation/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/master/Documentation)
-- **Examples**: [Examples/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/master/Examples)
+- **Documentation**: [Documentation/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/main/Documentation)
+- **Examples**: [Examples/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/main/Examples)
 - **Issues**: [GitHub Issues](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/discussions)
 
