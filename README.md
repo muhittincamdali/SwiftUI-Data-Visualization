@@ -220,21 +220,20 @@ The framework includes comprehensive testing:
 - **Privacy**: No data collection or tracking
 - **Encryption**: Secure data handling
 
-## 🌟 Contributing
+## 📊 Project Statistics
 
-We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/CONTRIBUTING.md) for guidelines.
+<div align="center">
 
-### Development Setup
+[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=social)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Data-Visualization?style=social)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/network)
+[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/pulls)
 
-1. Clone the repository
-2. Open `Package.swift` in Xcode
-3. Build and run tests
-4. Make your changes
-5. Submit a pull request
+</div>
 
-## 📄 License
+## 🌟 Stargazers
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/LICENSE) file for details.
+[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://reporoster.com/stars/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
 
 ## 🙏 Acknowledgments
 
@@ -260,9 +259,11 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 - [ ] Cloud Data Integration
 - [ ] Advanced Analytics Tools
 
+**⭐ Star this repository if it helped you!**
+
 ---
 
 <div align="center">
-  <p>Built with ❤️ by the SwiftUI Data Visualization Team</p>
+  <p>Built with ❤️ for the iOS community</p>
   <p>Made for the global iOS development community</p>
 </div> 
