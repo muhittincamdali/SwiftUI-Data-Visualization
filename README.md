@@ -1,35 +1,393 @@
-# SwiftUI Data Visualization
-
-[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
-[![Platform](https://img.shields.io/badge/Platform-iOS%2015.0%2B-blue.svg)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/main/CHANGELOG.md)
+# 📊 SwiftUI Data Visualization
 
 <div align="center">
-  <img src="https://img.shields.io/badge/SwiftUI-Data-Visualization-Advanced%20Charts%20%26%20Analytics-brightgreen?style=for-the-badge&logo=swift" alt="SwiftUI Data Visualization">
+
+![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-15.0+-000000?style=for-the-badge&logo=ios&logoColor=white)
+![Xcode](https://img.shields.io/badge/Xcode-15.0+-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-Declarative-FF6B6B?style=for-the-badge)
+![Data Visualization](https://img.shields.io/badge/Data%20Visualization-Charts-4CAF50?style=for-the-badge)
+![Charts](https://img.shields.io/badge/Charts-Interactive-2196F3?style=for-the-badge)
+![Graphs](https://img.shields.io/badge/Graphs-Dynamic-FF9800?style=for-the-badge)
+![Analytics](https://img.shields.io/badge/Analytics-Real-time-9C27B0?style=for-the-badge)
+![Performance](https://img.shields.io/badge/Performance-Optimized-00BCD4?style=for-the-badge)
+![Accessibility](https://img.shields.io/badge/Accessibility-Support-607D8B?style=for-the-badge)
+![Animation](https://img.shields.io/badge/Animation-Smooth-795548?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-Adaptive-673AB7?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-Clean-FF5722?style=for-the-badge)
+![Swift Package Manager](https://img.shields.io/badge/SPM-Dependencies-FF6B35?style=for-the-badge)
+![CocoaPods](https://img.shields.io/badge/CocoaPods-Supported-E91E63?style=for-the-badge)
+
+**🏆 Professional SwiftUI Data Visualization Framework**
+
+**📊 Advanced Charting & Analytics**
+
+**🎨 Beautiful & Interactive Visualizations**
+
 </div>
 
-## 🎯 Overview
+---
 
-**SwiftUI Data Visualization** is a comprehensive, high-performance data visualization framework designed for iOS applications. Built with SwiftUI and following Clean Architecture principles, this framework provides 20+ chart types, real-time data updates, interactive elements, and full accessibility support.
+## 📋 Table of Contents
 
-### ✨ Key Features
+- [🚀 Overview](#-overview)
+- [✨ Key Features](#-key-features)
+- [📊 Chart Types](#-chart-types)
+- [🎨 Customization](#-customization)
+- [⚡ Performance](#-performance)
+- [🚀 Quick Start](#-quick-start)
+- [📱 Usage Examples](#-usage-examples)
+- [🔧 Configuration](#-configuration)
+- [📚 Documentation](#-documentation)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📊 Project Statistics](#-project-statistics)
+- [🌟 Stargazers](#-stargazers)
 
-- **20+ Chart Types**: Line, Bar, Pie, Scatter, Area, Candlestick, Heatmap, Radar, and more
-- **Real-time Updates**: Live streaming capabilities with smooth animations
-- **Interactive Elements**: Zoom, pan, tooltip, selection, and gesture support
-- **Accessibility**: Full VoiceOver, Dynamic Type, and High Contrast support
-- **Performance**: 60fps smooth animations with optimized rendering
-- **Clean Architecture**: SOLID principles with modular design
-- **100% Test Coverage**: Comprehensive unit, integration, and UI tests
+---
+
+## 🚀 Overview
+
+**SwiftUI Data Visualization** is the most advanced, comprehensive, and professional data visualization framework for SwiftUI applications. Built with modern SwiftUI principles and enterprise-grade standards, this framework provides beautiful, interactive, and performant charts, graphs, and analytics visualizations.
+
+### 🎯 What Makes This Framework Special?
+
+- **📊 Comprehensive Chart Types**: Line, bar, pie, scatter, area, and custom charts
+- **🎨 Beautiful Design**: Modern, clean, and customizable visualizations
+- **⚡ High Performance**: Optimized for large datasets and real-time updates
+- **♿ Accessibility**: Full accessibility support for all chart types
+- **📱 Responsive**: Adaptive layouts for all device sizes
+- **🔄 Interactive**: Touch gestures, animations, and user interactions
+- **🌙 Dark Mode**: Automatic dark mode support
+- **🌍 Localization**: Multi-language support for global applications
+
+---
+
+## ✨ Key Features
+
+### 📊 Chart Types
+
+* **Line Charts**: Smooth line charts with multiple series and trend analysis
+* **Bar Charts**: Vertical and horizontal bar charts with grouping and stacking
+* **Pie Charts**: Circular charts with custom segments and animations
+* **Scatter Plots**: Point-based charts for correlation analysis
+* **Area Charts**: Filled area charts with gradient support
+* **Candlestick Charts**: Financial charts for stock market data
+* **Heatmaps**: Color-coded data visualization
+* **Custom Charts**: Framework for building custom chart types
+
+### 🎨 Customization
+
+* **Color Schemes**: Predefined and custom color palettes
+* **Typography**: Custom fonts, sizes, and text styling
+* **Animations**: Smooth transitions and interactive animations
+* **Themes**: Light, dark, and custom themes
+* **Branding**: Integration with app branding and design
+* **Responsive Design**: Adaptive layouts for different screen sizes
+* **Accessibility**: VoiceOver support and accessibility features
+* **Localization**: Multi-language support for chart labels
+
+### ⚡ Performance
+
+* **Large Datasets**: Optimized for thousands of data points
+* **Real-time Updates**: Efficient updates for live data
+* **Memory Management**: Intelligent memory usage and cleanup
+* **Rendering Optimization**: Hardware-accelerated rendering
+* **Caching**: Smart caching for improved performance
+* **Lazy Loading**: Progressive data loading for better UX
+* **Background Processing**: Non-blocking data processing
+* **GPU Acceleration**: Leverages Metal for optimal performance
+
+### 🔄 Interactivity
+
+* **Touch Gestures**: Tap, long press, and swipe interactions
+* **Zoom & Pan**: Interactive zooming and panning capabilities
+* **Tooltips**: Contextual information on data points
+* **Selection**: Multi-point selection and highlighting
+* **Drill-down**: Hierarchical data exploration
+* **Filtering**: Dynamic data filtering and filtering
+* **Sorting**: Real-time data sorting capabilities
+* **Export**: Chart export to various formats
+
+---
+
+## 📊 Chart Types
+
+### Line Charts
+
+```swift
+// Create line chart
+let lineChart = LineChart(
+    data: salesData,
+    xAxis: .time,
+    yAxis: .value,
+    style: LineChartStyle(
+        lineColor: .blue,
+        lineWidth: 2.0,
+        showPoints: true,
+        pointSize: 6.0
+    )
+)
+
+// Configure line chart
+lineChart.enableAnimations = true
+lineChart.enableInteractions = true
+lineChart.showGridLines = true
+lineChart.showLegend = true
+
+// Add to SwiftUI view
+var body: some View {
+    VStack {
+        Text("Sales Trend")
+            .font(.title)
+        lineChart
+            .frame(height: 300)
+    }
+}
+```
+
+### Bar Charts
+
+```swift
+// Create bar chart
+let barChart = BarChart(
+    data: monthlyData,
+    xAxis: .category,
+    yAxis: .value,
+    style: BarChartStyle(
+        barColor: .green,
+        barWidth: 0.8,
+        showValues: true,
+        valueColor: .black
+    )
+)
+
+// Configure bar chart
+barChart.enableAnimations = true
+barChart.enableInteractions = true
+barChart.showGridLines = true
+barChart.showLegend = true
+
+// Add to SwiftUI view
+var body: some View {
+    VStack {
+        Text("Monthly Revenue")
+            .font(.title)
+        barChart
+            .frame(height: 300)
+    }
+}
+```
+
+### Pie Charts
+
+```swift
+// Create pie chart
+let pieChart = PieChart(
+    data: categoryData,
+    style: PieChartStyle(
+        colors: [.red, .blue, .green, .orange],
+        showLabels: true,
+        labelColor: .white,
+        showPercentages: true
+    )
+)
+
+// Configure pie chart
+pieChart.enableAnimations = true
+pieChart.enableInteractions = true
+pieChart.showLegend = true
+pieChart.legendPosition = .bottom
+
+// Add to SwiftUI view
+var body: some View {
+    VStack {
+        Text("Category Distribution")
+            .font(.title)
+        pieChart
+            .frame(height: 300)
+    }
+}
+```
+
+### Scatter Plots
+
+```swift
+// Create scatter plot
+let scatterPlot = ScatterPlot(
+    data: correlationData,
+    xAxis: .value,
+    yAxis: .value,
+    style: ScatterPlotStyle(
+        pointColor: .purple,
+        pointSize: 8.0,
+        showTrendLine: true,
+        trendLineColor: .red
+    )
+)
+
+// Configure scatter plot
+scatterPlot.enableAnimations = true
+scatterPlot.enableInteractions = true
+scatterPlot.showGridLines = true
+scatterPlot.showLegend = true
+
+// Add to SwiftUI view
+var body: some View {
+    VStack {
+        Text("Correlation Analysis")
+            .font(.title)
+        scatterPlot
+            .frame(height: 300)
+    }
+}
+```
+
+---
+
+## 🎨 Customization
+
+### Color Schemes
+
+```swift
+// Create custom color scheme
+let customColorScheme = ChartColorScheme(
+    primary: .blue,
+    secondary: .green,
+    accent: .orange,
+    background: .white,
+    text: .black,
+    grid: .gray.opacity(0.3)
+)
+
+// Apply color scheme to chart
+let chart = LineChart(data: data)
+    .colorScheme(customColorScheme)
+```
+
+### Typography
+
+```swift
+// Create custom typography
+let customTypography = ChartTypography(
+    titleFont: .systemFont(ofSize: 18, weight: .bold),
+    axisFont: .systemFont(ofSize: 12, weight: .medium),
+    labelFont: .systemFont(ofSize: 10, weight: .regular),
+    legendFont: .systemFont(ofSize: 11, weight: .medium)
+)
+
+// Apply typography to chart
+let chart = BarChart(data: data)
+    .typography(customTypography)
+```
+
+### Animations
+
+```swift
+// Configure chart animations
+let chart = LineChart(data: data)
+    .animation(.easeInOut(duration: 1.0))
+    .transition(.scale.combined(with: .opacity))
+
+// Custom animation timing
+let customAnimation = ChartAnimation(
+    duration: 1.5,
+    curve: .easeInOut,
+    delay: 0.2,
+    repeatCount: 1
+)
+
+let chart = BarChart(data: data)
+    .animation(customAnimation)
+```
+
+---
+
+## ⚡ Performance
+
+### Large Dataset Optimization
+
+```swift
+// Optimize for large datasets
+let optimizedChart = LineChart(data: largeDataset)
+    .optimization(.largeDataset)
+    .caching(.enabled)
+    .lazyLoading(.enabled)
+
+// Configure performance settings
+let performanceConfig = ChartPerformanceConfig(
+    maxDataPoints: 10000,
+    enableCaching: true,
+    enableLazyLoading: true,
+    enableGPUAcceleration: true,
+    backgroundProcessing: true
+)
+
+let chart = BarChart(data: data)
+    .performance(performanceConfig)
+```
+
+### Real-time Updates
+
+```swift
+// Handle real-time data updates
+class RealTimeChartViewModel: ObservableObject {
+    @Published var chartData: [DataPoint] = []
+    
+    func updateData() {
+        // Update chart data
+        chartData = fetchNewData()
+        
+        // Animate the update
+        withAnimation(.easeInOut(duration: 0.5)) {
+            // Chart will automatically update
+        }
+    }
+}
+
+// Use in SwiftUI view
+struct RealTimeChartView: View {
+    @StateObject private var viewModel = RealTimeChartViewModel()
+    
+    var body: some View {
+        LineChart(data: viewModel.chartData)
+            .animation(.easeInOut(duration: 0.5))
+    }
+}
+```
+
+---
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+* **iOS 15.0+** with iOS 15.0+ SDK
+* **Swift 5.9+** programming language
+* **Xcode 15.0+** development environment
+* **Git** version control system
+* **Swift Package Manager** for dependency management
+
 ### Installation
 
-#### Swift Package Manager
+```bash
+# Clone the repository
+git clone https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
-Add the following dependency to your `Package.swift`:
+# Navigate to project directory
+cd SwiftUI-Data-Visualization
+
+# Install dependencies
+swift package resolve
+
+# Open in Xcode
+open Package.swift
+```
+
+### Swift Package Manager
+
+Add the framework to your project:
 
 ```swift
 dependencies: [
@@ -37,188 +395,256 @@ dependencies: [
 ]
 ```
 
-Or add it directly in Xcode:
-1. File → Add Package Dependencies
-2. Enter: `https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git`
-3. Select version: `1.0.0`
-
-### Basic Usage
+### Basic Setup
 
 ```swift
 import SwiftUI
-import SwiftUIDataVisualization
+import DataVisualization
 
-struct ContentView: View {
-    let data = [
-        ChartDataPoint(x: 1, y: 10),
-        ChartDataPoint(x: 2, y: 20),
-        ChartDataPoint(x: 3, y: 15),
-        ChartDataPoint(x: 4, y: 25)
-    ]
-    
+// Create sample data
+let sampleData = [
+    DataPoint(x: 1, y: 10),
+    DataPoint(x: 2, y: 20),
+    DataPoint(x: 3, y: 15),
+    DataPoint(x: 4, y: 25),
+    DataPoint(x: 5, y: 30)
+]
+
+// Create basic chart
+struct BasicChartView: View {
     var body: some View {
-        LineChart(data: data)
-            .frame(height: 300)
-            .padding()
+        VStack {
+            Text("Sample Chart")
+                .font(.title)
+            
+            LineChart(data: sampleData)
+                .frame(height: 300)
+                .padding()
+        }
     }
 }
 ```
 
-## 📊 Chart Types
+---
 
-### Line Charts
-```swift
-LineChart(data: data)
-    .chartStyle(.line)
-    .animation(.easeInOut(duration: 0.5))
-```
+## 📱 Usage Examples
 
-### Bar Charts
-```swift
-BarChart(data: data)
-    .chartStyle(.bar)
-    .interactive(true)
-```
-
-### Pie Charts
-```swift
-PieChart(data: data)
-    .chartStyle(.pie)
-    .showLabels(true)
-```
-
-### Scatter Plots
-```swift
-ScatterChart(data: data)
-    .chartStyle(.scatter)
-    .pointSize(8)
-```
-
-### Area Charts
-```swift
-AreaChart(data: data)
-    .chartStyle(.area)
-    .gradient(.linear)
-```
-
-### Candlestick Charts
-```swift
-CandlestickChart(data: financialData)
-    .chartStyle(.candlestick)
-    .showVolume(true)
-```
-
-### Heatmap Charts
-```swift
-HeatmapChart(data: matrixData)
-    .chartStyle(.heatmap)
-    .colorScale(.viridis)
-```
-
-### Radar Charts
-```swift
-RadarChart(data: radarData)
-    .chartStyle(.radar)
-    .showGrid(true)
-```
-
-## 🎨 Customization
-
-### Chart Styling
-```swift
-LineChart(data: data)
-    .chartStyle(.line)
-    .foregroundColor(.blue)
-    .backgroundColor(.white)
-    .borderColor(.gray)
-    .borderWidth(1)
-    .cornerRadius(8)
-    .shadow(radius: 4)
-```
-
-### Animations
-```swift
-LineChart(data: data)
-    .animation(.spring(response: 0.6, dampingFraction: 0.8))
-    .transition(.scale.combined(with: .opacity))
-```
-
-### Interactive Features
-```swift
-LineChart(data: data)
-    .interactive(true)
-    .zoomEnabled(true)
-    .panEnabled(true)
-    .tooltipEnabled(true)
-    .selectionEnabled(true)
-```
-
-## ♿ Accessibility
-
-All charts include comprehensive accessibility support:
+### Simple Line Chart
 
 ```swift
-LineChart(data: data)
-    .accessibilityLabel("Sales Performance Chart")
-    .accessibilityHint("Shows monthly sales data with interactive features")
-    .accessibilityValue("Current value: $25,000")
+// Create simple line chart
+struct SimpleLineChartView: View {
+    let data = [
+        DataPoint(x: 1, y: 10),
+        DataPoint(x: 2, y: 20),
+        DataPoint(x: 3, y: 15),
+        DataPoint(x: 4, y: 25),
+        DataPoint(x: 5, y: 30)
+    ]
+    
+    var body: some View {
+        VStack {
+            Text("Simple Line Chart")
+                .font(.title)
+            
+            LineChart(data: data)
+                .frame(height: 300)
+                .padding()
+        }
+    }
+}
 ```
 
-## 📱 Examples
+### Interactive Bar Chart
 
-### Analytics Dashboard
-Complete analytics dashboard with multiple chart types and real-time updates.
-
-### Financial Charts
-Professional financial charts with candlestick, volume, and technical indicators.
-
-### Scientific Visualization
-Advanced scientific charts for data analysis and research applications.
-
-### Business Intelligence
-Comprehensive BI dashboard with interactive charts and data exploration.
-
-## 🏗️ Architecture
-
-The framework follows Clean Architecture principles:
-
+```swift
+// Create interactive bar chart
+struct InteractiveBarChartView: View {
+    @State private var selectedBar: Int?
+    
+    let data = [
+        DataPoint(x: "Jan", y: 100),
+        DataPoint(x: "Feb", y: 150),
+        DataPoint(x: "Mar", y: 120),
+        DataPoint(x: "Apr", y: 200),
+        DataPoint(x: "May", y: 180)
+    ]
+    
+    var body: some View {
+        VStack {
+            Text("Interactive Bar Chart")
+                .font(.title)
+            
+            BarChart(data: data)
+                .onBarTap { index in
+                    selectedBar = index
+                }
+                .frame(height: 300)
+                .padding()
+            
+            if let selectedBar = selectedBar {
+                Text("Selected: \(data[selectedBar].x)")
+                    .font(.caption)
+            }
+        }
+    }
+}
 ```
-Sources/
-├── Charts/           # Chart implementations
-├── Components/       # Reusable UI components
-├── Models/          # Data models and structures
-└── Utils/           # Utility functions and helpers
+
+### Animated Pie Chart
+
+```swift
+// Create animated pie chart
+struct AnimatedPieChartView: View {
+    @State private var isAnimating = false
+    
+    let data = [
+        DataPoint(x: "Red", y: 30),
+        DataPoint(x: "Blue", y: 25),
+        DataPoint(x: "Green", y: 20),
+        DataPoint(x: "Yellow", y: 15),
+        DataPoint(x: "Purple", y: 10)
+    ]
+    
+    var body: some View {
+        VStack {
+            Text("Animated Pie Chart")
+                .font(.title)
+            
+            PieChart(data: data)
+                .animation(.easeInOut(duration: 1.0))
+                .frame(height: 300)
+                .padding()
+            
+            Button("Animate") {
+                withAnimation {
+                    isAnimating.toggle()
+                }
+            }
+        }
+    }
+}
 ```
 
-### Design Patterns
+---
 
-- **MVVM**: Model-View-ViewModel pattern
-- **SOLID Principles**: Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion
-- **Dependency Injection**: Loose coupling and testability
-- **Protocol-Oriented Programming**: Swift-first approach
+## 🔧 Configuration
 
-## 🧪 Testing
+### Chart Configuration
 
-The framework includes comprehensive testing:
+```swift
+// Configure chart settings
+let chartConfig = ChartConfiguration(
+    showGridLines: true,
+    showLegend: true,
+    showAxisLabels: true,
+    enableInteractions: true,
+    enableAnimations: true,
+    responsiveLayout: true
+)
 
-- **Unit Tests**: 100% code coverage
-- **Integration Tests**: Chart interaction testing
-- **UI Tests**: Accessibility and user interaction testing
-- **Performance Tests**: 60fps animation testing
+let chart = LineChart(data: data)
+    .configuration(chartConfig)
+```
 
-## 📈 Performance
+### Theme Configuration
 
-- **Rendering**: Optimized for 60fps smooth animations
-- **Memory**: Efficient memory management with ARC
-- **CPU**: Minimal CPU usage during animations
-- **Battery**: Optimized for extended battery life
+```swift
+// Configure chart theme
+let chartTheme = ChartTheme(
+    colorScheme: .light,
+    typography: .default,
+    spacing: .default,
+    animations: .default
+)
 
-## 🔒 Security
+let chart = BarChart(data: data)
+    .theme(chartTheme)
+```
 
-- **Input Validation**: Comprehensive data validation
-- **Memory Safety**: Swift's memory safety guarantees
-- **Privacy**: No data collection or tracking
-- **Encryption**: Secure data handling
+---
+
+## 📚 Documentation
+
+### API Documentation
+
+Comprehensive API documentation is available for all public interfaces:
+
+* [Chart API](Documentation/ChartAPI.md) - Core chart functionality
+* [Line Chart API](Documentation/LineChartAPI.md) - Line chart implementation
+* [Bar Chart API](Documentation/BarChartAPI.md) - Bar chart implementation
+* [Pie Chart API](Documentation/PieChartAPI.md) - Pie chart implementation
+* [Scatter Plot API](Documentation/ScatterPlotAPI.md) - Scatter plot implementation
+* [Customization API](Documentation/CustomizationAPI.md) - Chart customization
+* [Performance API](Documentation/PerformanceAPI.md) - Performance optimization
+* [Accessibility API](Documentation/AccessibilityAPI.md) - Accessibility features
+
+### Integration Guides
+
+* [Getting Started Guide](Documentation/GettingStarted.md) - Quick start tutorial
+* [Chart Types Guide](Documentation/ChartTypesGuide.md) - Chart type implementations
+* [Customization Guide](Documentation/CustomizationGuide.md) - Customization options
+* [Performance Guide](Documentation/PerformanceGuide.md) - Performance optimization
+* [Accessibility Guide](Documentation/AccessibilityGuide.md) - Accessibility features
+* [Animation Guide](Documentation/AnimationGuide.md) - Animation implementation
+* [Responsive Design Guide](Documentation/ResponsiveDesignGuide.md) - Responsive layouts
+
+### Examples
+
+* [Basic Examples](Examples/BasicExamples/) - Simple chart implementations
+* [Advanced Examples](Examples/AdvancedExamples/) - Complex chart scenarios
+* [Interactive Examples](Examples/InteractiveExamples/) - Interactive chart examples
+* [Animation Examples](Examples/AnimationExamples/) - Animation implementations
+* [Performance Examples](Examples/PerformanceExamples/) - Performance optimization examples
+* [Customization Examples](Examples/CustomizationExamples/) - Customization examples
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+### Development Setup
+
+1. **Fork** the repository
+2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open Pull Request**
+
+### Code Standards
+
+* Follow Swift API Design Guidelines
+* Maintain 100% test coverage
+* Use meaningful commit messages
+* Update documentation as needed
+* Follow SwiftUI best practices
+* Implement proper error handling
+* Add comprehensive examples
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+* **Apple** for the excellent SwiftUI framework
+* **The Swift Community** for inspiration and feedback
+* **All Contributors** who help improve this framework
+* **Data Visualization Community** for best practices and standards
+* **Open Source Community** for continuous innovation
+* **iOS Developer Community** for chart insights
+* **Design Community** for visual inspiration
+
+---
+
+**⭐ Star this repository if it helped you!**
+
+---
 
 ## 📊 Project Statistics
 
@@ -228,42 +654,11 @@ The framework includes comprehensive testing:
 [![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Data-Visualization?style=social)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/network)
 [![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/commits/master)
 
 </div>
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://reporoster.com/stars/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
-
-## 🙏 Acknowledgments
-
-- Apple SwiftUI team for the amazing framework
-- Swift community for inspiration and feedback
-- All contributors and users
-
-## 📞 Support
-
-- **Documentation**: [Documentation/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/main/Documentation)
-- **Examples**: [Examples/](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/main/Examples)
-- **Issues**: [GitHub Issues](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/discussions)
-
-## 🚀 Roadmap
-
-- [ ] 3D Chart Support
-- [ ] Machine Learning Integration
-- [ ] Web Export Capabilities
-- [ ] Advanced Animation Engine
-- [ ] Custom Chart Builder
-- [ ] Real-time Collaboration
-- [ ] Cloud Data Integration
-- [ ] Advanced Analytics Tools
-
-**⭐ Star this repository if it helped you!**
-
----
-
-<div align="center">
-  <p>Built with ❤️ for the iOS community</p>
-  <p>Made for the global iOS development community</p>
-</div> 
+[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://reporoster.com/stars/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers) 
