@@ -1,1 +1,1 @@
-# ChartTypesGuide
+# Chart Types Guide

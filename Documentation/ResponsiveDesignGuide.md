@@ -1,1 +1,1 @@
-# ResponsiveDesignGuide
+# Responsive Design Guide
