@@ -212,7 +212,6 @@ lineChart.showLegend = true
 var body: some View {
     VStack {
         Text("Sales Trend")
-            .font(.title)
         lineChart
             .frame(height: 300)
     }
@@ -245,7 +244,6 @@ barChart.showLegend = true
 var body: some View {
     VStack {
         Text("Monthly Revenue")
-            .font(.title)
         barChart
             .frame(height: 300)
     }
@@ -276,7 +274,6 @@ pieChart.legendPosition = .bottom
 var body: some View {
     VStack {
         Text("Category Distribution")
-            .font(.title)
         pieChart
             .frame(height: 300)
     }
@@ -309,7 +306,6 @@ scatterPlot.showLegend = true
 var body: some View {
     VStack {
         Text("Correlation Analysis")
-            .font(.title)
         scatterPlot
             .frame(height: 300)
     }
@@ -343,7 +339,6 @@ let chart = LineChart(data: data)
 ```swift
 // Create custom typography
 let customTypography = ChartTypography(
-    titleFont: .systemFont(ofSize: 18, weight: .bold),
     axisFont: .systemFont(ofSize: 12, weight: .medium),
     labelFont: .systemFont(ofSize: 10, weight: .regular),
     legendFont: .systemFont(ofSize: 11, weight: .medium)
@@ -445,7 +440,6 @@ struct RealTimeChartView: View {
 
 ```bash
 # Clone the repository
-git clone https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 # Navigate to project directory
 cd SwiftUI-Data-Visualization
@@ -463,7 +457,6 @@ Add the framework to your project:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "1.0.0")
 ]
 ```
 
@@ -487,7 +480,6 @@ struct BasicChartView: View {
     var body: some View {
         VStack {
             Text("Sample Chart")
-                .font(.title)
             
             LineChart(data: sampleData)
                 .frame(height: 300)
@@ -517,7 +509,6 @@ struct SimpleLineChartView: View {
     var body: some View {
         VStack {
             Text("Simple Line Chart")
-                .font(.title)
             
             LineChart(data: data)
                 .frame(height: 300)
@@ -545,7 +536,6 @@ struct InteractiveBarChartView: View {
     var body: some View {
         VStack {
             Text("Interactive Bar Chart")
-                .font(.title)
             
             BarChart(data: data)
                 .onBarTap { index in
@@ -581,7 +571,6 @@ struct AnimatedPieChartView: View {
     var body: some View {
         VStack {
             Text("Animated Pie Chart")
-                .font(.title)
             
             PieChart(data: data)
                 .animation(.easeInOut(duration: 1.0))
@@ -722,18 +711,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/commits/master)
 
 ### 📈 Advanced Statistics
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=muhittincamdali&show_icons=true&theme=radical&hide=contribs,issues)](https://github.com/muhittincamdali)
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=muhittincamdali&layout=compact&theme=radical)](https://github.com/muhittincamdali)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=muhittincamdali&theme=radical)](https://github.com/muhittincamdali)
 
 ### 🏆 Project Metrics
 
@@ -747,4 +727,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://reporoster.com/stars/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers) 
