@@ -1,1 +1,1 @@
-# ScatterPlotAPI
+# Scatter Plot API

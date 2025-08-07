@@ -1,1 +1,1 @@
-# AnimationGuide
+# Animation Guide
