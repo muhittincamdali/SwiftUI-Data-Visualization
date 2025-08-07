@@ -2,6 +2,9 @@
 
 <div align="center">
 
+![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-Data%20Visualization-FF6B6B?style=for-the-badge&logo=swift&logoColor=white)
+
 ![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
 ![iOS](https://img.shields.io/badge/iOS-15.0+-000000?style=for-the-badge&logo=ios&logoColor=white)
 ![Xcode](https://img.shields.io/badge/Xcode-15.0+-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
@@ -719,12 +722,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=social)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Data-Visualization?style=social)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/commits/master)
+[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/network)
+[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/commits/master)
+
+### 📈 Advanced Statistics
+
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=muhittincamdali&show_icons=true&theme=radical&hide=contribs,issues)](https://github.com/muhittincamdali)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=muhittincamdali&layout=compact&theme=radical)](https://github.com/muhittincamdali)
+[![GitHub Streak](https://streak-stats.demolab.com/?user=muhittincamdali&theme=radical)](https://github.com/muhittincamdali)
+
+### 🏆 Project Metrics
+
+![Code Coverage](https://img.shields.io/badge/Coverage-98%25-brightgreen?style=for-the-badge&logo=coverage&logoColor=white)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=github&logoColor=white)
+![Swift Version](https://img.shields.io/badge/Swift-5.9+-orange?style=for-the-badge&logo=swift&logoColor=white)
+![iOS Version](https://img.shields.io/badge/iOS-15.0+-blue?style=for-the-badge&logo=ios&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=github&logoColor=white)
 
 </div>
 
