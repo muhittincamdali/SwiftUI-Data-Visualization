@@ -1,5 +1,42 @@
 # Performance Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Performance Guide](#performance-guide)
+- [Overview](#overview)
+- [Performance Fundamentals](#performance-fundamentals)
+  - [Rendering Pipeline](#rendering-pipeline)
+  - [Performance Metrics](#performance-metrics)
+- [Optimization Strategies](#optimization-strategies)
+  - [1. Data Optimization](#1-data-optimization)
+    - [Data Sampling](#data-sampling)
+    - [Data Caching](#data-caching)
+  - [2. Rendering Optimization](#2-rendering-optimization)
+    - [GPU Acceleration](#gpu-acceleration)
+    - [Lazy Loading](#lazy-loading)
+  - [3. Memory Management](#3-memory-management)
+    - [Memory Monitoring](#memory-monitoring)
+    - [Memory Cleanup](#memory-cleanup)
+- [Large Dataset Handling](#large-dataset-handling)
+  - [Progressive Rendering](#progressive-rendering)
+  - [Data Compression](#data-compression)
+- [Real-time Performance](#real-time-performance)
+  - [Efficient Updates](#efficient-updates)
+  - [Background Processing](#background-processing)
+- [Animation Performance](#animation-performance)
+  - [Optimized Animations](#optimized-animations)
+  - [Frame Rate Monitoring](#frame-rate-monitoring)
+- [Memory Optimization](#memory-optimization)
+  - [Object Pooling](#object-pooling)
+  - [Image Caching](#image-caching)
+- [Performance Monitoring](#performance-monitoring)
+  - [Metrics Collection](#metrics-collection)
+  - [Performance Profiling](#performance-profiling)
+- [Best Practices](#best-practices)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Performance Guide provides comprehensive strategies and best practices for optimizing chart rendering, data processing, and memory management. This guide ensures smooth performance even with large datasets and real-time updates.

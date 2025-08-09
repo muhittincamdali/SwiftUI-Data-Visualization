@@ -1,5 +1,38 @@
 # Bar Chart API
 
+<!-- TOC START -->
+## Table of Contents
+- [Bar Chart API](#bar-chart-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [BarChart](#barchart)
+  - [BarChartStyle](#barchartstyle)
+- [Usage Examples](#usage-examples)
+  - [Basic Bar Chart](#basic-bar-chart)
+  - [Horizontal Bar Chart](#horizontal-bar-chart)
+  - [Customized Bar Chart](#customized-bar-chart)
+- [Interactive Features](#interactive-features)
+  - [Touch Interactions](#touch-interactions)
+  - [Animated Bar Chart](#animated-bar-chart)
+- [Performance Optimization](#performance-optimization)
+  - [Large Dataset Handling](#large-dataset-handling)
+  - [Real-time Updates](#real-time-updates)
+- [Customization Options](#customization-options)
+  - [Color Schemes](#color-schemes)
+  - [Typography](#typography)
+  - [Animations](#animations)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [Error Handling](#error-handling)
+- [Best Practices](#best-practices)
+- [Advanced Features](#advanced-features)
+  - [Grouped Bar Charts](#grouped-bar-charts)
+  - [Stacked Bar Charts](#stacked-bar-charts)
+  - [Value Formatting](#value-formatting)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Bar Chart API provides comprehensive functionality for creating vertical and horizontal bar charts with grouping, stacking, and interactive features. This API is optimized for performance and supports large datasets.

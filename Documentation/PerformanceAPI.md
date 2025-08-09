@@ -1,5 +1,36 @@
 # Performance API
 
+<!-- TOC START -->
+## Table of Contents
+- [Performance API](#performance-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [ChartPerformanceConfig](#chartperformanceconfig)
+  - [Performance Optimizer](#performance-optimizer)
+- [Usage Examples](#usage-examples)
+  - [Basic Performance Configuration](#basic-performance-configuration)
+  - [Large Dataset Optimization](#large-dataset-optimization)
+  - [Real-time Performance](#real-time-performance)
+- [Memory Management](#memory-management)
+  - [Cache Management](#cache-management)
+  - [Memory Monitoring](#memory-monitoring)
+- [GPU Acceleration](#gpu-acceleration)
+  - [Metal Integration](#metal-integration)
+- [Background Processing](#background-processing)
+  - [Data Processing](#data-processing)
+  - [Async Rendering](#async-rendering)
+- [Performance Monitoring](#performance-monitoring)
+  - [Metrics Collection](#metrics-collection)
+  - [Performance Profiling](#performance-profiling)
+- [Optimization Strategies](#optimization-strategies)
+  - [Data Sampling](#data-sampling)
+  - [Lazy Loading](#lazy-loading)
+  - [Adaptive Quality](#adaptive-quality)
+- [Best Practices](#best-practices)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Performance API provides comprehensive tools and utilities for optimizing chart rendering, data processing, and memory management. This API ensures smooth performance even with large datasets and real-time updates.

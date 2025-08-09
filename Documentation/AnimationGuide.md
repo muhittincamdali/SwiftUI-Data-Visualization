@@ -1,5 +1,33 @@
 # Animation Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Animation Guide](#animation-guide)
+- [Overview](#overview)
+- [Core Animation Components](#core-animation-components)
+  - [ChartAnimation](#chartanimation)
+  - [Animation Types](#animation-types)
+- [Basic Animations](#basic-animations)
+  - [Fade Animation](#fade-animation)
+  - [Scale Animation](#scale-animation)
+  - [Slide Animation](#slide-animation)
+- [Data-Driven Animations](#data-driven-animations)
+  - [Progressive Data Loading](#progressive-data-loading)
+  - [Value Change Animation](#value-change-animation)
+- [Advanced Animations](#advanced-animations)
+  - [Morphing Animations](#morphing-animations)
+  - [Elastic Animations](#elastic-animations)
+- [Custom Animations](#custom-animations)
+  - [Bezier Curve Animation](#bezier-curve-animation)
+  - [Staggered Animations](#staggered-animations)
+- [Performance Optimization](#performance-optimization)
+  - [Animation Performance](#animation-performance)
+  - [Memory Management](#memory-management)
+- [Best Practices](#best-practices)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Animation Guide provides comprehensive information on creating smooth, engaging animations for charts and data visualizations. This guide covers various animation types, timing functions, and best practices for optimal user experience.

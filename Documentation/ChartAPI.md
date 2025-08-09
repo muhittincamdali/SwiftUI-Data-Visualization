@@ -1,5 +1,31 @@
 # Chart API
 
+<!-- TOC START -->
+## Table of Contents
+- [Chart API](#chart-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [Chart Protocol](#chart-protocol)
+  - [ChartConfiguration](#chartconfiguration)
+- [Chart Types](#chart-types)
+  - [Line Chart](#line-chart)
+  - [Bar Chart](#bar-chart)
+  - [Pie Chart](#pie-chart)
+- [Data Models](#data-models)
+  - [DataPoint](#datapoint)
+- [Usage Examples](#usage-examples)
+  - [Basic Line Chart](#basic-line-chart)
+  - [Customized Bar Chart](#customized-bar-chart)
+- [Performance Optimization](#performance-optimization)
+  - [Large Dataset Handling](#large-dataset-handling)
+  - [Real-time Updates](#real-time-updates)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+- [Error Handling](#error-handling)
+- [Best Practices](#best-practices)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Chart API provides the core functionality for creating and managing data visualizations in SwiftUI. This comprehensive API offers a wide range of chart types, customization options, and performance optimizations.

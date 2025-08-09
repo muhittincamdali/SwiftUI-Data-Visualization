@@ -1,5 +1,46 @@
 # 🚀 Getting Started Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [🚀 Getting Started Guide](#-getting-started-guide)
+- [📋 Prerequisites](#-prerequisites)
+- [⚡ Quick Installation](#-quick-installation)
+  - [Using Swift Package Manager](#using-swift-package-manager)
+- [📊 Chart Types](#-chart-types)
+  - [Line Charts](#line-charts)
+  - [Bar Charts](#bar-charts)
+  - [Pie Charts](#pie-charts)
+  - [Scatter Plots](#scatter-plots)
+  - [Area Charts](#area-charts)
+  - [Candlestick Charts](#candlestick-charts)
+- [🎨 Customization](#-customization)
+  - [Chart Configuration](#chart-configuration)
+  - [Color Palettes](#color-palettes)
+  - [Animations](#animations)
+- [⚡ Performance Optimization](#-performance-optimization)
+  - [Large Datasets](#large-datasets)
+  - [Real-time Updates](#real-time-updates)
+- [♿ Accessibility](#-accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [🔧 Advanced Features](#-advanced-features)
+  - [Interactive Elements](#interactive-elements)
+  - [Custom Tooltips](#custom-tooltips)
+  - [Export Functionality](#export-functionality)
+- [🧪 Testing](#-testing)
+  - [Unit Tests](#unit-tests)
+  - [Performance Tests](#performance-tests)
+- [📱 Platform Support](#-platform-support)
+  - [iOS](#ios)
+  - [macOS](#macos)
+  - [tvOS](#tvos)
+  - [watchOS](#watchos)
+- [🚀 Next Steps](#-next-steps)
+- [📚 Additional Resources](#-additional-resources)
+- [🤝 Support](#-support)
+<!-- TOC END -->
+
+
 Welcome to SwiftUI Data Visualization! This guide will help you get up and running with the world's most advanced SwiftUI data visualization library.
 
 ## 📋 Prerequisites

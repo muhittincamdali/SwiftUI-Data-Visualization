@@ -1,5 +1,46 @@
 # Accessibility Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Accessibility Guide](#accessibility-guide)
+- [Overview](#overview)
+- [Accessibility Fundamentals](#accessibility-fundamentals)
+  - [VoiceOver Support](#voiceover-support)
+    - [Basic VoiceOver Implementation](#basic-voiceover-implementation)
+    - [VoiceOver Navigation](#voiceover-navigation)
+  - [Dynamic Type Support](#dynamic-type-support)
+    - [Font Scaling](#font-scaling)
+    - [Layout Adaptation](#layout-adaptation)
+- [Color Accessibility](#color-accessibility)
+  - [High Contrast Support](#high-contrast-support)
+  - [Color Blind Support](#color-blind-support)
+- [Gesture Accessibility](#gesture-accessibility)
+  - [VoiceOver Gestures](#voiceover-gestures)
+  - [Switch Control Support](#switch-control-support)
+- [Screen Reader Support](#screen-reader-support)
+  - [Descriptive Labels](#descriptive-labels)
+  - [Context Information](#context-information)
+- [Testing Accessibility](#testing-accessibility)
+  - [VoiceOver Testing](#voiceover-testing)
+  - [Automated Testing](#automated-testing)
+- [Best Practices](#best-practices)
+  - [1. Provide Descriptive Labels](#1-provide-descriptive-labels)
+  - [2. Use Clear Hints](#2-use-clear-hints)
+  - [3. Support Dynamic Type](#3-support-dynamic-type)
+  - [4. High Contrast Support](#4-high-contrast-support)
+  - [5. Color Blind Friendly](#5-color-blind-friendly)
+  - [6. VoiceOver Navigation](#6-voiceover-navigation)
+  - [7. Switch Control](#7-switch-control)
+  - [8. Context Information](#8-context-information)
+  - [9. Test Thoroughly](#9-test-thoroughly)
+  - [10. Follow Guidelines](#10-follow-guidelines)
+- [Error Handling](#error-handling)
+- [Advanced Features](#advanced-features)
+  - [Custom Accessibility Actions](#custom-accessibility-actions)
+  - [Accessibility Notifications](#accessibility-notifications)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Accessibility Guide provides comprehensive information on making charts accessible to users with disabilities. This guide covers VoiceOver support, Dynamic Type, color accessibility, and other accessibility features to ensure inclusive data visualization.

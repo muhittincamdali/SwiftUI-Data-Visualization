@@ -1,5 +1,37 @@
 # Line Chart API
 
+<!-- TOC START -->
+## Table of Contents
+- [Line Chart API](#line-chart-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [LineChart](#linechart)
+  - [LineChartStyle](#linechartstyle)
+- [Usage Examples](#usage-examples)
+  - [Basic Line Chart](#basic-line-chart)
+  - [Customized Line Chart](#customized-line-chart)
+  - [Multiple Series Line Chart](#multiple-series-line-chart)
+- [Interactive Features](#interactive-features)
+  - [Touch Interactions](#touch-interactions)
+  - [Zoom and Pan](#zoom-and-pan)
+- [Performance Optimization](#performance-optimization)
+  - [Large Dataset Handling](#large-dataset-handling)
+  - [Real-time Updates](#real-time-updates)
+- [Customization Options](#customization-options)
+  - [Color Schemes](#color-schemes)
+  - [Typography](#typography)
+  - [Animations](#animations)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [Error Handling](#error-handling)
+- [Best Practices](#best-practices)
+- [Advanced Features](#advanced-features)
+  - [Trend Analysis](#trend-analysis)
+  - [Data Smoothing](#data-smoothing)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Line Chart API provides comprehensive functionality for creating smooth, interactive line charts with multiple series, trend analysis, and real-time updates. This API is optimized for performance and supports large datasets.
