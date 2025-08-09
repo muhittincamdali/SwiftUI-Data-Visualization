@@ -1,5 +1,58 @@
 # Chart Types Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Chart Types Guide](#chart-types-guide)
+- [Overview](#overview)
+- [Available Chart Types](#available-chart-types)
+  - [1. Line Charts](#1-line-charts)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [2. Bar Charts](#2-bar-charts)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [3. Pie Charts](#3-pie-charts)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [4. Scatter Plots](#4-scatter-plots)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [5. Area Charts](#5-area-charts)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [6. Candlestick Charts](#6-candlestick-charts)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+  - [7. Heatmaps](#7-heatmaps)
+    - [Use Cases](#use-cases)
+    - [Implementation](#implementation)
+    - [Features](#features)
+- [Chart Selection Guidelines](#chart-selection-guidelines)
+  - [When to Use Each Chart Type](#when-to-use-each-chart-type)
+    - [Line Charts](#line-charts)
+    - [Bar Charts](#bar-charts)
+    - [Pie Charts](#pie-charts)
+    - [Scatter Plots](#scatter-plots)
+    - [Area Charts](#area-charts)
+    - [Candlestick Charts](#candlestick-charts)
+    - [Heatmaps](#heatmaps)
+- [Advanced Features](#advanced-features)
+  - [Multi-Series Charts](#multi-series-charts)
+  - [Interactive Charts](#interactive-charts)
+  - [Animated Charts](#animated-charts)
+- [Performance Considerations](#performance-considerations)
+  - [Large Datasets](#large-datasets)
+  - [Real-time Updates](#real-time-updates)
+- [Best Practices](#best-practices)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Chart Types Guide provides comprehensive information about all available chart types in the SwiftUI Data Visualization framework. This guide covers implementation details, use cases, and best practices for each chart type.

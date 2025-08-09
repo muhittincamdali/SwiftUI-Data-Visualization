@@ -1,5 +1,45 @@
 # Responsive Design Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Responsive Design Guide](#responsive-design-guide)
+- [Overview](#overview)
+- [Responsive Design Fundamentals](#responsive-design-fundamentals)
+  - [Device Adaptation](#device-adaptation)
+  - [Breakpoint Strategy](#breakpoint-strategy)
+- [Layout Strategies](#layout-strategies)
+  - [Adaptive Sizing](#adaptive-sizing)
+  - [Flexible Layouts](#flexible-layouts)
+  - [Grid-Based Layouts](#grid-based-layouts)
+- [Orientation Handling](#orientation-handling)
+  - [Portrait Layout](#portrait-layout)
+  - [Landscape Layout](#landscape-layout)
+- [Device-Specific Optimizations](#device-specific-optimizations)
+  - [iPhone Optimizations](#iphone-optimizations)
+  - [iPad Optimizations](#ipad-optimizations)
+  - [Mac Optimizations](#mac-optimizations)
+- [Dynamic Type Support](#dynamic-type-support)
+  - [Font Scaling](#font-scaling)
+  - [Layout Adaptation](#layout-adaptation)
+- [Accessibility Integration](#accessibility-integration)
+  - [VoiceOver Layout](#voiceover-layout)
+  - [Switch Control Support](#switch-control-support)
+- [Performance Considerations](#performance-considerations)
+  - [Efficient Rendering](#efficient-rendering)
+  - [Memory Management](#memory-management)
+- [Best Practices](#best-practices)
+  - [1. Use Size Classes](#1-use-size-classes)
+  - [2. Adaptive Spacing](#2-adaptive-spacing)
+  - [3. Flexible Dimensions](#3-flexible-dimensions)
+  - [4. Touch-Friendly Controls](#4-touch-friendly-controls)
+  - [5. Orientation Awareness](#5-orientation-awareness)
+  - [6. Accessibility First](#6-accessibility-first)
+  - [7. Performance Optimization](#7-performance-optimization)
+  - [8. Testing Strategy](#8-testing-strategy)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Responsive Design Guide provides comprehensive strategies for creating charts that adapt seamlessly to different screen sizes, orientations, and device capabilities. This guide ensures optimal user experience across all iOS devices.

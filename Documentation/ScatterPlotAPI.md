@@ -1,5 +1,39 @@
 # Scatter Plot API
 
+<!-- TOC START -->
+## Table of Contents
+- [Scatter Plot API](#scatter-plot-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [ScatterPlot](#scatterplot)
+  - [ScatterPlotStyle](#scatterplotstyle)
+- [Usage Examples](#usage-examples)
+  - [Basic Scatter Plot](#basic-scatter-plot)
+  - [Scatter Plot with Trend Line](#scatter-plot-with-trend-line)
+  - [Customized Scatter Plot](#customized-scatter-plot)
+- [Interactive Features](#interactive-features)
+  - [Touch Interactions](#touch-interactions)
+  - [Zoom and Pan](#zoom-and-pan)
+  - [Selection Mode](#selection-mode)
+- [Performance Optimization](#performance-optimization)
+  - [Large Dataset Handling](#large-dataset-handling)
+  - [Real-time Updates](#real-time-updates)
+- [Customization Options](#customization-options)
+  - [Color Schemes](#color-schemes)
+  - [Typography](#typography)
+  - [Animations](#animations)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [Error Handling](#error-handling)
+- [Best Practices](#best-practices)
+- [Advanced Features](#advanced-features)
+  - [Correlation Analysis](#correlation-analysis)
+  - [Trend Line Calculation](#trend-line-calculation)
+  - [Clustering Analysis](#clustering-analysis)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Scatter Plot API provides comprehensive functionality for creating point-based charts for correlation analysis, clustering, and data distribution visualization. This API is optimized for performance and supports large datasets with interactive features.

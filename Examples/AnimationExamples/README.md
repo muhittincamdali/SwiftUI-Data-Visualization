@@ -1,5 +1,21 @@
 # Animation Examples
 
+<!-- TOC START -->
+## Table of Contents
+- [Animation Examples](#animation-examples)
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Installation (SPM)](#installation-spm)
+- [Quick Start](#quick-start)
+- [API Reference](#api-reference)
+- [Usage Examples](#usage-examples)
+- [Performance](#performance)
+- [Security](#security)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+<!-- TOC END -->
+
+
 ## Overview
 This document belongs to the SwiftUI Data Visualization repository. It explains goals, scope, and usage.
 

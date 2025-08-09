@@ -1,5 +1,39 @@
 # Pie Chart API
 
+<!-- TOC START -->
+## Table of Contents
+- [Pie Chart API](#pie-chart-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [PieChart](#piechart)
+  - [PieChartStyle](#piechartstyle)
+- [Usage Examples](#usage-examples)
+  - [Basic Pie Chart](#basic-pie-chart)
+  - [Donut Chart](#donut-chart)
+  - [Customized Pie Chart](#customized-pie-chart)
+- [Interactive Features](#interactive-features)
+  - [Touch Interactions](#touch-interactions)
+  - [Animated Pie Chart](#animated-pie-chart)
+- [Performance Optimization](#performance-optimization)
+  - [Large Dataset Handling](#large-dataset-handling)
+  - [Real-time Updates](#real-time-updates)
+- [Customization Options](#customization-options)
+  - [Color Schemes](#color-schemes)
+  - [Typography](#typography)
+  - [Animations](#animations)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [Error Handling](#error-handling)
+- [Best Practices](#best-practices)
+- [Advanced Features](#advanced-features)
+  - [Exploded Pie Chart](#exploded-pie-chart)
+  - [Percentage Calculation](#percentage-calculation)
+  - [Legend Generation](#legend-generation)
+  - [Segment Highlighting](#segment-highlighting)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Pie Chart API provides comprehensive functionality for creating circular charts with custom segments, animations, and interactive features. This API is optimized for showing proportions and percentages in an intuitive visual format.

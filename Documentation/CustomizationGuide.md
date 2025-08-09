@@ -1,5 +1,52 @@
 # Customization Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Customization Guide](#customization-guide)
+- [Overview](#overview)
+- [Color Customization](#color-customization)
+  - [Color Schemes](#color-schemes)
+    - [Default Color Scheme](#default-color-scheme)
+    - [Custom Color Scheme](#custom-color-scheme)
+    - [Brand Colors](#brand-colors)
+  - [Dark Mode Support](#dark-mode-support)
+- [Typography Customization](#typography-customization)
+  - [Font Selection](#font-selection)
+  - [Dynamic Type Support](#dynamic-type-support)
+  - [Font Weight and Style](#font-weight-and-style)
+- [Layout Customization](#layout-customization)
+  - [Spacing and Padding](#spacing-and-padding)
+  - [Aspect Ratio](#aspect-ratio)
+  - [Responsive Layout](#responsive-layout)
+- [Style Customization](#style-customization)
+  - [Line Chart Styles](#line-chart-styles)
+  - [Bar Chart Styles](#bar-chart-styles)
+  - [Pie Chart Styles](#pie-chart-styles)
+- [Interactive Customization](#interactive-customization)
+  - [Custom Gestures](#custom-gestures)
+  - [Custom Callbacks](#custom-callbacks)
+- [Theme Customization](#theme-customization)
+  - [Light Theme](#light-theme)
+  - [Dark Theme](#dark-theme)
+- [Advanced Customization](#advanced-customization)
+  - [Custom Renderers](#custom-renderers)
+  - [Custom Animations](#custom-animations)
+  - [Custom Modifiers](#custom-modifiers)
+- [Best Practices](#best-practices)
+  - [1. Consistent Design](#1-consistent-design)
+  - [2. Accessibility](#2-accessibility)
+  - [3. Performance](#3-performance)
+  - [4. Responsive Design](#4-responsive-design)
+  - [5. Brand Guidelines](#5-brand-guidelines)
+  - [6. User Preferences](#6-user-preferences)
+  - [7. Testing](#7-testing)
+  - [8. Documentation](#8-documentation)
+  - [9. Reusability](#9-reusability)
+  - [10. Maintenance](#10-maintenance)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Customization Guide provides comprehensive information on customizing chart appearance, behavior, and functionality. This guide covers color schemes, typography, layouts, and advanced customization options to create unique, branded visualizations.

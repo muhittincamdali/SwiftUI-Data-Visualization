@@ -3,6 +3,16 @@
 
 # Accessibility
 
+<!-- TOC START -->
+## Table of Contents
+- [Accessibility](#accessibility)
+- [Overview](#overview)
+- [API](#api)
+- [Usage](#usage)
+- [Notes](#notes)
+<!-- TOC END -->
+
+
 ## Overview
 Explain the purpose and context.
 

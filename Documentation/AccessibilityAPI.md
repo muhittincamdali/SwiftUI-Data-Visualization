@@ -1,5 +1,39 @@
 # Accessibility API
 
+<!-- TOC START -->
+## Table of Contents
+- [Accessibility API](#accessibility-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [ChartAccessibility](#chartaccessibility)
+  - [Accessibility Traits](#accessibility-traits)
+- [Usage Examples](#usage-examples)
+  - [Basic Accessibility](#basic-accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type Support](#dynamic-type-support)
+- [VoiceOver Integration](#voiceover-integration)
+  - [Data Point Accessibility](#data-point-accessibility)
+  - [Navigation Support](#navigation-support)
+- [Dynamic Type](#dynamic-type)
+  - [Font Scaling](#font-scaling)
+  - [Layout Adaptation](#layout-adaptation)
+- [Color Accessibility](#color-accessibility)
+  - [High Contrast Support](#high-contrast-support)
+  - [Color Blind Support](#color-blind-support)
+- [Gesture Accessibility](#gesture-accessibility)
+  - [VoiceOver Gestures](#voiceover-gestures)
+  - [Switch Control Support](#switch-control-support)
+- [Screen Reader Support](#screen-reader-support)
+  - [Descriptive Labels](#descriptive-labels)
+  - [Context Information](#context-information)
+- [Testing Accessibility](#testing-accessibility)
+  - [VoiceOver Testing](#voiceover-testing)
+  - [Automated Testing](#automated-testing)
+- [Best Practices](#best-practices)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Accessibility API provides comprehensive support for VoiceOver, Dynamic Type, and other accessibility features. This API ensures that all charts are accessible to users with disabilities and comply with iOS accessibility guidelines.

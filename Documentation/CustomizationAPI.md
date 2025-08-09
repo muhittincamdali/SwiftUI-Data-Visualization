@@ -1,5 +1,42 @@
 # Customization API
 
+<!-- TOC START -->
+## Table of Contents
+- [Customization API](#customization-api)
+- [Overview](#overview)
+- [Core Components](#core-components)
+  - [ChartColorScheme](#chartcolorscheme)
+  - [ChartTypography](#charttypography)
+- [Color Customization](#color-customization)
+  - [Custom Color Schemes](#custom-color-schemes)
+  - [Brand Colors](#brand-colors)
+  - [Dark Mode Support](#dark-mode-support)
+- [Typography Customization](#typography-customization)
+  - [Custom Fonts](#custom-fonts)
+  - [Dynamic Type Support](#dynamic-type-support)
+- [Layout Customization](#layout-customization)
+  - [Spacing and Padding](#spacing-and-padding)
+  - [Aspect Ratio](#aspect-ratio)
+  - [Responsive Layout](#responsive-layout)
+- [Style Customization](#style-customization)
+  - [Line Chart Styles](#line-chart-styles)
+  - [Bar Chart Styles](#bar-chart-styles)
+  - [Pie Chart Styles](#pie-chart-styles)
+- [Interactive Customization](#interactive-customization)
+  - [Custom Gestures](#custom-gestures)
+  - [Custom Callbacks](#custom-callbacks)
+- [Theme Customization](#theme-customization)
+  - [Light Theme](#light-theme)
+  - [Dark Theme](#dark-theme)
+- [Advanced Customization](#advanced-customization)
+  - [Custom Renderers](#custom-renderers)
+  - [Custom Animations](#custom-animations)
+  - [Custom Modifiers](#custom-modifiers)
+- [Best Practices](#best-practices)
+- [Error Handling](#error-handling)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Customization API provides comprehensive tools for customizing chart appearance, behavior, and functionality. This API allows developers to create unique, branded visualizations that match their application's design language.

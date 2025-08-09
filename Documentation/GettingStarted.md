@@ -1,5 +1,47 @@
 # Getting Started Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Getting Started Guide](#getting-started-guide)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
+  - [Manual Installation](#manual-installation)
+- [Clone the repository](#clone-the-repository)
+- [Navigate to project directory](#navigate-to-project-directory)
+- [Install dependencies](#install-dependencies)
+- [Open in Xcode](#open-in-xcode)
+- [Quick Start](#quick-start)
+  - [1. Import the Framework](#1-import-the-framework)
+  - [2. Create Sample Data](#2-create-sample-data)
+  - [3. Create Your First Chart](#3-create-your-first-chart)
+- [Chart Types](#chart-types)
+  - [Line Charts](#line-charts)
+  - [Bar Charts](#bar-charts)
+  - [Pie Charts](#pie-charts)
+- [Customization](#customization)
+  - [Color Schemes](#color-schemes)
+  - [Typography](#typography)
+  - [Animations](#animations)
+- [Performance Optimization](#performance-optimization)
+  - [Large Datasets](#large-datasets)
+  - [Real-time Updates](#real-time-updates)
+- [Accessibility](#accessibility)
+  - [VoiceOver Support](#voiceover-support)
+  - [Dynamic Type](#dynamic-type)
+- [Best Practices](#best-practices)
+  - [1. Data Preparation](#1-data-preparation)
+  - [2. Responsive Design](#2-responsive-design)
+  - [3. Error Handling](#3-error-handling)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Debug Tips](#debug-tips)
+- [Next Steps](#next-steps)
+- [Support](#support)
+<!-- TOC END -->
+
+
 ## Introduction
 
 Welcome to SwiftUI Data Visualization Framework! This comprehensive guide will help you get started with creating beautiful, interactive charts and data visualizations for your iOS applications.
