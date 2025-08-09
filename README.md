@@ -747,4 +747,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://reporoster.com/stars/muhittincamdali/SwiftUI-Data-Visualization)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers) 
+[![Stargazers repo roster for @muhittincamdali/SwiftUI-Data-Visualization](https://starchart.cc/muhittincamdali/SwiftUI-Data-Visualization.svg)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers) 
