@@ -1,4 +1,5 @@
 # 📊 SwiftUI Data Visualization
+[![CI](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml)
 
 <!-- TOC START -->
 ## Table of Contents
