@@ -34,6 +34,12 @@
 
 ---
 
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-Data-Visualization&type=Date)](https://star-history.com/#muhittincamdali/SwiftUI-Data-Visualization&Date)
+
+---
+
 ## 📋 Table of Contents
 
 <div align="center">
