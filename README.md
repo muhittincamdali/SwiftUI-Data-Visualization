@@ -588,6 +588,32 @@ open Package.swift
 swift test
 ```
 
+
+
+## 🏗️ Architecture
+
+```mermaid
+graph TB
+    subgraph Public["📱 Public API"]
+        A[Client Interface]
+    end
+    subgraph Core["⚙️ Core"]
+        B[Engine]
+        C[Configuration]
+    end
+    subgraph Data["💾 Data Layer"]
+        D[Cache]
+        E[Storage]
+    end
+    A --> B
+    A --> C
+    B --> D
+    B --> E
+    style Public fill:#0071E3,stroke:#005BB5,color:#fff
+    style Core fill:#34C759,stroke:#248A3D,color:#fff
+    style Data fill:#FF9500,stroke:#C77600,color:#fff
+```
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
