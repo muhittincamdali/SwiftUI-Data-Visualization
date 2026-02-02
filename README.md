@@ -597,7 +597,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 **Muhittin Camdali**
 
 [![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat&logo=github)](https://github.com/muhittincamdali)
-
+[![CI](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions)
 ---
 
 <p align="center">
