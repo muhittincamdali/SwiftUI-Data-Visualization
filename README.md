@@ -22,7 +22,7 @@
 ║    ╚████╔╝ ██║███████║╚██████╔╝██║  ██║███████╗██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║ ║
 ║     ╚═══╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ║
 ║                                                                                                   ║
-║                    Beautiful • Interactive • Native SwiftUI Charts                                ║
+║          🏆 The Most Comprehensive Data Visualization Library for SwiftUI 🏆                     ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
 </pre>
 </p>
@@ -36,618 +36,395 @@
 
 <p align="center">
   <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions"><img src="https://img.shields.io/github/actions/workflow/status/muhittincamdali/SwiftUI-Data-Visualization/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"></a>
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><img src="https://img.shields.io/github/v/release/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square" alt="Release"></a>
+  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><img src="https://img.shields.io/badge/v2.0.0-release-blue?style=flat-square" alt="Release"></a>
   <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers"><img src="https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square" alt="Stars"></a>
   <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-Compatible-orange?style=flat-square" alt="SPM"></a>
 </p>
 
 <p align="center">
-  <strong>A powerful, native SwiftUI charting library with 8 chart types, smooth animations, and complete customization.</strong>
+  <strong>🎯 8 Chart Types • 5 Advanced Visualizations • 6 Progress Indicators • 10+ Themes • D3.js-like Flexibility</strong>
 </p>
 
 ---
 
-## 📊 Chart Gallery
+## 🌟 What Makes This Library World #1
 
+| Feature | SwiftUICharts | Charts.org | Apple Charts | **This Library** |
+|:--------|:-------------:|:----------:|:------------:|:----------------:|
+| Chart Types | 5 | 8 | 6 | **8+** |
+| Timelines | ❌ | ❌ | ❌ | **✅** |
+| Flowcharts | ❌ | ❌ | ❌ | **✅** |
+| Mind Maps | ❌ | ❌ | ❌ | **✅** |
+| Org Charts | ❌ | ❌ | ❌ | **✅** |
+| Network Graphs | ❌ | ❌ | ❌ | **✅** |
+| Dashboards | ❌ | ❌ | ❌ | **✅** |
+| Leaderboards | ❌ | ❌ | ❌ | **✅** |
+| Progress Indicators | 1 | ❌ | ❌ | **6** |
+| Data Transformers | ❌ | Basic | ❌ | **✅** |
+| Theming System | Basic | Basic | ❌ | **10+ Themes** |
+| Export (PNG/PDF/SVG) | ❌ | ❌ | ❌ | **✅** |
+| Accessibility | Basic | Basic | ✅ | **✅ VoiceOver** |
+| Real-time Updates | ❌ | ❌ | ✅ | **✅** |
+
+---
+
+## 📦 Complete Component Library
+
+### 📊 Charts (8 Types)
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                                                                                 │
-│   LINE CHART                    BAR CHART                   PIE CHART           │
-│                                                                                 │
-│      ╭──╮                      ┌───┐                         ╭────╮            │
-│     ╱    ╲    ╭──╮            ┌┤   │ ┌───┐             ╭────╮│████│╭────╮      │
-│    ╱      ╲──╱    ╲          ┌┤│   │ │   │ ┌───┐      │░░░░││████││▒▒▒▒│      │
-│   ╱                ╲        ┌┤││   │ │   │ │   │      │░░░░│╰────╯│▒▒▒▒│      │
-│  ╱                  ╲      ┌┤│││   │ │   │ │   │       ╰────╮    ╭────╯       │
-│                           └┴┴┴┴───┴─┴───┴─┴───┘              ╰──╯             │
-│   └───────────────┘        Q1  Q2  Q3  Q4        35% Mobile  45% Web  20% API │
-│                                                                                 │
+│   LINE CHART           BAR CHART            PIE CHART          AREA CHART       │
+│      ╭──╮             ┌───┐                  ╭────╮               ╭──╮          │
+│     ╱    ╲           ┌┤   │ ┌───┐      ╭────╮│████│           ╱████╲           │
+│    ╱      ╲──       ┌┤│   │ │   │      │░░░░││████│          ╱██████╲──        │
+│   ╱          ╲     └┴┴┴───┴─┴───┘       ╰────╯╰────╯        ╱████████████      │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│   AREA CHART                  SCATTER PLOT                RADAR CHART           │
-│                                                                                 │
-│      ╭──╮                        •                            ╱╲               │
-│     ╱████╲    ╭──╮              •  •                        ╱    ╲             │
-│    ╱██████╲──╱████╲           •    •  •                   ╱──────╲            │
-│   ╱████████████████╲            •  •                      ╲      ╱            │
-│  ╱██████████████████╲         •      •                      ╲──╱              │
-│  ███████████████████████      •  •  •    •                    ╲╱               │
-│                                                                                 │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                 │
-│   CANDLESTICK CHART                        HEATMAP CHART                        │
-│                                                                                 │
-│      ┌─┐   ┌─┐                      ┌──┬──┬──┬──┬──┬──┬──┐                     │
-│      │█│   │█│  │                   │██│▓▓│░░│▒▒│░░│▓▓│██│                     │
-│    ──┼─┼───┼─┼──┼──                 ├──┼──┼──┼──┼──┼──┼──┤                     │
-│      │█│   └─┘  │█│                 │▒▒│░░│▓▓│██│▓▓│░░│▒▒│                     │
-│      └─┘        └─┘                 ├──┼──┼──┼──┼──┼──┼──┤                     │
-│                                     │░░│▒▒│██│▓▓│██│▒▒│░░│                     │
-│    Open-High-Low-Close              └──┴──┴──┴──┴──┴──┴──┘                     │
-│                                                                                 │
+│   SCATTER PLOT       RADAR CHART        CANDLESTICK         HEATMAP            │
+│       •  •              ╱╲               ┌─┐   ┌─┐        ┌──┬──┬──┬──┐        │
+│     •    •  •         ╱    ╲             │█│   │█│        │██│▓▓│░░│▒▒│        │
+│       •  •          ╱──────╲           ──┼─┼───┼─┼──      ├──┼──┼──┼──┤        │
+│     •      •          ╲──╱               │█│   └─┘        │▒▒│░░│▓▓│██│        │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-## ✨ Feature Matrix
+### 🎨 Advanced Visualizations (5 Types)
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│   TIMELINE                 FLOWCHART              MIND MAP                      │
+│                                                                                 │
+│   ●────●────●────●        ┌─────┐                    ┌───┐                     │
+│   │    │    │    │        │Start│                 ┌──┤ A ├──┐                  │
+│  2021 2022 2023 2024      └──┬──┘              ┌──┴─┐└───┘┌─┴──┐               │
+│   ▼    ▼    ▼    ▼           ▼                 │ B  │     │ C  │               │
+│  Evt1 Evt2 Evt3 Evt4     ┌───────┐             └────┘     └────┘               │
+│                          │Process│                                              │
+│                          └───┬───┘                                              │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│   ORG CHART                            NETWORK GRAPH                            │
+│                                                                                 │
+│       ┌─────┐                              ●────●                               │
+│       │ CEO │                             ╱│╲   │                               │
+│       └──┬──┘                            ● │ ●──●                               │
+│     ┌────┼────┐                           ╲│╱                                   │
+│  ┌──┴─┐┌─┴──┐┌┴──┐                         ●                                    │
+│  │CTO ││CFO ││CMO│                                                              │
+│  └────┘└────┘└───┘                    Force-directed layout                     │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
 
-| Feature | Line | Bar | Pie | Area | Scatter | Radar | Candlestick | Heatmap |
-|:--------|:----:|:---:|:---:|:----:|:-------:|:-----:|:-----------:|:-------:|
-| Smooth Animations | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Touch Interaction | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Zoom & Pan | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ |
-| Custom Colors | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Gradients | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Grid Lines | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Axes Labels | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Legend | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Tooltips | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Multi-Series | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Real-Time Data | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Accessibility | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+### 📈 Progress Indicators (6 Types)
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│   CIRCULAR          LINEAR           SEGMENTED        RADIAL                    │
+│                                                                                 │
+│     ╭───╮        ████████░░░░        ●──●──○──○      ╭───────╮                 │
+│    ╱ 75% ╲       Progress: 75%       Step 2 of 4    ╱ ╭───╮   ╲                │
+│    ╲     ╱                                          ╲  ╲60%╱  ╱                 │
+│     ╰───╯                                            ╰───────╯                  │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│   WAVE PROGRESS                      GAUGE PROGRESS                             │
+│                                                                                 │
+│     ╭───────╮                           ╭─────╮                                 │
+│    │ ~~~~~ │                          ╱    72   ╲                               │
+│    │███████│  65%                    ╱     │      ╲                             │
+│     ╰───────╯                       0 ─────┼───── 100                           │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 📱 UI Components
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│   STATISTICS CARD              COMPARISON TABLE           LEADERBOARD           │
+│  ┌─────────────────┐         ┌──────┬─────┬─────┐      ┌─────────────────┐     │
+│  │  📈 Revenue     │         │      │Pro  │Free │      │ 🥇 Alice  15.2K │     │
+│  │  $24,500        │         │Users │ 10  │ 1   │      │ 🥈 Bob    14.1K │     │
+│  │  ▲ +12.5%       │         │API   │ ✅  │ ❌  │      │ 🥉 Carol  13.8K │     │
+│  │  ▁▂▃▄▅▆▇        │         │Price │ $29 │ $9  │      │ 4. David  12.5K │     │
+│  └─────────────────┘         └──────┴─────┴─────┘      └─────────────────┘     │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│   DASHBOARD                                                                     │
+│  ┌─────────────┬─────────────┬─────────────────────────────────────────────┐   │
+│  │   Revenue   │   Users     │                  Chart                       │   │
+│  │   $24.5K    │   1,234     │               ╭──────╮                       │   │
+│  │   ▲ +12%    │   ▲ +8%     │              ╱        ╲                      │   │
+│  ├─────────────┴─────────────┤             ╱          ╲──────              │   │
+│  │      Activity Feed        │            ╱                                 │   │
+│  │  ● New user signed up     │           ╱──────────────────────────────   │   │
+│  │  ● Order #12345 received  │                                              │   │
+│  └───────────────────────────┴─────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
 
 ## 🚀 Quick Start
 
 ### Installation
 
-Add to your `Package.swift`:
-
 ```swift
+// Package.swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "1.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
 ]
 ```
-
-Or in Xcode: **File → Add Package Dependencies** → paste the URL.
 
 ### Basic Usage
 
 ```swift
 import SwiftUIDataVisualization
 
-// 1️⃣ Create data points
-let salesData = [
-    ChartDataPoint(label: "Jan", value: 4200),
-    ChartDataPoint(label: "Feb", value: 5800),
-    ChartDataPoint(label: "Mar", value: 4900),
-    ChartDataPoint(label: "Apr", value: 7200),
-    ChartDataPoint(label: "May", value: 8500),
-    ChartDataPoint(label: "Jun", value: 9100)
-]
+// Line Chart
+LineChart(data: [10, 25, 15, 30, 20], labels: ["Mon", "Tue", "Wed", "Thu", "Fri"])
+    .chartTheme(.vibrant)
+    .animated(true)
 
-// 2️⃣ Create the chart
-LineChart(data: salesData)
-    .chartStyle(.line)
-    .animation(.easeInOut(duration: 0.5))
-    .interactive(true)
-    .frame(height: 300)
+// Timeline
+TimelineView(events: $events)
+    .configuration(TimelineConfiguration(orientation: .vertical, style: .modern))
+
+// Dashboard
+DashboardView(widgets: $widgets)
+    .configuration(DashboardConfiguration(columns: 3, style: .card))
+
+// Progress Indicator
+CircularProgressView(value: 75, label: "Storage")
+    .frame(width: 120, height: 120)
 ```
 
-## 📈 Chart Examples
+---
 
-### Line Chart - Sales Trend
+## 🎨 Theming System
+
+### Pre-built Themes
+
+| Theme | Best For |
+|:------|:---------|
+| `.light` | Standard light mode apps |
+| `.dark` | Dark mode interfaces |
+| `.vibrant` | Marketing dashboards |
+| `.minimal` | Clean, professional reports |
+| `.ocean` | Finance & analytics |
+| `.sunset` | Creative portfolios |
+| `.forest` | Environmental data |
+| `.neon` | Gaming & entertainment |
+| `.corporate` | Enterprise applications |
+
+### Custom Theme
 
 ```swift
-struct SalesTrendView: View {
-    let monthlySales = [
-        ChartDataPoint(label: "Jan", value: 12500),
-        ChartDataPoint(label: "Feb", value: 18200),
-        ChartDataPoint(label: "Mar", value: 15800),
-        ChartDataPoint(label: "Apr", value: 22100),
-        ChartDataPoint(label: "May", value: 28400),
-        ChartDataPoint(label: "Jun", value: 31200)
-    ]
-    
-    var body: some View {
-        LineChart(data: monthlySales)
-            .lineColor(.blue)
-            .lineWidth(2.5)
-            .showPoints(true)
-            .pointStyle(.circle(radius: 5, fill: .white, stroke: .blue))
-            .showGrid(true)
-            .gridStyle(.dashed(color: .gray.opacity(0.3)))
-            .xAxisLabel("Month")
-            .yAxisLabel("Revenue ($)")
-            .animated(true)
-            .frame(height: 280)
-    }
-}
-```
+let customTheme = ChartThemeBuilder(base: .light)
+    .primaryColor(.purple)
+    .colorPalette([.purple, .pink, .orange, .yellow])
+    .animationDuration(0.6)
+    .showGrid(false)
+    .build()
 
-**Visual output:**
-```
-Revenue ($)
-    │
-32K ┤                           ╭────●
-    │                     ╭────╯
-28K ┤               ╭────╯
-    │         ╭────╯
-22K ┤   ╭────╯
-    │   │
-18K ┤   ●
-    │ ╭╯
-12K ┤ ●
-    │
-    └────┬─────┬─────┬─────┬─────┬────→ Month
-        Jan   Feb   Mar   Apr   May   Jun
-```
-
-### Bar Chart - Quarterly Revenue
-
-```swift
-struct QuarterlyRevenueView: View {
-    let quarterlyData = [
-        ChartDataPoint(label: "Q1", value: 45000),
-        ChartDataPoint(label: "Q2", value: 62000),
-        ChartDataPoint(label: "Q3", value: 58000),
-        ChartDataPoint(label: "Q4", value: 78000)
-    ]
-    
-    var body: some View {
-        BarChart(data: quarterlyData)
-            .barColors([.blue, .green, .orange, .purple])
-            .barCornerRadius(8)
-            .showValues(true)
-            .valueFormat("$%.0fK") { $0 / 1000 }
-            .spacing(16)
-            .animated(true)
-            .animationStyle(.spring(response: 0.6, dampingFraction: 0.8))
-            .frame(height: 300)
-    }
-}
-```
-
-**Visual output:**
-```
-         $78K
-         ┌────┐
-         │████│
-         │████│
-  $62K   │████│
-  ┌────┐ │████│
-  │████│ │████│
-  │████│ │████│  $58K
-$45K████│ │████│  ┌────┐
-┌─│████│ │████│  │████│
-│█│████│ │████│  │████│
-│█│████│ │████│  │████│
-└─┴────┴─┴────┴──┴────┴─
-   Q1     Q2     Q3     Q4
-```
-
-### Pie Chart - Traffic Sources
-
-```swift
-struct TrafficSourcesView: View {
-    let trafficData = [
-        ChartDataPoint(label: "Organic", value: 45, color: .green),
-        ChartDataPoint(label: "Direct", value: 25, color: .blue),
-        ChartDataPoint(label: "Referral", value: 20, color: .orange),
-        ChartDataPoint(label: "Social", value: 10, color: .purple)
-    ]
-    
-    var body: some View {
-        PieChart(data: trafficData)
-            .innerRadius(0.5) // Creates donut chart
-            .showPercentages(true)
-            .showLabels(true)
-            .labelPosition(.outside)
-            .animated(true)
-            .onSliceTap { slice in
-                print("Tapped: \(slice.label) - \(slice.percentage)%")
-            }
-            .frame(width: 300, height: 300)
-    }
-}
-```
-
-**Visual output:**
-```
-                Organic 45%
-                    ↓
-              ╭─────────╮
-           ╭──│█████████│──╮
-         ╱ ███│█████████│███ ╲
-        │█████│         │█████│ ← Direct 25%
-        │█████│    ○    │░░░░░│
-        │█████│         │░░░░░│
-         ╲ ▒▒▒│░░░░░░░░░│▒▒▒ ╱
-           ╰──│░░░░░░░░░│──╯
-              ╰─────────╯
-           ↑              ↑
-     Social 10%      Referral 20%
-```
-
-### Area Chart - Website Visitors
-
-```swift
-struct VisitorsChartView: View {
-    let visitorData = [
-        ChartDataPoint(label: "Mon", value: 1200),
-        ChartDataPoint(label: "Tue", value: 1850),
-        ChartDataPoint(label: "Wed", value: 2100),
-        ChartDataPoint(label: "Thu", value: 1750),
-        ChartDataPoint(label: "Fri", value: 2400),
-        ChartDataPoint(label: "Sat", value: 3100),
-        ChartDataPoint(label: "Sun", value: 2800)
-    ]
-    
-    var body: some View {
-        AreaChart(data: visitorData)
-            .fillGradient(
-                Gradient(colors: [.blue.opacity(0.6), .blue.opacity(0.1)])
-            )
-            .lineColor(.blue)
-            .lineWidth(2)
-            .showPoints(true)
-            .animated(true)
-            .frame(height: 250)
-    }
-}
-```
-
-### Scatter Plot - Correlation Analysis
-
-```swift
-struct CorrelationChartView: View {
-    let correlationData = (0..<50).map { _ in
-        ChartDataPoint(
-            x: Double.random(in: 0...100),
-            y: Double.random(in: 0...100)
-        )
-    }
-    
-    var body: some View {
-        ScatterChart(data: correlationData)
-            .pointStyle(.circle(radius: 6, fill: .blue.opacity(0.6)))
-            .showTrendLine(true)
-            .trendLineColor(.red)
-            .interactive(true)
-            .zoomEnabled(true)
-            .panEnabled(true)
-            .frame(height: 300)
-    }
-}
-```
-
-### Candlestick Chart - Stock Data
-
-```swift
-struct StockChartView: View {
-    let stockData = [
-        CandlestickDataPoint(date: "Mon", open: 150, high: 158, low: 148, close: 155),
-        CandlestickDataPoint(date: "Tue", open: 155, high: 162, low: 153, close: 160),
-        CandlestickDataPoint(date: "Wed", open: 160, high: 165, low: 155, close: 157),
-        CandlestickDataPoint(date: "Thu", open: 157, high: 163, low: 152, close: 161),
-        CandlestickDataPoint(date: "Fri", open: 161, high: 168, low: 159, close: 166)
-    ]
-    
-    var body: some View {
-        CandlestickChart(data: stockData)
-            .bullishColor(.green)
-            .bearishColor(.red)
-            .wickWidth(1)
-            .candleWidth(12)
-            .showVolume(true)
-            .frame(height: 350)
-    }
-}
-```
-
-**Visual output:**
-```
-Price
-  │
-168├         │
-166├         ┌┴┐
-164├     │   │█│
-162├   ┌─┤   │█│
-160├   │█│ │ └┬┘
-158├ │ │█│ ├─┤
-156├ ├─┤ │ │█│
-154├ │█│   │█│
-152├ └┬┘   │ │
-150├ ─┴────┴─┴────→
-    Mon Tue Wed Thu Fri
-    
-█ = Bullish (Close > Open)
-░ = Bearish (Close < Open)
-```
-
-### Heatmap Chart - Activity Matrix
-
-```swift
-struct ActivityHeatmapView: View {
-    let activityData: [[Double]] = [
-        [0.2, 0.5, 0.8, 0.3, 0.9, 0.4, 0.1],
-        [0.6, 0.3, 0.7, 0.9, 0.5, 0.2, 0.4],
-        [0.9, 0.8, 0.4, 0.6, 0.3, 0.7, 0.5],
-        [0.3, 0.6, 0.9, 0.4, 0.8, 0.5, 0.2]
-    ]
-    
-    var body: some View {
-        HeatmapChart(
-            data: activityData,
-            colorScale: .viridis,
-            rowLabels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-            columnLabels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-        )
-        .cellCornerRadius(4)
-        .showValues(false)
-        .animated(true)
-        .frame(height: 200)
-    }
-}
-```
-
-## 🎨 Customization
-
-### Color Scales (Heatmap)
-
-```swift
-// Built-in color scales
-.colorScale(.viridis)    // Purple → Green → Yellow
-.colorScale(.plasma)     // Purple → Pink → Yellow
-.colorScale(.inferno)    // Black → Red → Yellow
-.colorScale(.magma)      // Black → Purple → White
-.colorScale(.coolwarm)   // Blue → White → Red
-
-// Custom color scale
-.colorScale(.custom([.blue, .white, .red]))
-```
-
-### Chart Themes
-
-```swift
-// Apply a theme
 LineChart(data: data)
-    .theme(.dark)      // Dark background
-    .theme(.light)     // Light background
-    .theme(.minimal)   // Clean, minimal style
-    .theme(.vibrant)   // Bold colors
+    .chartTheme(customTheme)
+```
 
-// Custom theme
-let myTheme = ChartTheme(
-    backgroundColor: .black,
-    foregroundColor: .white,
-    accentColor: .cyan,
-    gridColor: .gray.opacity(0.3),
-    fontFamily: .system(.body, design: .monospaced)
+---
+
+## 📊 Data Binding & Transformations
+
+### Real-time Updates
+
+```swift
+class DataSource: ObservableObject {
+    @Published var data: [ChartDataPoint] = []
+    
+    func startLiveUpdates() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            self.data.append(ChartDataPoint(label: Date().formatted(), value: Double.random(in: 0...100)))
+        }
+    }
+}
+```
+
+### Data Transformers
+
+```swift
+// Group by date
+let grouped = ChartDataTransformer.groupByDate(
+    data: sales,
+    dateKey: \.date,
+    valueKey: \.amount,
+    component: .month,
+    aggregation: .sum
 )
 
-LineChart(data: data)
-    .theme(myTheme)
+// Moving average
+let smoothed = ChartDataTransformer.movingAverage(data: timeSeries, windowSize: 7)
+
+// Statistics
+let stats = ChartDataTransformer.statistics(data: sales, valueKey: \.amount)
+print("Mean: \(stats.mean), Std Dev: \(stats.standardDeviation)")
 ```
 
-### Animations
+### Filtering & Sorting
 
 ```swift
-// Animation styles
-.animationStyle(.easeIn)
-.animationStyle(.easeOut)
-.animationStyle(.spring(response: 0.5, dampingFraction: 0.7))
-.animationStyle(.custom(Animation.interpolatingSpring(stiffness: 100, damping: 10)))
+// Filter by date range
+let filtered = DataFilter.byDateRange(data: events, dateKey: \.date, from: startDate, to: endDate)
 
-// Animation duration
-.animationDuration(0.8)
-
-// Staggered animations (for bar/pie charts)
-.staggeredAnimation(delay: 0.1)
+// Sort by value
+let sorted = DataSorter.sort(data: entries, by: \.score, ascending: false)
 ```
 
-### Interactions
+---
+
+## 📤 Export Options
+
+```swift
+// PNG Export
+if let pngData = ChartExporter.exportToPNG(view: myChart, size: CGSize(width: 800, height: 600), quality: .high) {
+    // Save or share
+}
+
+// PDF Export
+if let pdfData = ChartExporter.exportToPDF(view: myChart, size: CGSize(width: 800, height: 600), title: "Sales Report") {
+    // Save or share
+}
+
+// CSV Export
+let csv = ChartExporter.exportToCSV(data: salesData, columns: [
+    ("Date", \.dateString),
+    ("Amount", \.amountString),
+    ("Category", \.category)
+])
+
+// JSON Export
+let json = ChartExporter.exportToJSON(data: salesData)
+```
+
+---
+
+## ♿ Accessibility
+
+### VoiceOver Support
+
+```swift
+LineChart(data: salesData)
+    .chartAccessibility(
+        label: ChartAccessibilityProvider.lineChartDescription(
+            title: "Monthly Sales",
+            dataPoints: salesData.map { ($0.label, $0.value) },
+            unit: "dollars"
+        )
+    )
+```
+
+### Color-Blind Friendly Palettes
 
 ```swift
 LineChart(data: data)
-    // Enable interactions
-    .interactive(true)
-    .zoomEnabled(true)
-    .panEnabled(true)
-    .selectable(true)
+    .chartTheme(ChartTheme(colorPalette: AccessibleColors.colorBlindFriendly))
+```
+
+### Haptic Feedback
+
+```swift
+// Automatic haptic feedback on interactions
+ChartHaptics.dataPointSelected()  // Light tap
+ChartHaptics.peakDetected()       // Medium impact
+ChartHaptics.thresholdCrossed()   // Warning notification
+```
+
+---
+
+## 📈 Complete Examples
+
+### Analytics Dashboard
+
+```swift
+struct AnalyticsDashboard: View {
+    @StateObject var dataSource = AnalyticsDataSource()
     
-    // Callbacks
-    .onPointSelect { point in
-        print("Selected: \(point.label) = \(point.value)")
+    var body: some View {
+        DashboardView(widgets: $dataSource.widgets)
+            .configuration(DashboardConfiguration(
+                columns: 3,
+                style: .card,
+                showWidgetHeaders: true
+            ))
+            .chartTheme(.corporate)
     }
-    .onZoomChange { scale in
-        print("Zoom level: \(scale)")
-    }
+}
+```
+
+### Project Timeline
+
+```swift
+struct ProjectTimeline: View {
+    @State var events = [
+        TimelineEvent(date: Date(), title: "Project Kickoff", icon: "star.fill", color: .blue),
+        TimelineEvent(date: Date().addingTimeInterval(86400 * 7), title: "Design Complete", icon: "paintbrush.fill", color: .purple),
+        TimelineEvent(date: Date().addingTimeInterval(86400 * 21), title: "Beta Release", icon: "rocket.fill", color: .orange)
+    ]
     
-    // Custom tooltip
-    .tooltip { point in
-        VStack {
-            Text(point.label).font(.headline)
-            Text("$\(point.value, specifier: "%.2f")").font(.caption)
-        }
-        .padding(8)
-        .background(.ultraThinMaterial)
-        .cornerRadius(8)
+    var body: some View {
+        TimelineView(events: $events)
+            .configuration(TimelineConfiguration(
+                orientation: .vertical,
+                style: .alternating,
+                showConnectors: true
+            ))
     }
+}
 ```
 
-## 🏗️ Architecture
+### Gaming Leaderboard
 
-```
-SwiftUI-Data-Visualization/
-│
-├── Sources/SwiftUIDataVisualization/
-│   ├── Charts/
-│   │   ├── LineChart.swift         # Line chart implementation
-│   │   ├── BarChart.swift          # Bar chart implementation
-│   │   ├── PieChart.swift          # Pie/Donut chart
-│   │   ├── AreaChart.swift         # Area chart
-│   │   ├── ScatterChart.swift      # Scatter plot
-│   │   ├── RadarChart.swift        # Radar/Spider chart
-│   │   ├── CandlestickChart.swift  # Financial OHLC chart
-│   │   └── HeatmapChart.swift      # Matrix heatmap
-│   │
-│   ├── Models/
-│   │   ├── ChartDataPoint.swift    # Data point models
-│   │   └── ChartConfiguration.swift # Configuration options
-│   │
-│   ├── Styles/
-│   │   ├── ChartStyle.swift        # Style definitions
-│   │   ├── ChartTheme.swift        # Theme presets
-│   │   └── ColorScales.swift       # Color scale definitions
-│   │
-│   ├── Modifiers/
-│   │   ├── ChartModifiers.swift    # View modifiers
-│   │   └── AnimationModifiers.swift # Animation helpers
-│   │
-│   └── Utils/
-│       ├── MathUtils.swift         # Mathematical calculations
-│       ├── GeometryUtils.swift     # Geometry helpers
-│       └── AccessibilityUtils.swift # Accessibility support
-│
-├── Examples/
-│   ├── BasicCharts/                # Basic usage examples
-│   ├── AdvancedCharts/             # Advanced features
-│   ├── RealTimeData/               # Live data examples
-│   └── CustomStyling/              # Styling examples
-│
-├── Tests/
-│   ├── SwiftUIDataVisualizationTests/
-│   ├── SwiftUIDataVisualizationPerformanceTests/
-│   └── SwiftUIDataVisualizationUITests/
-│
-└── Documentation/
-    ├── ChartTypes.md
-    ├── Customization.md
-    ├── RealTimeData.md
-    └── Accessibility.md
+```swift
+struct GameLeaderboard: View {
+    @State var players = LeaderboardEntry.samplePlayers()
+    
+    var body: some View {
+        LeaderboardView(entries: $players)
+            .configuration(LeaderboardConfiguration(
+                style: .podium,
+                showRankChange: true,
+                showTopThreeSpecial: true
+            ))
+    }
+}
 ```
 
-## 📱 Platform Support
+---
 
-| Platform | Minimum Version | Status |
-|:---------|:---------------:|:------:|
-| iOS | 15.0+ | ✅ Full Support |
-| macOS | 12.0+ | ✅ Full Support |
-| tvOS | 15.0+ | ✅ Full Support |
-| watchOS | 8.0+ | ✅ Full Support |
-| visionOS | 1.0+ | 🔜 Coming Soon |
+## 🔧 Requirements
 
-## ⚡ Performance
+| Platform | Minimum Version |
+|:---------|:----------------|
+| iOS | 15.0+ |
+| macOS | 12.0+ |
+| tvOS | 15.0+ |
+| watchOS | 8.0+ |
+| visionOS | 1.0+ |
+| Swift | 5.9+ |
 
-Built with performance in mind:
-
-- **Lazy rendering** - Only visible elements are rendered
-- **Efficient animations** - Uses Metal-backed rendering
-- **Memory optimized** - Automatic cleanup of off-screen elements
-- **Large datasets** - Handles 10,000+ data points smoothly
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Performance Benchmarks                    │
-├─────────────────────────────────────────────────────────────┤
-│  Data Points     │  Render Time  │  Memory Usage  │  FPS   │
-├──────────────────┼───────────────┼────────────────┼────────┤
-│  100             │  < 5ms        │  ~2 MB         │  60    │
-│  1,000           │  < 15ms       │  ~8 MB         │  60    │
-│  10,000          │  < 50ms       │  ~25 MB        │  60    │
-│  100,000         │  < 200ms      │  ~80 MB        │  55+   │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## 📚 Documentation
-
-| Document | Description |
-|:---------|:------------|
-| [Chart Types Guide](Documentation/ChartTypes.md) | Detailed guide for each chart type |
-| [Customization](Documentation/Customization.md) | Styling, themes, and appearance |
-| [Real-Time Data](Documentation/RealTimeData.md) | Live data and streaming |
-| [Accessibility](Documentation/Accessibility.md) | VoiceOver and accessibility features |
-| [API Reference](Documentation/API.md) | Complete API documentation |
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-```bash
-# Clone the repo
-git clone https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
-
-# Open in Xcode
-cd SwiftUI-Data-Visualization
-open Package.swift
-
-# Run tests
-swift test
-```
-
-
-
-## 🏗️ Architecture
-
-```mermaid
-graph TB
-    subgraph Public["📱 Public API"]
-        A[Client Interface]
-    end
-    subgraph Core["⚙️ Core"]
-        B[Engine]
-        C[Configuration]
-    end
-    subgraph Data["💾 Data Layer"]
-        D[Cache]
-        E[Storage]
-    end
-    A --> B
-    A --> C
-    B --> D
-    B --> E
-    style Public fill:#0071E3,stroke:#005BB5,color:#fff
-    style Core fill:#34C759,stroke:#248A3D,color:#fff
-    style Data fill:#FF9500,stroke:#C77600,color:#fff
-```
+---
 
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## 👨‍💻 Author
+---
 
-**Muhittin Camdali**
+## 🙏 Acknowledgments
 
-[![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat&logo=github)](https://github.com/muhittincamdali)
-[![CI](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions)
+Built with ❤️ for the SwiftUI community.
+
+Inspired by D3.js, Recharts, and Apache ECharts.
+
 ---
 
 <p align="center">
-  <sub>Built with ❤️ using SwiftUI</sub>
+  <strong>⭐ Star this repo if you find it useful! ⭐</strong>
 </p>
 
 <p align="center">
-  <sub>If you find this useful, consider giving it a ⭐</sub>
+  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues">Report Bug</a> •
+  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues">Request Feature</a> •
+  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/discussions">Discussions</a>
 </p>
-
----
-
-## 📈 Star History
-
-<a href="https://star-history.com/#muhittincamdali/SwiftUI-Data-Visualization&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-Data-Visualization&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-Data-Visualization&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-Data-Visualization&type=Date" />
- </picture>
-</a>
