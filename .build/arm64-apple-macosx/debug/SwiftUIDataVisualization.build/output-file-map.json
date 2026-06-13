@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/primary.swiftdeps"
+  },
+  "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift": {
+    "dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.d",
+    "object": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swift.o",
+    "swiftmodule": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore~partial.swiftmodule",
+    "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swiftdeps",
+    "diagnostics": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.dia"
+  }
+}

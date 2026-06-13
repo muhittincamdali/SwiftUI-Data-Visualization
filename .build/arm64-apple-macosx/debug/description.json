@@ -1,0 +1,670 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.xctest/Contents/MacOS/SwiftUIDataVisualizationPackageTests",
+      "packagePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization",
+      "productName" : "SwiftUIDataVisualizationPackageTests",
+      "testEntryPointPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/LinuxMain.swift"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.SwiftUIDataVisualization-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/sources",
+      "importPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftUIDataVisualization",
+      "moduleOutputPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualization.swiftmodule",
+      "objects" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j18",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/include/SwiftUIDataVisualization-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-enable-experimental-feature",
+        "StrictConcurrency",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftui_data_visualization"
+      ],
+      "outputFileMapPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualization.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift"
+      ],
+      "tempsPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwiftUIDataVisualizationPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/sources",
+      "importPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualizationTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftUIDataVisualizationPackageTests",
+      "moduleOutputPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualizationPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j18",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/include/SwiftUIDataVisualizationPackageTests-Swift.h",
+        "-color-diagnostics",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftui_data_visualization"
+      ],
+      "outputFileMapPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualizationPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwiftUIDataVisualizationTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/sources",
+      "importPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/BarChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/LineChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/PieChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/ScatterChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualization.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftUIDataVisualizationTests",
+      "moduleOutputPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualizationTests.swiftmodule",
+      "objects" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/BarChartTests.swift.o",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/LineChartTests.swift.o",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/PieChartTests.swift.o",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/ScatterChartTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j18",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftui_data_visualization"
+      ],
+      "outputFileMapPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/BarChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/LineChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/PieChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/ScatterChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualizationTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/BarChartTests.swift",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/LineChartTests.swift",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/PieChartTests.swift",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/ScatterChartTests.swift"
+      ],
+      "tempsPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "SwiftUIDataVisualization" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftUIDataVisualization",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-c",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift",
+      "-I",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j18",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/include/SwiftUIDataVisualization-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-enable-experimental-feature",
+      "StrictConcurrency",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwiftUIDataVisualizationPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftUIDataVisualizationPackageTests",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-c",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j18",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/include/SwiftUIDataVisualizationPackageTests-Swift.h",
+      "-color-diagnostics",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwiftUIDataVisualizationTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftUIDataVisualizationTests",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-c",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/BarChartTests.swift",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/LineChartTests.swift",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/PieChartTests.swift",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/ScatterChartTests.swift",
+      "-I",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j18",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftui_data_visualization",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "SwiftUIDataVisualization" : [
+
+    ],
+    "SwiftUIDataVisualizationPackageTests" : [
+      "SwiftUIDataVisualizationTests",
+      "SwiftUIDataVisualization"
+    ],
+    "SwiftUIDataVisualizationTests" : [
+      "SwiftUIDataVisualization"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/sources"
+    },
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/sources"
+    },
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/BarChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/LineChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/PieChartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/ScatterChartTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/BarChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/LineChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/PieChartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Tests/SwiftUIDataVisualizationTests/ScatterChartTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationTests.build/sources"
+    },
+    "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

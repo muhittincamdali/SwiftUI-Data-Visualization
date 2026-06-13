@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/primary.swiftdeps"
+  },
+  "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.d",
+    "object": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualizationPackageTests.build/runner.dia"
+  }
+}
