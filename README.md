@@ -62,6 +62,21 @@
 
 ---
 
+## 🚀 The 2026 Standard: High-Frequency Tickers
+Stop dropping frames when rendering financial data. Built entirely on Swift 6 and `Canvas`, the new `LiveTickerChart` renders real-time data at a locked 60fps.
+
+```swift
+// Render high-frequency financial data at 60fps
+LiveTickerChart(
+    dataPoints: [100.5, 102.1, 101.8, 105.4, 108.2],
+    lineColor: .green,
+    gradientColor: .green.opacity(0.3)
+)
+.frame(height: 200)
+```
+
+---
+
 ## 🌟 What Makes This Library World #1
 
 | Feature | SwiftUICharts | Charts.org | Apple Charts | **This Library** |
