@@ -9,6 +9,13 @@
     "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swiftdeps",
     "diagnostics": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.dia"
   },
+  "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Ticker/SpatialDataPlotter.swift": {
+    "dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.d",
+    "object": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.swift.o",
+    "swiftmodule": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter~partial.swiftmodule",
+    "swift-dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.swiftdeps",
+    "diagnostics": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.dia"
+  },
   "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Visuals/LiveTickerChart.swift": {
     "dependencies": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/LiveTickerChart.d",
     "object": "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/LiveTickerChart.swift.o",

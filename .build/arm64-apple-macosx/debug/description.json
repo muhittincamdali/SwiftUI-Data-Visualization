@@ -33,6 +33,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Ticker/SpatialDataPlotter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Visuals/LiveTickerChart.swift"
         },
         {
@@ -49,6 +53,7 @@
       "moduleOutputPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules/SwiftUIDataVisualization.swiftmodule",
       "objects" : [
         "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/VisualCore.swift.o",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.swift.o",
         "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/LiveTickerChart.swift.o"
       ],
       "otherArguments" : [
@@ -110,6 +115,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/LiveTickerChart.swift.o"
         },
         {
@@ -120,6 +129,7 @@
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift",
+        "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Ticker/SpatialDataPlotter.swift",
         "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Visuals/LiveTickerChart.swift"
       ],
       "tempsPath" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build",
@@ -357,6 +367,7 @@
       "swiftui_data_visualization",
       "-c",
       "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Core/VisualCore.swift",
+      "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Ticker/SpatialDataPlotter.swift",
       "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Visuals/LiveTickerChart.swift",
       "-I",
       "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/Modules",
@@ -582,6 +593,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Ticker/SpatialDataPlotter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/Sources/SwiftUIDataVisualization/Visuals/LiveTickerChart.swift"
         }
       ],
@@ -611,6 +626,10 @@
         {
           "kind" : "file",
           "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/LiveTickerChart.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/muhittincamdali/Desktop/Claude Projects/GitHub/SwiftUI-Data-Visualization/.build/arm64-apple-macosx/debug/SwiftUIDataVisualization.build/SpatialDataPlotter.swift.o"
         },
         {
           "kind" : "file",
