@@ -61,32 +61,49 @@ public enum MovingAverage {
     ///
     /// The result has one element per input value. An element is `nil` while its window is not
     /// full yet (the first `window - 1`) and while the window holds a value that is not finite.
-    /// A window below 1 counts as 1. Runs in O(n) with a running sum, which is recomputed every
-    /// `window` steps to keep rounding errors from adding up.
+    /// A window below 1 counts as 1. Runs in O(n) with a compensated running sum, so a large
+    /// value leaving the window does not wipe out the small ones still in it; the sum is also
+    /// recomputed every `window` steps. A second running sum of the values divided by the
+    /// window gives the mean while the plain sum overflows, so values near
+    /// `Double.greatestFiniteMagnitude` keep the O(n) bound.
     public static func simple(_ values: [Double], window: Int) -> [Double?] {
         let window = max(window, 1)
         var result: [Double?] = Array(repeating: nil, count: values.count)
         guard values.count >= window else { return result }
         let divisor = Double(window)
-        // The sum of the finite values in the window and how many values are not finite.
-        var sum = 0.0
+        // The sum of the finite values in the window, the same sum with each value divided by
+        // the window, and how many values are not finite.
+        var sum = CompensatedSum()
+        var scaledSum = CompensatedSum()
         var nonFiniteCount = 0
         for index in values.indices {
             let value = values[index]
-            if value.isFinite { sum += value } else { nonFiniteCount += 1 }
+            if value.isFinite {
+                sum.add(value)
+                scaledSum.add(value / divisor)
+            } else {
+                nonFiniteCount += 1
+            }
             if index >= window {
                 let leaving = values[index - window]
-                if leaving.isFinite { sum -= leaving } else { nonFiniteCount -= 1 }
+                if leaving.isFinite {
+                    sum.add(-leaving)
+                    scaledSum.add(-leaving / divisor)
+                } else {
+                    nonFiniteCount -= 1
+                }
             }
-            if index.isMultiple(of: window) || !sum.isFinite {
-                sum = values[(max(index - window + 1, 0))...index].reduce(0) { $1.isFinite ? $0 + $1 : $0 }
+            if index.isMultiple(of: window) {
+                sum = CompensatedSum()
+                scaledSum = CompensatedSum()
+                for value in values[(max(index - window + 1, 0))...index] where value.isFinite {
+                    sum.add(value)
+                    scaledSum.add(value / divisor)
+                }
             }
             guard index >= window - 1, nonFiniteCount == 0 else { continue }
-            let mean = sum / divisor
-            // A sum that overflows is averaged value by value instead.
-            result[index] = mean.isFinite
-                ? mean
-                : values[(index - window + 1)...index].reduce(0) { $0 + $1 / divisor }
+            let mean = sum.value / divisor
+            result[index] = mean.isFinite ? mean : scaledSum.value
         }
         return result
     }
@@ -110,5 +127,26 @@ public enum MovingAverage {
             result.append(average)
         }
         return result
+    }
+}
+
+/// A running sum with Neumaier's compensation: the low-order part that each addition rounds
+/// away is kept in `compensation`. Adding `1e308`, `1` and `-1e308` gives `1` instead of `0`.
+/// After an overflow the value is not finite.
+struct CompensatedSum {
+    private var sum = 0.0
+    private var compensation = 0.0
+
+    /// The sum of everything added so far.
+    var value: Double { sum + compensation }
+
+    mutating func add(_ term: Double) {
+        let total = sum + term
+        if abs(sum) >= abs(term) {
+            compensation += (sum - total) + term
+        } else {
+            compensation += (term - total) + sum
+        }
+        sum = total
     }
 }

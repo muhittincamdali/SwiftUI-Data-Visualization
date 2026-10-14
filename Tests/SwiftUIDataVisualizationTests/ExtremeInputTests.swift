@@ -183,6 +183,26 @@ struct StatisticsExtremeTests {
         #expect(MovingAverage.simple([huge, huge, huge], window: 2) == [nil, huge, huge])
     }
 
+    @Test func simpleAverageOfLongHugeSeriesStaysLinear() {
+        // While the plain sum overflows, the average used to be recomputed over the whole
+        // window at every index: 200,000 values with a window of 50,000 took 1e10 additions.
+        let values = Array(repeating: huge / 2, count: 200_000)
+        let averages = MovingAverage.simple(values, window: 50_000)
+        #expect(averages[49_998] == nil)
+        #expect(averages[49_999...].allSatisfy { $0.map { abs($0 - huge / 2) <= huge * 1e-12 } ?? false })
+    }
+
+    @Test func simpleAverageRecoversAfterHugeValuesLeaveTheWindow() {
+        let averages = MovingAverage.simple([huge, huge, 1, 3, 5, 7], window: 2)
+        #expect(averages == [nil, huge, huge / 2 + 0.5, 2, 4, 6])
+    }
+
+    @Test func compensatedSumKeepsSmallTermsNextToLargeOnes() {
+        var sum = CompensatedSum()
+        for term in [1e308, 1, -1e308, 3] { sum.add(term) }
+        #expect(sum.value == 4)
+    }
+
     @Test func exponentialAverageIgnoresNonFiniteValues() {
         #expect(MovingAverage.exponential([.nan, 10, .infinity, 20], smoothing: 0.5) == [nil, 10, 10, 15])
     }
