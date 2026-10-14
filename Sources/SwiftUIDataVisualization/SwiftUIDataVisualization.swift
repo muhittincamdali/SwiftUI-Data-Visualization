@@ -1,12 +1,5 @@
-import SwiftUI
-
-/// Main entry point for the SwiftUI Data Visualization toolkit.
+/// Package-level information for SwiftUI Data Visualization.
 public enum SwiftUIDataVisualization {
+    /// The version of this package, the release tag without its leading `v`.
     public static let version = "2.0.0"
-}
-
-/// A base protocol for visualizable data.
-public protocol Visualizable: Sendable {
-    var value: Double { get }
-    var color: Color { get }
 }
