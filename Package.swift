@@ -14,6 +14,10 @@ let package = Package(
         .target(
             name: "SwiftUIDataVisualization",
             path: "Sources/SwiftUIDataVisualization"
+        ),
+        .testTarget(
+            name: "SwiftUIDataVisualizationTests",
+            dependencies: ["SwiftUIDataVisualization"]
         )
     ]
 )
