@@ -32,8 +32,8 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// Periods start at multiples of `interval` counted from the reference date (1 January 2001,
     /// UTC), so `interval: 60` gives candles that start on the minute. The ticks may come in any
     /// order; they are sorted by date first, and ticks with equal dates keep their order. Periods
-    /// without a tick get no candle. Non-finite values are skipped, and an interval that is not
-    /// positive and finite gives no candles.
+    /// without a tick get no candle. Ticks whose value or date is not finite are skipped, and an
+    /// interval that is not positive and finite gives no candles.
     ///
     /// ```swift
     /// let minuteCandles = Candle.aggregate(trades, interval: 60)
@@ -42,16 +42,16 @@ public struct Candle: Identifiable, Hashable, Sendable {
         guard interval > 0, interval.isFinite else { return [] }
         let ordered = ticks
             .enumerated()
-            .filter { $0.element.value.isFinite }
+            .filter { $0.element.value.isFinite && $0.element.date.timeIntervalSinceReferenceDate.isFinite }
             .sorted { ($0.element.date, $0.offset) < ($1.element.date, $1.offset) }
             .map(\.element)
 
         var candles: [Candle] = []
         for tick in ordered {
-            let periodStart = Date(
-                timeIntervalSinceReferenceDate:
-                    (tick.date.timeIntervalSinceReferenceDate / interval).rounded(.down) * interval
-            )
+            let time = tick.date.timeIntervalSinceReferenceDate
+            let start = (time / interval).rounded(.down) * interval
+            // An interval so small that the division overflows puts each tick in its own period.
+            let periodStart = Date(timeIntervalSinceReferenceDate: start.isFinite ? start : time)
             if let last = candles.last, last.date == periodStart {
                 candles[candles.count - 1].high = max(last.high, tick.value)
                 candles[candles.count - 1].low = min(last.low, tick.value)

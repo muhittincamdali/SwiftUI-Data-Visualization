@@ -17,7 +17,9 @@ public struct TimeSeriesPoint: Hashable, Sendable {
 /// A named sequence of ``TimeSeriesPoint`` values, such as one line in a ``TimeSeriesChart``.
 ///
 /// The initializer sorts the points by date, so charts, downsampling and
-/// ``nearestPoint(to:)`` can rely on the order.
+/// ``nearestPoint(to:)`` can rely on the order. Points whose date is not a finite time (a `Date`
+/// built from `nan` or infinity) are dropped, because they cannot be ordered or placed on an
+/// axis.
 public struct TimeSeries: Identifiable, Hashable, Sendable {
     /// The series name, shown in the chart legend. It also identifies the series, so names in
     /// one chart should be unique.
@@ -30,7 +32,9 @@ public struct TimeSeries: Identifiable, Hashable, Sendable {
     /// Creates a series and sorts its points by date.
     public init(name: String, points: [TimeSeriesPoint]) {
         self.name = name
-        self.points = points.sorted { $0.date < $1.date }
+        self.points = points
+            .filter { $0.date.timeIntervalSinceReferenceDate.isFinite }
+            .sorted { $0.date < $1.date }
     }
 
     /// Creates a series from values measured at a fixed interval, starting at `start`.
@@ -40,10 +44,12 @@ public struct TimeSeries: Identifiable, Hashable, Sendable {
     ///                        start: .now.addingTimeInterval(-2 * 86_400), interval: 86_400)
     /// ```
     public init(name: String, values: [Double], start: Date, interval: TimeInterval) {
-        self.name = name
-        self.points = values.enumerated().map { offset, value in
+        let points = values.enumerated().map { offset, value in
             TimeSeriesPoint(date: start.addingTimeInterval(Double(offset) * interval), value: value)
         }
+        // A negative interval gives dates in reverse order, so the points are sorted like any
+        // others.
+        self.init(name: name, points: points)
     }
 
     /// The point whose date is closest to `date`, or `nil` for an empty series.

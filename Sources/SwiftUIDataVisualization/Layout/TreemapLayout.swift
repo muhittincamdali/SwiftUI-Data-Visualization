@@ -9,19 +9,26 @@ public enum TreemapLayout {
     /// The tile for each value, in the order of `values`.
     ///
     /// Tiles cover `rect` without overlapping. Values that are zero, negative or not finite get
-    /// an empty rectangle at the origin of `rect`, as does every value when `rect` is empty.
+    /// an empty rectangle at the origin of `rect`, as does every value when `rect` is empty or
+    /// not finite.
     public static func squarify(_ values: [Double], in rect: CGRect) -> [CGRect] {
-        let emptyTile = CGRect(origin: rect.origin, size: .zero)
+        let emptyTile = CGRect(origin: rect.origin.isFinite ? rect.origin : .zero, size: .zero)
         var tiles = Array(repeating: emptyTile, count: values.count)
-        let total = values.reduce(0) { $1.isFinite && $1 > 0 ? $0 + $1 : $0 }
-        guard total > 0, rect.width > 0, rect.height > 0 else { return tiles }
+        let positive = values.indices.filter { values[$0].isFinite && values[$0] > 0 }
+        let area = Double(rect.width) * Double(rect.height)
+        guard
+            let largest = positive.map({ values[$0] }).max(),
+            rect.width > 0, rect.height > 0, area.isFinite, rect.origin.isFinite
+        else { return tiles }
 
+        // Dividing by the largest value first keeps the total finite for values near
+        // Double.greatestFiniteMagnitude.
+        let total = positive.reduce(0) { $0 + values[$1] / largest }
+        let scale = area / total
         // Positive values, largest first, with their areas scaled to the rectangle.
-        let scale = Double(rect.width * rect.height) / total
-        let items = values.indices
-            .filter { values[$0].isFinite && values[$0] > 0 }
+        let items = positive
             .sorted { values[$0] > values[$1] }
-            .map { (index: $0, area: values[$0] * scale) }
+            .map { (index: $0, area: values[$0] / largest * scale) }
 
         var remaining = rect
         var row: [(index: Int, area: Double)] = []
@@ -77,4 +84,9 @@ public enum TreemapLayout {
                                width: remaining.width, height: max(remaining.height - height, 0))
         }
     }
+}
+
+extension CGPoint {
+    /// Whether both coordinates are finite.
+    fileprivate var isFinite: Bool { x.isFinite && y.isFinite }
 }

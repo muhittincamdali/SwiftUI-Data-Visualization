@@ -16,10 +16,16 @@ public struct RingBuffer<Element>: RandomAccessCollection {
     /// The storage index of the oldest element once the buffer is full.
     private var head = 0
 
+    /// The most storage the initializer reserves up front; a larger buffer grows as it fills.
+    static var maximumReservedCapacity: Int { 4_096 }
+
     /// Creates an empty buffer. A capacity below 1 counts as 1.
+    ///
+    /// Memory is reserved for at most ``maximumReservedCapacity`` elements, so a very large
+    /// capacity (`Int.max` from a configuration value, say) costs nothing until elements arrive.
     public init(capacity: Int) {
         self.capacity = Swift.max(capacity, 1)
-        storage.reserveCapacity(self.capacity)
+        storage.reserveCapacity(Swift.min(self.capacity, Self.maximumReservedCapacity))
     }
 
     public var startIndex: Int { 0 }
@@ -27,7 +33,9 @@ public struct RingBuffer<Element>: RandomAccessCollection {
 
     public subscript(position: Int) -> Element {
         precondition(indices.contains(position), "RingBuffer index out of range")
-        return storage[(head + position) % storage.count]
+        // Both are below storage.count, so subtracting once wraps without a remainder.
+        let index = head + position
+        return storage[index >= storage.count ? index - storage.count : index]
     }
 
     /// Whether the next append drops the oldest element.
@@ -39,7 +47,7 @@ public struct RingBuffer<Element>: RandomAccessCollection {
             storage.append(element)
         } else {
             storage[head] = element
-            head = (head + 1) % capacity
+            head = head + 1 == capacity ? 0 : head + 1
         }
     }
 

@@ -15,8 +15,8 @@ public enum RadarGeometry {
 
     /// The point for `value` on an axis, where `0` is the center and `maximum` is `radius` away.
     ///
-    /// Values are clamped to `0...maximum`; a `maximum` that is not positive, or a value that is
-    /// not finite, gives the center.
+    /// Values are clamped to `0...maximum`; a `maximum` that is not positive and finite, a value
+    /// that is not finite or a radius that is not positive and finite gives the center.
     public static func point(
         value: Double,
         maximum: Double,
@@ -25,7 +25,7 @@ public enum RadarGeometry {
         center: CGPoint,
         radius: CGFloat
     ) -> CGPoint {
-        guard maximum > 0, value.isFinite else { return center }
+        guard maximum > 0, maximum.isFinite, value.isFinite, radius > 0, radius.isFinite else { return center }
         let fraction = min(max(value / maximum, 0), 1)
         let angle = angle(axis: axis, axisCount: axisCount)
         let distance = Double(radius) * fraction

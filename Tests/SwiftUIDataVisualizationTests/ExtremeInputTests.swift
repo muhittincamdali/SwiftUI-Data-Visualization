@@ -153,3 +153,70 @@ struct StatisticsExtremeTests {
         #expect(MovingAverage.exponential([.nan, 10, .infinity, 20], smoothing: 0.5) == [nil, 10, 10, 15])
     }
 }
+
+@Suite("Extreme inputs: data, streaming and layout")
+struct DataExtremeTests {
+    @Test func timeSeriesDropsPointsWithoutAFiniteDate() {
+        let series = TimeSeries(name: "A", points: [
+            .init(date: Date(timeIntervalSinceReferenceDate: 2), value: 2),
+            .init(date: Date(timeIntervalSinceReferenceDate: .nan), value: 9),
+            .init(date: Date(timeIntervalSinceReferenceDate: .infinity), value: 9),
+            .init(date: Date(timeIntervalSinceReferenceDate: 1), value: 1),
+        ])
+        #expect(series.points.map(\.value) == [1, 2])
+    }
+
+    @Test func candlesSkipTicksWithoutAFiniteDate() {
+        let candles = Candle.aggregate([
+            .init(date: Date(timeIntervalSinceReferenceDate: .nan), value: 50),
+            .init(date: Date(timeIntervalSinceReferenceDate: 10), value: 1),
+        ], interval: 60)
+        #expect(candles.count == 1)
+        #expect(candles[0].high == 1)
+    }
+
+    @Test func subnormalIntervalGivesOneCandlePerTick() {
+        let ticks = (1...3).map { TimeSeriesPoint(date: Date(timeIntervalSinceReferenceDate: Double($0) * 1e10), value: Double($0)) }
+        let candles = Candle.aggregate(ticks, interval: subnormal)
+        #expect(candles.map(\.close) == [1, 2, 3])
+        #expect(candles.allSatisfy { $0.date.timeIntervalSinceReferenceDate.isFinite })
+    }
+
+    @Test func ringBufferWithMaximumCapacityDoesNotReserveIt() {
+        var buffer = RingBuffer<Double>(capacity: .max)
+        buffer.append(contentsOf: [1, 2, 3])
+        #expect(buffer.capacity == .max)
+        #expect(Array(buffer) == [1, 2, 3])
+        #expect(!buffer.isFull)
+    }
+
+    @Test func liveSeriesWithMaximumCapacityKeepsWorking() async {
+        await MainActor.run {
+            let series = LiveSeries(capacity: .max)
+            series.append(contentsOf: [3, .nan, 4])
+            #expect(series.values == [3, 4])
+        }
+    }
+
+    @Test func treemapOfHugeValuesFillsTheRectangle() {
+        let rect = CGRect(x: 0, y: 0, width: 100, height: 50)
+        let tiles = TreemapLayout.squarify([huge, huge, huge / 2], in: rect)
+        let area = tiles.reduce(0) { $0 + $1.width * $1.height }
+        #expect(abs(area - 5_000) < 1e-6)
+        #expect(abs(tiles[0].width * tiles[0].height - 2_000) < 1e-6)
+    }
+
+    @Test func treemapInANonFiniteRectangleGivesEmptyTiles() {
+        let infinite = CGRect(x: 0, y: 0, width: CGFloat.infinity, height: 10)
+        #expect(TreemapLayout.squarify([1, 2], in: infinite).allSatisfy { $0.isEmpty })
+        let nanOrigin = CGRect(x: CGFloat.nan, y: 0, width: 10, height: 10)
+        #expect(TreemapLayout.squarify([1, 2], in: nanOrigin).allSatisfy { $0 == .zero })
+    }
+
+    @Test func radarPointsStayAtTheCenterForInvalidScales() {
+        let center = CGPoint(x: 5, y: 5)
+        #expect(RadarGeometry.point(value: 1, maximum: .infinity, axis: 0, axisCount: 3, center: center, radius: 10) == center)
+        #expect(RadarGeometry.point(value: 1, maximum: 1, axis: 0, axisCount: 3, center: center, radius: .nan) == center)
+        #expect(RadarGeometry.point(value: 1, maximum: 1, axis: 0, axisCount: 3, center: center, radius: .infinity) == center)
+    }
+}
