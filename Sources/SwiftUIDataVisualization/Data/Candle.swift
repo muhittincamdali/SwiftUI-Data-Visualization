@@ -27,6 +27,14 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// Whether the period closed at or above its open.
     public var isRising: Bool { close >= open }
 
+    /// Whether the candle can be drawn: all four values are finite, and the low and the high
+    /// enclose the open and the close.
+    public var isValid: Bool {
+        [open, high, low, close].allSatisfy(\.isFinite)
+            && low <= min(open, close)
+            && high >= max(open, close)
+    }
+
     /// Groups individual measurements (trades, sensor readings) into one candle per `interval`.
     ///
     /// Periods start at multiples of `interval` counted from the reference date (1 January 2001,
