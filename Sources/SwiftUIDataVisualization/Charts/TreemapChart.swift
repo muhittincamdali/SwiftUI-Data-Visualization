@@ -56,12 +56,9 @@ public struct TreemapChart: View {
 
     public var body: some View {
         GeometryReader { proxy in
-            let tiles = TreemapLayout.squarify(items.map(\.value), in: CGRect(origin: .zero, size: proxy.size))
             ZStack(alignment: .topLeading) {
-                ForEach(Array(zip(items, tiles).enumerated()), id: \.offset) { index, entry in
-                    if !entry.1.isEmpty {
-                        tile(entry.0, color: palette.color(at: index), in: entry.1)
-                    }
+                ForEach(Self.tiles(for: items, in: proxy.size), id: \.colorIndex) { tile in
+                    self.tile(tile, color: palette.color(at: tile.colorIndex))
                 }
             }
         }
@@ -74,9 +71,37 @@ public struct TreemapChart: View {
         ))
     }
 
-    private func tile(_ item: TreemapItem, color: Color, in rect: CGRect) -> some View {
-        let inset = rect.insetBy(dx: min(1, rect.width / 4), dy: min(1, rect.height / 4))
-        let labelled = inset.width >= Self.minimumLabelledSize.width && inset.height >= Self.minimumLabelledSize.height
+    /// One drawn tile.
+    struct Tile: Equatable {
+        let item: TreemapItem
+        /// The item's position among all items, which picks its palette color.
+        let colorIndex: Int
+        /// The tile's rectangle, inset by up to one point on each side to leave a gap.
+        let rect: CGRect
+
+        /// Whether the tile is large enough to print its label.
+        var isLabelled: Bool {
+            rect.width >= TreemapChart.minimumLabelledSize.width && rect.height >= TreemapChart.minimumLabelledSize.height
+        }
+    }
+
+    /// The tiles for `items` in a chart of `size`, in the order of the items. Items whose value is
+    /// not positive and finite get no tile but keep their color index, so the colors of the
+    /// other items do not shift.
+    nonisolated static func tiles(for items: [TreemapItem], in size: CGSize) -> [Tile] {
+        let rects = TreemapLayout.squarify(items.map(\.value), in: CGRect(origin: .zero, size: size))
+        return zip(items, rects).enumerated().compactMap { index, entry in
+            let (item, rect) = entry
+            guard !rect.isEmpty else { return nil }
+            let inset = rect.insetBy(dx: min(1, rect.width / 4), dy: min(1, rect.height / 4))
+            return Tile(item: item, colorIndex: index, rect: inset)
+        }
+    }
+
+    private func tile(_ tile: Tile, color: Color) -> some View {
+        let item = tile.item
+        let inset = tile.rect
+        let labelled = tile.isLabelled
         return RoundedRectangle(cornerRadius: min(4, inset.width / 4, inset.height / 4))
             .fill(color.gradient)
             .overlay(alignment: .topLeading) {
