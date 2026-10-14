@@ -1,19 +1,24 @@
-name: Docs Quality
+# Managed by the repository kit (muhittincamdali/.github). Pages source must be "GitHub Actions".
+name: Documentation
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [master]
   pull_request:
-    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions: {}
 
 jobs:
-  linkcheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check links
-        uses: lycheeverse/lychee-action@v1
-        with:
-          args: --exclude "img.shields.io|starchart.cc" --verbose --no-progress "**/*.md"
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  docc:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: muhittincamdali/.github/.github/workflows/docc-pages.yml@85ec2fa95f3607e09168f14b744bd3154fdc7d43 # v1.1.0
+    with:
+      targets: SwiftUIDataVisualization
+      deploy: ${{ github.event_name != 'pull_request' }}
+      # Leaves the View modifiers every chart inherits (several hundred pages per view) out of
+      # the site, so each chart's page lists only its own API.
+      skip-synthesized-members: true
