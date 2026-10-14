@@ -15,6 +15,17 @@ the useful algorithms from that history and from SwiftUI-Charts-Pro (which is be
 rewritten for Swift 6 and tested, and adds the chart views around them. Every public type
 changed, so this is a major release.
 
+From SwiftUI-Charts-Pro, the box plot, candlestick, heatmap, waterfall, radar and treemap charts
+were carried over. Its other charts were not, and none of them had tests there:
+
+- `GaugeChart`: SwiftUI's own `Gauge` view covers it, with accessibility.
+- `BubbleChart`, `FunnelChart` and `GanttChart`: one Swift Charts mark each
+  (`PointMark` with `symbolSize`, a sorted `BarMark`, `BarMark(xStart:xEnd:y:)` over dates).
+- `SunburstChart`: nested `SectorMark` rings in Swift Charts.
+- `SankeyChart`, `ChordDiagram`, `ViolinChart` (kernel density), `ParallelCoordinatesChart` and
+  `WordCloudChart`: each needs its own layout or estimation algorithm, which would need the same
+  tests as `TreemapLayout` and `Histogram` before it ships. They may come in a later release.
+
 ### Added
 
 - Chart views: `TimeSeriesChart` (lines or areas, moving average, downsampling to 1,000 points
@@ -56,12 +67,15 @@ changed, so this is a major release.
 
 ### Security
 
-- Inputs that could crash an app or exhaust its memory are now handled: a tick count of
-  `Int.max` in `NiceScale`, data ranges wider than `Double` can hold or of subnormal width in
-  `NiceScale` and `Histogram` (which trapped on `Int(nan)`), tiny histogram widths over wide
-  ranges, `RingBuffer(capacity: .max)` (which reserved the whole capacity), `nan` dates in time
-  series and candles, and sums that overflow in statistics, regression, moving averages and the
-  treemap layout. Each case has a test in `ExtremeInputTests.swift`.
+- Inputs that could crash an app, exhaust its memory or keep it busy are now handled: a tick
+  count of `Int.max` in `NiceScale`, data ranges wider than `Double` can hold or of subnormal
+  width in `NiceScale` and `Histogram` (which trapped on `Int(nan)`), tiny histogram widths over
+  wide ranges, `RingBuffer(capacity: .max)` (which reserved the whole capacity), `nan` dates and
+  dates beyond `Date.distantPast` and `Date.distantFuture` in time series, candles, selections
+  and visible durations (Swift Charts traps near 1e19 seconds), scroll windows that would number
+  in the millions, moving averages of overflowing sums (which took quadratic time), and sums
+  that overflow in statistics, regression and the treemap layout. Each case has a test in
+  `ExtremeInputTests.swift` or `ExtremeDateInputTests.swift`.
 
 ## [1.0.0] - 2026-02-02
 
