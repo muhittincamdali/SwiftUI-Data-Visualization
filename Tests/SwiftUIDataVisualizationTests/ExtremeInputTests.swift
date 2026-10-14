@@ -90,6 +90,24 @@ struct HistogramExtremeTests {
         #expect(histogram.totalCount == 2)
     }
 
+    @Test(arguments: [0.5, 1, 1.5, 3])
+    func widthsBelowTheValueSpacingGiveUniqueBins(_ width: Double) {
+        // Near 1e16, doubles are 2 apart, so edges in steps of 0.5 or 1 round to repeats.
+        let values = [1e16, 1e16 + 4]
+        let histogram = Histogram(values: values, binning: .width(width))
+        let ids = histogram.bins.map(\.id)
+        #expect(Set(ids).count == ids.count)
+        #expect(histogram.bins.allSatisfy { $0.lowerBound < $0.upperBound })
+        #expect(histogram.totalCount == values.count)
+        #expect(histogram.bins.first?.lowerBound ?? .nan <= 1e16)
+        #expect(histogram.bins.last?.upperBound ?? .nan >= 1e16 + 4)
+    }
+
+    @Test func distinctDropsRepeatedAndFallingEdges() {
+        #expect(Histogram.distinct([0, 0, 1, 1, 1, 0.5, 2]) == [0, 1, 2])
+        #expect(Histogram.distinct([]) == [])
+    }
+
     @Test(arguments: [huge, -huge, 1e300])
     func identicalExtremeValuesShareOneNonEmptyBin(_ value: Double) {
         let bins = Histogram(values: [value, value]).bins

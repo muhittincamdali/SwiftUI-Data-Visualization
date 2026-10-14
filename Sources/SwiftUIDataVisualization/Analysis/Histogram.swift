@@ -48,7 +48,8 @@ public struct Histogram: Hashable, Sendable {
         case width(Double)
     }
 
-    /// The bins in ascending order, including empty ones between the first and the last.
+    /// The bins in ascending order, including empty ones between the first and the last. Every
+    /// bin is wider than zero, so the lower bounds (the ``Bin/id`` values) are unique.
     public let bins: [Bin]
 
     /// The number of values that were counted (non-finite values are skipped).
@@ -77,7 +78,22 @@ public struct Histogram: Hashable, Sendable {
             )]
             return
         }
-        bins = Self.count(sorted: finite, edges: Self.edges(sorted: finite, binning: binning))
+        bins = Self.count(sorted: finite, edges: Self.distinct(Self.edges(sorted: finite, binning: binning)))
+    }
+
+    /// `edges` without an edge that does not exceed the one before it.
+    ///
+    /// Near 1e16 a `Double` has no fractional part, so steps of 0.5 round to repeated edges.
+    /// Each repeat would add an empty, zero-width bin whose ``Bin/id`` duplicates its
+    /// neighbor's. The first and the last edge always differ (they enclose a minimum below the
+    /// maximum), so at least one bin remains.
+    static func distinct(_ edges: [Double]) -> [Double] {
+        var result: [Double] = []
+        result.reserveCapacity(edges.count)
+        for edge in edges where result.last.map({ edge > $0 }) ?? true {
+            result.append(edge)
+        }
+        return result
     }
 
     /// The bin edges for `binning`: ascending, finite, at least two, and from at most the
