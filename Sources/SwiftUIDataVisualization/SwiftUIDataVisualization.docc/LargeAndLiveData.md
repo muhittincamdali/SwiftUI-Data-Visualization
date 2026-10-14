@@ -21,6 +21,21 @@ yourself for your own `Chart`.
 The moving average is computed on all the points first and then reduced the same way, so it
 does not change with the drawing limit.
 
+## Long histories
+
+When a series covers more time than fits on screen, pass `visibleDuration`: the chart shows that
+many seconds at a time, scrolls horizontally and opens at the newest data. A `selection` binding
+tells you which date is under the pointer:
+
+```swift
+@State private var selected: Date?
+
+TimeSeriesChart(load, selection: $selected, visibleDuration: 2 * 86_400)
+```
+
+To keep a picture of a chart, ``ChartExport/pngData(of:size:scale:colorScheme:)`` renders it
+off screen at a fixed size.
+
 ## Live values
 
 For a value that updates many times a second, such as a price or a sensor, keep the latest

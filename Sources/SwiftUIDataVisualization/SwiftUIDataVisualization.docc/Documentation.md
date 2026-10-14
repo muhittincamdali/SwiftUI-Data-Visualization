@@ -83,6 +83,10 @@ and ``Histogram/maximumBinCount`` bound the memory a chart can use.
 - ``RingBuffer``
 - ``Downsampling``
 
+### Export
+
+- ``ChartExport``
+
 ### Axes, colors and accessibility
 
 - ``NiceScale``
