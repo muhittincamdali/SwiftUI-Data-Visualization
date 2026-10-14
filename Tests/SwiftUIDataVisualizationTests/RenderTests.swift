@@ -73,27 +73,87 @@ struct RenderTests {
         #expect(try drawnFraction(of: image) > 0.05)
     }
 
-    @Test func chartsWithoutUsableDataRenderEmpty() throws {
-        let views: [AnyView] = [
-            AnyView(TimeSeriesChart([TimeSeries]())),
-            AnyView(ScatterChart([PlotPoint(x: .nan, y: 1)], showsTrendLine: true)),
-            AnyView(HistogramChart(values: [])),
-            AnyView(BoxPlotChart([.init(name: "A", values: [.nan])])),
-            AnyView(CandlestickChart([Candle(date: .now, open: 1, high: 0, low: 2, close: 1)])),
-            AnyView(HeatmapChart([HeatmapCell(column: "a", row: "b", value: .infinity)])),
-            AnyView(WaterfallChart([])),
-            AnyView(RadarChart(axes: ["A", "B"], series: [.init(name: "S", values: [1, 2])])),
-            AnyView(TreemapChart([TreemapItem("Zero", value: 0)])),
-            AnyView(LiveTickerChart(values: [.nan, .infinity])),
+    /// Each chart given only data it cannot draw, the same chart given no data, and given data
+    /// it can draw.
+    private static var unusableEmptyAndUsableCharts: [(name: String, unusable: AnyView, empty: AnyView, usable: AnyView)] {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let candle = Candle(date: date, open: 1, high: 3, low: 0, close: 2)
+        return [
+            ("time series",
+             AnyView(TimeSeriesChart(TimeSeries(name: "A", points: [.init(date: date, value: .nan)]))),
+             AnyView(TimeSeriesChart(TimeSeries(name: "A", points: []))),
+             AnyView(TimeSeriesChart(TimeSeries(name: "A", values: [1, 3, 2], start: date, interval: 60)))),
+            ("scatter",
+             AnyView(ScatterChart([PlotPoint(x: .nan, y: 1)], showsTrendLine: true)),
+             AnyView(ScatterChart([], showsTrendLine: true)),
+             AnyView(ScatterChart([PlotPoint(x: 1, y: 1), PlotPoint(x: 2, y: 3)], showsTrendLine: true))),
+            ("histogram",
+             AnyView(HistogramChart(values: [.nan, .infinity])),
+             AnyView(HistogramChart(values: [])),
+             AnyView(HistogramChart(values: [1, 2, 2, 3]))),
+            ("box plot",
+             AnyView(BoxPlotChart([.init(name: "A", values: [.nan])])),
+             AnyView(BoxPlotChart([])),
+             AnyView(BoxPlotChart([.init(name: "A", values: [1, 2, 3, 4, 9])]))),
+            ("candlestick",
+             AnyView(CandlestickChart([Candle(date: date, open: 1, high: 0, low: 2, close: 1)])),
+             AnyView(CandlestickChart([])),
+             AnyView(CandlestickChart([candle]))),
+            ("heatmap",
+             AnyView(HeatmapChart([HeatmapCell(column: "a", row: "b", value: .infinity)])),
+             AnyView(HeatmapChart([])),
+             AnyView(HeatmapChart([HeatmapCell(column: "a", row: "b", value: 1), HeatmapCell(column: "c", row: "b", value: 2)]))),
+            ("waterfall",
+             AnyView(WaterfallChart([WaterfallStep("A", .nan)])),
+             AnyView(WaterfallChart([])),
+             AnyView(WaterfallChart([WaterfallStep("A", 5), WaterfallStep("B", -2)]))),
+            ("radar",
+             AnyView(RadarChart(axes: ["A", "B"], series: [.init(name: "S", values: [1, 2])])),
+             AnyView(RadarChart(axes: [], series: [])),
+             AnyView(RadarChart(axes: ["A", "B", "C"], series: [.init(name: "S", values: [1, 2, 3])]))),
+            ("treemap",
+             AnyView(TreemapChart([TreemapItem("Zero", value: 0)])),
+             AnyView(TreemapChart([])),
+             AnyView(TreemapChart([TreemapItem("One", value: 1)]))),
+            ("live ticker",
+             AnyView(LiveTickerChart(values: [.nan, .infinity])),
+             AnyView(LiveTickerChart(values: [])),
+             AnyView(LiveTickerChart(values: [1, 3, 2]))),
         ]
-        for view in views {
-            let image = try #require(ImageRenderer(content: view.frame(width: 200, height: 120)).cgImage)
-            #expect(image.width == 200)
+    }
+
+    /// An empty render matches the chart with no data, and the comparison would notice a mark:
+    /// the same chart with drawable data renders differently.
+    @Test func chartsWithoutUsableDataRenderEmpty() throws {
+        for chart in Self.unusableEmptyAndUsableCharts {
+            let unusable = try pixels(of: render(chart.unusable))
+            let empty = try pixels(of: render(chart.empty))
+            let usable = try pixels(of: render(chart.usable))
+            #expect(unusable == empty, "\(chart.name) drew something for unusable data")
+            #expect(usable != empty, "\(chart.name) drew nothing for usable data")
         }
+    }
+
+    private func render(_ view: AnyView) throws -> CGImage {
+        let image = try #require(ImageRenderer(content: view.frame(width: 200, height: 120)).cgImage)
+        #expect(image.width == 200 && image.height == 120)
+        return image
     }
 
     /// The share of pixels that differ clearly from the top-left pixel (the background).
     private func drawnFraction(of image: CGImage) throws -> Double {
+        let pixels = try pixels(of: image)
+        let background = Array(pixels[0..<4])
+        var drawn = 0
+        for offset in stride(from: 0, to: pixels.count, by: 4) {
+            let difference = (0..<4).reduce(0) { $0 + abs(Int(pixels[offset + $1]) - Int(background[$1])) }
+            if difference > 48 { drawn += 1 }
+        }
+        return Double(drawn) / Double(image.width * image.height)
+    }
+
+    /// The image's pixels as premultiplied RGBA bytes.
+    private func pixels(of image: CGImage) throws -> [UInt8] {
         let width = image.width
         let height = image.height
         var pixels = [UInt8](repeating: 0, count: width * height * 4)
@@ -107,13 +167,7 @@ struct RenderTests {
             bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
         ))
         context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
-        let background = Array(pixels[0..<4])
-        var drawn = 0
-        for offset in stride(from: 0, to: pixels.count, by: 4) {
-            let difference = (0..<4).reduce(0) { $0 + abs(Int(pixels[offset + $1]) - Int(background[$1])) }
-            if difference > 48 { drawn += 1 }
-        }
-        return Double(drawn) / Double(width * height)
+        return pixels
     }
 
     private func writePNG(_ image: CGImage, to url: URL) throws {
