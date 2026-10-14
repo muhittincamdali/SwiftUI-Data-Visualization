@@ -50,6 +50,20 @@ struct TimeSeriesChartTests {
         #expect(window.start == start.addingTimeInterval(350))
     }
 
+    @Test func shortDurationsOverLongHistoriesAreLengthened() throws {
+        // 4,000 years shown one day at a time would be 1.5 million windows.
+        let history = TimeSeries(name: "A", points: [.init(date: .distantPast, value: 1), .init(date: .distantFuture, value: 2)])
+        let plotted = TimeSeriesChart.plottedSeries([history], movingAverageWindow: nil, maximumPointsPerSeries: 10)
+        let window = try #require(TimeSeriesChart.scrollWindow(for: plotted, visibleDuration: 86_400))
+        let span = Date.distantFuture.timeIntervalSince(.distantPast)
+        #expect(window.length == span / Double(TimeSeriesChart.maximumScrolledWindows))
+
+        // A year shown one hour at a time stays as asked.
+        let year = TimeSeries(name: "B", values: [1, 2], start: start, interval: 365 * 86_400)
+        let yearPlotted = TimeSeriesChart.plottedSeries([year], movingAverageWindow: nil, maximumPointsPerSeries: 10)
+        #expect(TimeSeriesChart.scrollWindow(for: yearPlotted, visibleDuration: 3_600)?.length == 3_600)
+    }
+
     @Test(arguments: [nil, 0, -60, .infinity, .nan] as [TimeInterval?])
     func unusableDurationsDoNotScroll(_ duration: TimeInterval?) {
         let series = TimeSeries(name: "A", values: [1, 2], start: start, interval: 60)

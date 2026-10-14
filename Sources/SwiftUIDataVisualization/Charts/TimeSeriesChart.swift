@@ -29,6 +29,13 @@ public struct TimeSeriesChart: View {
     /// The most points each series is drawn with unless you pass another limit.
     public nonisolated static let defaultMaximumPointsPerSeries = 1_000
 
+    /// The most visible windows a scrolling chart holds: a year of data shown one hour at a
+    /// time (8,760 windows) fits. Swift Charts lays out the whole scrollable width, and the time
+    /// that takes grows with the number of windows; 4,000 years shown one day at a time (1.5
+    /// million windows) was still drawing after nine minutes. A shorter `visibleDuration` is
+    /// lengthened to the drawn time span divided by this number.
+    public nonisolated static let maximumScrolledWindows = 10_000
+
     private let series: [TimeSeries]
     private let style: Style
     private let movingAverageWindow: Int?
@@ -58,7 +65,8 @@ public struct TimeSeriesChart: View {
     ///   - visibleDuration: How many seconds of data the chart shows at once. When set, the
     ///     chart scrolls horizontally and opens at the newest data; `nil` shows everything. A
     ///     duration longer than the 4,000 years from `Date.distantPast` to `Date.distantFuture`
-    ///     is shortened to that.
+    ///     is shortened to that, and one so short that the data would fill more than
+    ///     ``maximumScrolledWindows`` windows is lengthened.
     public init(
         _ series: [TimeSeries],
         style: Style = .line,
@@ -140,18 +148,21 @@ public struct TimeSeriesChart: View {
     }
 
     /// The visible length and the date the chart opens at, or `nil` when it should not scroll:
-    /// no positive, finite duration was given, or no point is drawn. The length is at most
-    /// ``ChartDates/longestDuration`` and the opening date is not before `Date.distantPast`, so
-    /// both stay far inside the dates Swift Charts can draw.
+    /// no positive, finite duration was given, or no point is drawn. The length is at least the
+    /// drawn time span divided by ``maximumScrolledWindows`` and at most
+    /// ``ChartDates/longestDuration``, and the opening date is not before `Date.distantPast`,
+    /// so both stay far inside the dates Swift Charts can draw.
     nonisolated static func scrollWindow(
         for plotted: [PlottedSeries],
         visibleDuration: TimeInterval?
     ) -> (length: TimeInterval, start: Date)? {
         guard
             let length = visibleDuration, length > 0, length.isFinite,
-            let newest = plotted.compactMap({ $0.points.last?.date }).max()
+            let newest = plotted.compactMap({ $0.points.last?.date }).max(),
+            let oldest = plotted.compactMap({ $0.points.first?.date }).min()
         else { return nil }
-        let capped = min(length, ChartDates.longestDuration)
+        let shortest = newest.timeIntervalSince(oldest) / Double(maximumScrolledWindows)
+        let capped = min(max(length, shortest), ChartDates.longestDuration)
         return (capped, max(newest.addingTimeInterval(-capped), Date.distantPast))
     }
 
