@@ -1,0 +1,1 @@
+../../Examples/ChartGallery/ChartGallery/ReadmeSamples.swift

@@ -1,25 +1,19 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.2
 import PackageDescription
 
 let package = Package(
     name: "SwiftUIDataVisualization",
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13),
-        .watchOS(.v9),
-        .tvOS(.v16),
-        .visionOS(.v1)
+        .iOS(.v17),
+        .macOS(.v14)
     ],
     products: [
-        .library(name: "SwiftUIDataVisualization", targets: ["SwiftUIDataVisualization"]),
+        .library(name: "SwiftUIDataVisualization", targets: ["SwiftUIDataVisualization"])
     ],
     targets: [
         .target(
             name: "SwiftUIDataVisualization",
-            path: "Sources/SwiftUIDataVisualization",
-            swiftSettings: [
-                .enableExperimentalFeature("StrictConcurrency")
-            ]
+            path: "Sources/SwiftUIDataVisualization"
         ),
         .testTarget(
             name: "SwiftUIDataVisualizationTests",

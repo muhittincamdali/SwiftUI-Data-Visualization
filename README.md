@@ -1,463 +1,473 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Swift-6.0-FA7343?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 6.0"/>
-  <img src="https://img.shields.io/badge/Platform-iOS%20|%20macOS%20|%20visionOS-007AFF?style=for-the-badge&logo=apple&logoColor=white" alt="Platform"/>
-  <img src="https://img.shields.io/badge/Standard-Unified%20Core-5856D6?style=for-the-badge" alt="Standard"/>
-</p>
+<!-- brand:start -->
 
----
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-light.svg" alt="SwiftUI Data Visualization: Statistical, financial and live charts for SwiftUI on iOS and macOS, built on Swift Charts."></picture></p>
 
-> **🛡️ PART OF THE 2026 UNIFIED CORE**
-> This repository is a verified component of 'The Endless March' initiative. Purified for Swift 6, zero-dependency, and engineered for maximum hardware saturation.
-> 
-> *Flagship Engines:* [SwiftNetwork](https://github.com/muhittincamdali/SwiftNetwork) | [SwiftAI](https://github.com/muhittincamdali/SwiftAI) | [LiquidGlassKit](https://github.com/muhittincamdali/LiquidGlassKit)
-
----
+<!-- lang-selector:start -->
+<p align="center"><a href="README.md">English</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.es.md">Español</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ru.md">Русский</a></p>
+<!-- lang-selector:end -->
 
 <p align="center">
-
-<p align="center">
-  <a href="README.md">🇺🇸 English</a> |
-  <a href="README_TR.md">🇹🇷 Türkçe</a>
-</p>
-
-<pre>
-╔═══════════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                                                                                   ║
-║   ███████╗██╗    ██╗██╗███████╗████████╗██╗   ██╗██╗    ██████╗  █████╗ ████████╗ █████╗          ║
-║   ██╔════╝██║    ██║██║██╔════╝╚══██╔══╝██║   ██║██║    ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗         ║
-║   ███████╗██║ █╗ ██║██║█████╗     ██║   ██║   ██║██║    ██║  ██║███████║   ██║   ███████║         ║
-║   ╚════██║██║███╗██║██║██╔══╝     ██║   ██║   ██║██║    ██║  ██║██╔══██║   ██║   ██╔══██║         ║
-║   ███████║╚███╔███╔╝██║██║        ██║   ╚██████╔╝██║    ██████╔╝██║  ██║   ██║   ██║  ██║         ║
-║   ╚══════╝ ╚══╝╚══╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝         ║
-║                                                                                                   ║
-║   ██╗   ██╗██╗███████╗██╗   ██╗ █████╗ ██╗     ██╗███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗ ║
-║   ██║   ██║██║██╔════╝██║   ██║██╔══██╗██║     ██║╚══███╔╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║ ║
-║   ██║   ██║██║███████╗██║   ██║███████║██║     ██║  ███╔╝ ███████║   ██║   ██║██║   ██║██╔██╗ ██║ ║
-║   ╚██╗ ██╔╝██║╚════██║██║   ██║██╔══██║██║     ██║ ███╔╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║ ║
-║    ╚████╔╝ ██║███████║╚██████╔╝██║  ██║███████╗██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║ ║
-║     ╚═══╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ║
-║                                                                                                   ║
-║          🏆 The Most Comprehensive Data Visualization Library for SwiftUI 🏆                     ║
-╚═══════════════════════════════════════════════════════════════════════════════════════════════════╝
-</pre>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Latest version: v2.0.0"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="Supported platforms: iOS 17+ · macOS 14+"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="Language version: Swift 6.2+"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="License: MIT"></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9+-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift"></a>
-  <a href="https://developer.apple.com/ios/"><img src="https://img.shields.io/badge/iOS-15.0+-000000?style=for-the-badge&logo=apple&logoColor=white" alt="iOS"></a>
-  <a href="https://developer.apple.com/macos/"><img src="https://img.shields.io/badge/macOS-12.0+-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
+<a href="#quick-start"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-start-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-start-en-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-start-en-light.svg" alt="Get started"></picture></a>
+<a href="https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-docs-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-docs-en-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-docs-en-light.svg" alt="Documentation"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/tree/master/Examples"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-examples-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-examples-en-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/button-examples-en-light.svg" alt="Examples"></picture></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions"><img src="https://img.shields.io/github/actions/workflow/status/muhittincamdali/SwiftUI-Data-Visualization/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"></a>
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><img src="https://img.shields.io/badge/v2.0.0-release-blue?style=flat-square" alt="Release"></a>
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/stargazers"><img src="https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Data-Visualization?style=flat-square" alt="Stars"></a>
-  <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-Compatible-orange?style=flat-square" alt="SPM"></a>
-</p>
+<!-- brand:end -->
 
-<p align="center">
-  <strong>🎯 8 Chart Types • 5 Advanced Visualizations • 6 Progress Indicators • 10+ Themes • D3.js-like Flexibility</strong>
-</p>
+A Swift package of chart views for SwiftUI on iOS 17+ and macOS 14+, built on Swift Charts. It
+covers the charts that Swift Charts leaves to you — time series with tens of thousands of
+points, histograms, box plots, trend lines, candlesticks, waterfalls, heatmaps, radar charts,
+treemaps and live tickers — and makes the analysis behind them public, so you can use it in a
+`Chart` of your own. The package has no dependencies.
 
----
+## Highlights
 
-## 🚀 The 2026 Standard: High-Frequency Tickers
-Stop dropping frames when rendering financial data. Built entirely on Swift 6 and `Canvas`, the new `LiveTickerChart` renders real-time data at a locked 60fps.
+- **10 chart views** — `TimeSeriesChart`, `HistogramChart`, `BoxPlotChart`, `ScatterChart`,
+  `CandlestickChart`, `WaterfallChart`, `HeatmapChart`, `RadarChart`, `TreemapChart` and
+  `LiveTickerChart`. Each takes plain value types and needs only a frame.
+- **Large and live data** — `TimeSeriesChart` downsamples each series to 1,000 points with
+  Largest-Triangle-Three-Buckets, so 50,000 readings per series stay smooth; it can scroll
+  through a time window and report the selected date. `LiveSeries` keeps the latest values in a
+  ring buffer for `LiveTickerChart`.
+- **The analysis is public** — `Histogram` (Sturges, Freedman–Diaconis, fixed width or count),
+  `BoxPlotSummary` (Tukey whiskers), `Statistics`, `LinearRegression`, `MovingAverage`,
+  `NiceScale` axis ticks, `TreemapLayout` (squarified), `Candle.aggregate` and `Downsampling`.
+- **Safe with any input** — values that are not finite and dates outside the years 1 to 4001 are
+  left out, ranges near `Double.greatestFiniteMagnitude` and subnormal ranges stay finite, and
+  tick counts, bins, buffers, scroll windows and exports have upper limits. A dedicated test
+  suite feeds `nan`, infinity, `Int.max`, extreme ranges and extreme dates to the analysis types
+  and the charts.
+- **Accessible** — the Swift Charts based views get VoiceOver navigation and Audio Graphs, with
+  readable labels for bins, boxes, candles and steps; the Canvas based views (radar, treemap,
+  ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
+- **Tested** — 180 Swift Testing tests in 32 suites, run on macOS and an iPhone simulator,
+  including off-screen renders of every README sample in light and dark mode.
+- **Usage samples that compile** — every sample below comes from the
+  [example app](Examples/ChartGallery), which CI builds for iOS and macOS.
 
-```swift
-// Render high-frequency financial data at 60fps
-LiveTickerChart(
-    dataPoints: [100.5, 102.1, 101.8, 105.4, 108.2],
-    lineColor: .green,
-    gradientColor: .green.opacity(0.3)
-)
-.frame(height: 200)
+### What's included
+
+| Area             | Types                                                                                         |
+| ---------------- | --------------------------------------------------------------------------------------------- |
+| Time series      | `TimeSeriesChart`, `TimeSeries`, `TimeSeriesPoint`, `MovingAverage`, `Downsampling`            |
+| Statistics       | `HistogramChart`, `Histogram`, `BoxPlotChart`, `BoxPlotSummary`, `ScatterChart`, `LinearRegression`, `Statistics` |
+| Finance          | `CandlestickChart`, `Candle`, `WaterfallChart`, `WaterfallStep`                               |
+| Grids and shapes | `HeatmapChart`, `HeatmapCell`, `RadarChart`, `RadarGeometry`, `TreemapChart`, `TreemapLayout` |
+| Live data        | `LiveTickerChart`, `LiveSeries`, `RingBuffer`                                                 |
+| Shared           | `ChartPalette` and `.chartPalette(_:)`, `NiceScale`, `ChartExport`, `AudioGraphDescriptor`    |
+
+## Quick start
+
+**1. Add the package**
+
+In Xcode, choose **File › Add Package Dependencies…** and enter the repository URL:
+
+```text
+https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
----
+Paste it into the search field at the top right of the window. Leave **Dependency Rule** at
+**Up to Next Major Version** from `2.0.0`, then click **Add Package**. In the next window,
+choose your app target next to **SwiftUIDataVisualization** and click **Add Package** again.
 
-## 🌟 What Makes This Library World #1
-
-| Feature | SwiftUICharts | Charts.org | Apple Charts | **This Library** |
-|:--------|:-------------:|:----------:|:------------:|:----------------:|
-| Chart Types | 5 | 8 | 6 | **8+** |
-| Timelines | ❌ | ❌ | ❌ | **✅** |
-| Flowcharts | ❌ | ❌ | ❌ | **✅** |
-| Mind Maps | ❌ | ❌ | ❌ | **✅** |
-| Org Charts | ❌ | ❌ | ❌ | **✅** |
-| Network Graphs | ❌ | ❌ | ❌ | **✅** |
-| Dashboards | ❌ | ❌ | ❌ | **✅** |
-| Leaderboards | ❌ | ❌ | ❌ | **✅** |
-| Progress Indicators | 1 | ❌ | ❌ | **6** |
-| Data Transformers | ❌ | Basic | ❌ | **✅** |
-| Theming System | Basic | Basic | ❌ | **10+ Themes** |
-| Export (PNG/PDF/SVG) | ❌ | ❌ | ❌ | **✅** |
-| Accessibility | Basic | Basic | ✅ | **✅ VoiceOver** |
-| Real-time Updates | ❌ | ❌ | ✅ | **✅** |
-
----
-
-## 📦 Complete Component Library
-
-### 📊 Charts (8 Types)
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│   LINE CHART           BAR CHART            PIE CHART          AREA CHART       │
-│      ╭──╮             ┌───┐                  ╭────╮               ╭──╮          │
-│     ╱    ╲           ┌┤   │ ┌───┐      ╭────╮│████│           ╱████╲           │
-│    ╱      ╲──       ┌┤│   │ │   │      │░░░░││████│          ╱██████╲──        │
-│   ╱          ╲     └┴┴┴───┴─┴───┘       ╰────╯╰────╯        ╱████████████      │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│   SCATTER PLOT       RADAR CHART        CANDLESTICK         HEATMAP            │
-│       •  •              ╱╲               ┌─┐   ┌─┐        ┌──┬──┬──┬──┐        │
-│     •    •  •         ╱    ╲             │█│   │█│        │██│▓▓│░░│▒▒│        │
-│       •  •          ╱──────╲           ──┼─┼───┼─┼──      ├──┼──┼──┼──┤        │
-│     •      •          ╲──╱               │█│   └─┘        │▒▒│░░│▓▓│██│        │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 🎨 Advanced Visualizations (5 Types)
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│   TIMELINE                 FLOWCHART              MIND MAP                      │
-│                                                                                 │
-│   ●────●────●────●        ┌─────┐                    ┌───┐                     │
-│   │    │    │    │        │Start│                 ┌──┤ A ├──┐                  │
-│  2021 2022 2023 2024      └──┬──┘              ┌──┴─┐└───┘┌─┴──┐               │
-│   ▼    ▼    ▼    ▼           ▼                 │ B  │     │ C  │               │
-│  Evt1 Evt2 Evt3 Evt4     ┌───────┐             └────┘     └────┘               │
-│                          │Process│                                              │
-│                          └───┬───┘                                              │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│   ORG CHART                            NETWORK GRAPH                            │
-│                                                                                 │
-│       ┌─────┐                              ●────●                               │
-│       │ CEO │                             ╱│╲   │                               │
-│       └──┬──┘                            ● │ ●──●                               │
-│     ┌────┼────┐                           ╲│╱                                   │
-│  ┌──┴─┐┌─┴──┐┌┴──┐                         ●                                    │
-│  │CTO ││CFO ││CMO│                                                              │
-│  └────┘└────┘└───┘                    Force-directed layout                     │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 📈 Progress Indicators (6 Types)
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│   CIRCULAR          LINEAR           SEGMENTED        RADIAL                    │
-│                                                                                 │
-│     ╭───╮        ████████░░░░        ●──●──○──○      ╭───────╮                 │
-│    ╱ 75% ╲       Progress: 75%       Step 2 of 4    ╱ ╭───╮   ╲                │
-│    ╲     ╱                                          ╲  ╲60%╱  ╱                 │
-│     ╰───╯                                            ╰───────╯                  │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│   WAVE PROGRESS                      GAUGE PROGRESS                             │
-│                                                                                 │
-│     ╭───────╮                           ╭─────╮                                 │
-│    │ ~~~~~ │                          ╱    72   ╲                               │
-│    │███████│  65%                    ╱     │      ╲                             │
-│     ╰───────╯                       0 ─────┼───── 100                           │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 📱 UI Components
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│   STATISTICS CARD              COMPARISON TABLE           LEADERBOARD           │
-│  ┌─────────────────┐         ┌──────┬─────┬─────┐      ┌─────────────────┐     │
-│  │  📈 Revenue     │         │      │Pro  │Free │      │ 🥇 Alice  15.2K │     │
-│  │  $24,500        │         │Users │ 10  │ 1   │      │ 🥈 Bob    14.1K │     │
-│  │  ▲ +12.5%       │         │API   │ ✅  │ ❌  │      │ 🥉 Carol  13.8K │     │
-│  │  ▁▂▃▄▅▆▇        │         │Price │ $29 │ $9  │      │ 4. David  12.5K │     │
-│  └─────────────────┘         └──────┴─────┴─────┘      └─────────────────┘     │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│   DASHBOARD                                                                     │
-│  ┌─────────────┬─────────────┬─────────────────────────────────────────────┐   │
-│  │   Revenue   │   Users     │                  Chart                       │   │
-│  │   $24.5K    │   1,234     │               ╭──────╮                       │   │
-│  │   ▲ +12%    │   ▲ +8%     │              ╱        ╲                      │   │
-│  ├─────────────┴─────────────┤             ╱          ╲──────              │   │
-│  │      Activity Feed        │            ╱                                 │   │
-│  │  ● New user signed up     │           ╱──────────────────────────────   │   │
-│  │  ● Order #12345 received  │                                              │   │
-│  └───────────────────────────┴─────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🚀 Quick Start
-
-### Installation
-
-```swift
-// Package.swift
-dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
-]
-```
-
-### Basic Usage
+**2. Import the module**
 
 ```swift
 import SwiftUIDataVisualization
-
-// Line Chart
-LineChart(data: [10, 25, 15, 30, 20], labels: ["Mon", "Tue", "Wed", "Thu", "Fri"])
-    .chartTheme(.vibrant)
-    .animated(true)
-
-// Timeline
-TimelineView(events: $events)
-    .configuration(TimelineConfiguration(orientation: .vertical, style: .modern))
-
-// Dashboard
-DashboardView(widgets: $widgets)
-    .configuration(DashboardConfiguration(columns: 3, style: .card))
-
-// Progress Indicator
-CircularProgressView(value: 75, label: "Storage")
-    .frame(width: 120, height: 120)
 ```
 
----
+Put this line at the top of the Swift file where you draw a chart, below `import SwiftUI`.
 
-## 🎨 Theming System
+**3. Use it**
 
-### Pre-built Themes
-
-| Theme | Best For |
-|:------|:---------|
-| `.light` | Standard light mode apps |
-| `.dark` | Dark mode interfaces |
-| `.vibrant` | Marketing dashboards |
-| `.minimal` | Clean, professional reports |
-| `.ocean` | Finance & analytics |
-| `.sunset` | Creative portfolios |
-| `.forest` | Environmental data |
-| `.neon` | Gaming & entertainment |
-| `.corporate` | Enterprise applications |
-
-### Custom Theme
+In a new Xcode app (**File › New › Project… › App**), replace everything in `ContentView.swift`
+with:
 
 ```swift
-let customTheme = ChartThemeBuilder(base: .light)
-    .primaryColor(.purple)
-    .colorPalette([.purple, .pink, .orange, .yellow])
-    .animationDuration(0.6)
-    .showGrid(false)
-    .build()
+import SwiftUI
+import SwiftUIDataVisualization
 
-LineChart(data: data)
-    .chartTheme(customTheme)
+struct ContentView: View {
+    let steps = TimeSeries(
+        name: "Steps",
+        values: [4_200, 8_100, 6_900, 10_400, 7_800, 12_100, 9_300],
+        start: .now.addingTimeInterval(-6 * 86_400),
+        interval: 86_400
+    )
+
+    var body: some View {
+        TimeSeriesChart(steps)
+            .frame(height: 240)
+            .padding()
+    }
+}
 ```
 
----
+Press **Run** (⌘R). The app shows a blue line of the last seven days; touch the line (or hover
+over it on the Mac) to see the date and the number of steps.
 
-## 📊 Data Binding & Transformations
+## Installation
 
-### Real-time Updates
+### Swift Package Manager
+
+In Xcode, choose **File › Add Package Dependencies…** and enter the repository URL:
+
+```text
+https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
+```
+
+Or add it to the `dependencies` in your `Package.swift`:
 
 ```swift
-class DataSource: ObservableObject {
-    @Published var data: [ChartDataPoint] = []
-    
-    func startLiveUpdates() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            self.data.append(ChartDataPoint(label: Date().formatted(), value: Double.random(in: 0...100)))
+dependencies: [
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+],
+targets: [
+    .target(name: "YourApp", dependencies: [
+        .product(name: "SwiftUIDataVisualization", package: "SwiftUI-Data-Visualization")
+    ])
+]
+```
+
+Version 2.0.0 (October 2026) is the first release of the charts described here. The earlier
+release, 1.0.0, had a different API that did not build with current Xcode versions; 2.0.0 also
+brings in the work of SwiftUI-Charts-Pro, which is being archived. [CHANGELOG.md](CHANGELOG.md)
+lists the changes, including the breaking ones.
+
+## Usage
+
+The samples below are copied from
+[`Examples/ChartGallery/ChartGallery/ReadmeSamples.swift`](Examples/ChartGallery/ChartGallery/ReadmeSamples.swift).
+The example app and the test suite both compile that file.
+
+### Time series
+
+```swift
+struct ServerLoad: View {
+    // 50,000 readings per server, one every 30 seconds; the chart draws 1,000 of each.
+    let servers = [readings(name: "api-1", phase: 0), readings(name: "api-2", phase: 1)]
+
+    static func readings(name: String, phase: Double) -> TimeSeries {
+        let values = (0..<50_000).map { index -> Double in
+            let wave = 25 * sin(Double(index) / 3_000 + phase)
+            let noise = Double(index % 97) / 40
+            return 40 + wave + noise
+        }
+        return TimeSeries(name: name, values: values, start: Date(timeIntervalSinceReferenceDate: 800_000_000), interval: 30)
+    }
+
+    var body: some View {
+        TimeSeriesChart(servers, movingAverageWindow: 2_000)
+            .frame(height: 240)
+            .padding()
+    }
+}
+```
+
+The dashed lines are the moving averages over 2,000 readings. Pass `style: .area` to fill below
+the lines.
+
+### Scrolling, selection and export
+
+```swift
+struct ScrollingHistory: View {
+    @State private var selected: Date?
+    @State private var exported: Data?
+    let load = ServerLoad.readings(name: "api-1", phase: 0)
+
+    var chart: some View {
+        // Two days at a time out of 17; the chart opens at the newest data.
+        TimeSeriesChart(load, selection: $selected, visibleDuration: 2 * 86_400)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(selected.map { "Selected \($0.formatted(date: .abbreviated, time: .shortened))" } ?? "Touch the chart")
+                .font(.headline)
+            chart
+                .frame(height: 220)
+            Button("Export PNG") {
+                exported = ChartExport.pngData(of: chart, size: CGSize(width: 600, height: 300))
+            }
+            if let exported {
+                Text("\(exported.count) bytes")
+            }
+        }
+        .padding()
+    }
+}
+```
+
+### Statistics
+
+```swift
+struct LatencyReport: View {
+    let ios: [Double] = [112, 98, 130, 101, 145, 120, 99, 180, 104, 117, 125, 133, 230, 108, 121]
+    let android: [Double] = [140, 151, 128, 160, 149, 171, 138, 155, 162, 147, 158, 133, 166, 152]
+
+    var body: some View {
+        VStack(spacing: 24) {
+            HistogramChart(values: ios + android, binning: .width(25), valueLabel: "Latency (ms)")
+                .frame(height: 180)
+            BoxPlotChart([
+                .init(name: "iOS", values: ios),
+                .init(name: "Android", values: android),
+            ], valueLabel: "Latency (ms)")
+            .frame(height: 200)
+        }
+        .padding()
+    }
+}
+```
+
+Without `binning`, the histogram chooses the bin width with Sturges' or the Freedman–Diaconis
+rule, whichever gives more bins. The box plot marks values beyond 1.5 interquartile ranges as
+outliers.
+
+### Trend line
+
+```swift
+struct HeightWeight: View {
+    let people: [PlotPoint] = [
+        .init(x: 158, y: 54), .init(x: 163, y: 60), .init(x: 167, y: 59), .init(x: 171, y: 68),
+        .init(x: 174, y: 70), .init(x: 178, y: 74), .init(x: 181, y: 77), .init(x: 186, y: 85),
+    ]
+
+    var body: some View {
+        ScatterChart(people, xLabel: "Height (cm)", yLabel: "Weight (kg)", showsTrendLine: true)
+            .frame(height: 220)
+            .padding()
+    }
+}
+```
+
+### Finance
+
+```swift
+struct PriceAndProfit: View {
+    // Trades every 5 minutes for three days, grouped into one candle per 6 hours.
+    let candles = Candle.aggregate(trades, interval: 6 * 3_600)
+
+    static let trades = (0..<864).map { index -> TimeSeriesPoint in
+        let date = Date(timeIntervalSinceReferenceDate: 800_000_000 + Double(index) * 300)
+        let price = 100 + 6 * sin(Double(index) / 40) + Double(index % 13) / 4
+        return TimeSeriesPoint(date: date, value: price)
+    }
+
+    var body: some View {
+        VStack(spacing: 24) {
+            CandlestickChart(candles)
+                .frame(height: 200)
+            WaterfallChart([
+                WaterfallStep("Revenue", 420),
+                WaterfallStep("Costs", -260),
+                WaterfallStep("Tax", -40),
+                .total("Profit"),
+            ])
+            .frame(height: 200)
+        }
+        .padding()
+    }
+}
+```
+
+### Heatmap
+
+```swift
+struct CommitActivity: View {
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+    let hours = ["9", "11", "13", "15", "17"]
+
+    var cells: [HeatmapCell] {
+        days.enumerated().flatMap { day, dayName in
+            hours.enumerated().map { hour, hourName in
+                HeatmapCell(column: hourName, row: dayName, value: Double((day * 7 + hour * 3) % 11))
+            }
         }
     }
-}
-```
 
-### Data Transformers
-
-```swift
-// Group by date
-let grouped = ChartDataTransformer.groupByDate(
-    data: sales,
-    dateKey: \.date,
-    valueKey: \.amount,
-    component: .month,
-    aggregation: .sum
-)
-
-// Moving average
-let smoothed = ChartDataTransformer.movingAverage(data: timeSeries, windowSize: 7)
-
-// Statistics
-let stats = ChartDataTransformer.statistics(data: sales, valueKey: \.amount)
-print("Mean: \(stats.mean), Std Dev: \(stats.standardDeviation)")
-```
-
-### Filtering & Sorting
-
-```swift
-// Filter by date range
-let filtered = DataFilter.byDateRange(data: events, dateKey: \.date, from: startDate, to: endDate)
-
-// Sort by value
-let sorted = DataSorter.sort(data: entries, by: \.score, ascending: false)
-```
-
----
-
-## 📤 Export Options
-
-```swift
-// PNG Export
-if let pngData = ChartExporter.exportToPNG(view: myChart, size: CGSize(width: 800, height: 600), quality: .high) {
-    // Save or share
-}
-
-// PDF Export
-if let pdfData = ChartExporter.exportToPDF(view: myChart, size: CGSize(width: 800, height: 600), title: "Sales Report") {
-    // Save or share
-}
-
-// CSV Export
-let csv = ChartExporter.exportToCSV(data: salesData, columns: [
-    ("Date", \.dateString),
-    ("Amount", \.amountString),
-    ("Category", \.category)
-])
-
-// JSON Export
-let json = ChartExporter.exportToJSON(data: salesData)
-```
-
----
-
-## ♿ Accessibility
-
-### VoiceOver Support
-
-```swift
-LineChart(data: salesData)
-    .chartAccessibility(
-        label: ChartAccessibilityProvider.lineChartDescription(
-            title: "Monthly Sales",
-            dataPoints: salesData.map { ($0.label, $0.value) },
-            unit: "dollars"
-        )
-    )
-```
-
-### Color-Blind Friendly Palettes
-
-```swift
-LineChart(data: data)
-    .chartTheme(ChartTheme(colorPalette: AccessibleColors.colorBlindFriendly))
-```
-
-### Haptic Feedback
-
-```swift
-// Automatic haptic feedback on interactions
-ChartHaptics.dataPointSelected()  // Light tap
-ChartHaptics.peakDetected()       // Medium impact
-ChartHaptics.thresholdCrossed()   // Warning notification
-```
-
----
-
-## 📈 Complete Examples
-
-### Analytics Dashboard
-
-```swift
-struct AnalyticsDashboard: View {
-    @StateObject var dataSource = AnalyticsDataSource()
-    
     var body: some View {
-        DashboardView(widgets: $dataSource.widgets)
-            .configuration(DashboardConfiguration(
-                columns: 3,
-                style: .card,
-                showWidgetHeaders: true
-            ))
-            .chartTheme(.corporate)
+        HeatmapChart(cells, valueLabel: "Commits", showsValues: true)
+            .frame(height: 220)
+            .padding()
     }
 }
 ```
 
-### Project Timeline
+### Radar and treemap
 
 ```swift
-struct ProjectTimeline: View {
-    @State var events = [
-        TimelineEvent(date: Date(), title: "Project Kickoff", icon: "star.fill", color: .blue),
-        TimelineEvent(date: Date().addingTimeInterval(86400 * 7), title: "Design Complete", icon: "paintbrush.fill", color: .purple),
-        TimelineEvent(date: Date().addingTimeInterval(86400 * 21), title: "Beta Release", icon: "rocket.fill", color: .orange)
-    ]
-    
+struct ProfileAndStorage: View {
     var body: some View {
-        TimelineView(events: $events)
-            .configuration(TimelineConfiguration(
-                orientation: .vertical,
-                style: .alternating,
-                showConnectors: true
-            ))
+        VStack(spacing: 24) {
+            RadarChart(
+                axes: ["Speed", "Power", "Range", "Comfort", "Price"],
+                series: [
+                    .init(name: "Model A", values: [8, 6, 7, 9, 5]),
+                    .init(name: "Model B", values: [6, 9, 5, 6, 8]),
+                ],
+                maximum: 10
+            )
+            .frame(height: 260)
+            TreemapChart([
+                TreemapItem("Photos", value: 48),
+                TreemapItem("Apps", value: 31),
+                TreemapItem("Music", value: 12),
+                TreemapItem("Mail", value: 6),
+                TreemapItem("Notes", value: 3),
+            ])
+            .frame(height: 200)
+        }
+        .padding()
     }
 }
 ```
 
-### Gaming Leaderboard
+### Live data
 
 ```swift
-struct GameLeaderboard: View {
-    @State var players = LeaderboardEntry.samplePlayers()
-    
+struct LiveLoad: View {
+    @State private var load = LiveSeries(capacity: 120)
+
     var body: some View {
-        LeaderboardView(entries: $players)
-            .configuration(LeaderboardConfiguration(
-                style: .podium,
-                showRankChange: true,
-                showTopThreeSpecial: true
-            ))
+        LiveTickerChart(values: load.values, title: "CPU load")
+            .frame(height: 80)
+            .padding()
+            .task {
+                var tick = 0.0
+                while !Task.isCancelled {
+                    tick += 1
+                    load.append(50 + 30 * sin(tick / 8)) // read the real value here
+                    try? await Task.sleep(for: .milliseconds(100))
+                }
+            }
     }
 }
 ```
 
----
+### Colors
 
-## 🔧 Requirements
+```swift
+struct ColorblindSafeCharts: View {
+    var body: some View {
+        LatencyReport()
+            .chartPalette(.colorblindSafe)
+    }
+}
+```
 
-| Platform | Minimum Version |
-|:---------|:----------------|
-| iOS | 15.0+ |
-| macOS | 12.0+ |
-| tvOS | 15.0+ |
-| watchOS | 8.0+ |
-| visionOS | 1.0+ |
-| Swift | 5.9+ |
+Every chart below the modifier uses the palette. The default, `.ocean`, is the blue palette in
+the screenshots; build your own with `ChartPalette(series:positive:negative:neutral:gradient:)`.
 
----
+## Demo
 
-## 📄 License
+| Light                                                          | Dark                                                         |
+| -------------------------------------------------------------- | ------------------------------------------------------------ |
+| ![Time series, light](docs/images/time-series-light.png)       | ![Time series, dark](docs/images/time-series-dark.png)       |
+| ![Statistics, light](docs/images/statistics-light.png)         | ![Statistics, dark](docs/images/statistics-dark.png)         |
+| ![Trend line, light](docs/images/trend-line-light.png)         | ![Trend line, dark](docs/images/trend-line-dark.png)         |
+| ![Finance, light](docs/images/finance-light.png)               | ![Finance, dark](docs/images/finance-dark.png)               |
+| ![Heatmap, light](docs/images/heatmap-light.png)               | ![Heatmap, dark](docs/images/heatmap-dark.png)               |
+| ![Radar and treemap, light](docs/images/radar-treemap-light.png) | ![Radar and treemap, dark](docs/images/radar-treemap-dark.png) |
 
-MIT License - see [LICENSE](LICENSE) for details.
+The images are rendered on the iOS simulator from the Usage samples by
+[`Tests/SwiftUIDataVisualizationTests/RenderTests.swift`](Tests/SwiftUIDataVisualizationTests/RenderTests.swift)
+and [`scripts/generate-screenshots.sh`](scripts/generate-screenshots.sh).
 
----
+The time series and live data screens of the example app, captured on an iPhone simulator by
+[`scripts/capture-example-screens.sh`](scripts/capture-example-screens.sh):
 
-## 🙏 Acknowledgments
+| Time series                                                      | Live data                                                    |
+| ---------------------------------------------------------------- | ------------------------------------------------------------ |
+| ![Time series screen, light](docs/images/example-timeSeries-light.png) | ![Live data screen, light](docs/images/example-liveData-light.png) |
+| ![Time series screen, dark](docs/images/example-timeSeries-dark.png)   | ![Live data screen, dark](docs/images/example-liveData-dark.png)   |
 
-Built with ❤️ for the SwiftUI community.
+To try the charts yourself, open `ChartGallery.xcodeproj` in
+[`Examples/ChartGallery`](Examples/ChartGallery) with Xcode, choose an iPhone simulator or
+**My Mac**, and press **Run**. The app has one screen per sample above;
+[Examples/README.md](Examples/README.md) has the details.
 
-Inspired by D3.js, Recharts, and Apache ECharts.
+## Documentation
 
----
+Reference documentation and articles:
 
-<p align="center">
-  <strong>⭐ Star this repo if you find it useful! ⭐</strong>
-</p>
+- [API reference](https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/)
+  (DocC, published to GitHub Pages from `master`)
+- Build it locally in Xcode with **Product › Build Documentation**, or from the command line:
 
-<p align="center">
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues">Report Bug</a> •
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/issues">Request Feature</a> •
-  <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/discussions">Discussions</a>
-</p>
+```sh
+xcodebuild docbuild -scheme SwiftUIDataVisualization -destination 'generic/platform=macOS'
+```
 
-## 🚀 Killer Feature: The 2026 Standard
-This repository has been upgraded to the absolute global #1 standard in its category.
+## Guides
+
+- [Getting Started](https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/gettingstarted)
+  — add the package, draw a first chart, map your own data and set a palette
+  ([source](Sources/SwiftUIDataVisualization/SwiftUIDataVisualization.docc/GettingStarted.md)).
+- [Choosing a Chart](https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/choosingachart)
+  — which chart answers which question, and the statistics behind them
+  ([source](Sources/SwiftUIDataVisualization/SwiftUIDataVisualization.docc/ChoosingAChart.md)).
+- [Large and Live Data](https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/largeandlivedata)
+  — downsampling, scrolling long histories, live values and the input limits
+  ([source](Sources/SwiftUIDataVisualization/SwiftUIDataVisualization.docc/LargeAndLiveData.md)).
+- [Accessible Charts](https://muhittincamdali.github.io/SwiftUI-Data-Visualization/documentation/swiftuidatavisualization/accessiblecharts)
+  — what VoiceOver reads for each chart, and the color-blind safe palette
+  ([source](Sources/SwiftUIDataVisualization/SwiftUIDataVisualization.docc/AccessibleCharts.md)).
+
+## Requirements
+
+| Platform  | Minimum version       |
+| --------- | --------------------- |
+| iOS       | 17                    |
+| macOS     | 14                    |
+| Toolchain | Swift 6.2 · Xcode 26+ |
+
+CI builds with the default Xcode of GitHub's `macos-26` runner image. The package is developed
+with Xcode 27.
+
+## Architecture
+
+- `Sources/SwiftUIDataVisualization/Charts/` holds one file per chart view. Seven of them are
+  Swift Charts `Chart`s; `RadarChart`, `TreemapChart` and `LiveTickerChart` draw with `Canvas`
+  or plain views, because Swift Charts has no polar or treemap coordinates and a ticker
+  redrawn at display rate is cheaper in one `Canvas` pass.
+- `Analysis/`, `Layout/` and `Data/` hold the value types and functions the charts use
+  (`Histogram`, `BoxPlotSummary`, `LinearRegression`, `NiceScale`, `TreemapLayout`, `Candle`,
+  …). They have no view code and are `Sendable`, so they can run off the main actor.
+- The preparation each chart does before drawing (downsampling, whisker domains, candle body
+  widths, waterfall bars, radar maximum) lives in `nonisolated static` functions that the tests
+  call directly.
+- `Streaming/` has `RingBuffer` and `LiveSeries`, the only reference type, an `@Observable`
+  class on the main actor. `Style/ChartPalette.swift` passes colors through the environment.
+- CI runs `swift test` on macOS, `xcodebuild test` on an iPhone simulator, builds the example
+  app for iOS and macOS, and publishes the DocC documentation.
+
+Run the tests locally:
+
+```sh
+swift test                                    # macOS
+xcodebuild test -scheme SwiftUIDataVisualization \
+  -destination 'platform=iOS Simulator,name=iPhone 17'
+```
+
+## Roadmap
+
+- Add the package to the Swift Package Index; `.spi.yml` is already in the repository.
+- Pinch to zoom on the time axis of `TimeSeriesChart`.
+- Test and enable visionOS, which Swift Charts supports.
+
+## Contributing
+
+Contributions are welcome. Read the [contributing guide](https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/CONTRIBUTING.md) and the [code of conduct](https://github.com/muhittincamdali/.github/blob/main/CODE_OF_CONDUCT.md) before opening a pull request. Report security issues privately as described in the [security policy](https://github.com/muhittincamdali/.github/blob/main/SECURITY.md).
+
+## License
+
+Released under the MIT license. See [LICENSE](LICENSE).
