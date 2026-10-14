@@ -6,6 +6,7 @@ struct GalleryView: View {
     enum Sample: String, CaseIterable, Identifiable {
         case quickStart = "Quick start"
         case timeSeries = "Time series"
+        case scrolling = "Scrolling and export"
         case statistics = "Statistics"
         case trendLine = "Trend line"
         case finance = "Finance"
@@ -25,6 +26,7 @@ struct GalleryView: View {
             switch self {
             case .quickStart: "star"
             case .timeSeries: "chart.xyaxis.line"
+            case .scrolling: "arrow.left.and.right"
             case .statistics: "chart.bar"
             case .trendLine: "chart.dots.scatter"
             case .finance: "chart.bar.xaxis"
@@ -40,6 +42,7 @@ struct GalleryView: View {
             switch self {
             case .quickStart: ContentView()
             case .timeSeries: ServerLoad()
+            case .scrolling: ScrollingHistory()
             case .statistics: LatencyReport()
             case .trendLine: HeightWeight()
             case .finance: PriceAndProfit()

@@ -43,6 +43,34 @@ struct ServerLoad: View {
     }
 }
 
+// README: Scrolling, selection and export
+struct ScrollingHistory: View {
+    @State private var selected: Date?
+    @State private var exported: Data?
+    let load = ServerLoad.readings(name: "api-1", phase: 0)
+
+    var chart: some View {
+        // Two days at a time out of 17; the chart opens at the newest data.
+        TimeSeriesChart(load, selection: $selected, visibleDuration: 2 * 86_400)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(selected.map { "Selected \($0.formatted(date: .abbreviated, time: .shortened))" } ?? "Touch the chart")
+                .font(.headline)
+            chart
+                .frame(height: 220)
+            Button("Export PNG") {
+                exported = ChartExport.pngData(of: chart, size: CGSize(width: 600, height: 300))
+            }
+            if let exported {
+                Text("\(exported.count) bytes")
+            }
+        }
+        .padding()
+    }
+}
+
 // README: Statistics
 struct LatencyReport: View {
     let ios: [Double] = [112, 98, 130, 101, 145, 120, 99, 180, 104, 117, 125, 133, 230, 108, 121]

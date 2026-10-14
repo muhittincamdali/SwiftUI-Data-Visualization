@@ -61,7 +61,7 @@ struct RenderTests {
     }
 
     @Test func quickStartAndLiveSamplesRender() throws {
-        for view in [AnyView(ContentView()), AnyView(LiveLoad()), AnyView(ColorblindSafeCharts())] {
+        for view in [AnyView(ContentView()), AnyView(ScrollingHistory()), AnyView(LiveLoad()), AnyView(ColorblindSafeCharts())] {
             let image = try #require(ImageRenderer(content: view.frame(width: 390)).cgImage)
             #expect(image.height > 50)
         }
