@@ -107,7 +107,7 @@ struct ContentView: View {
 }
 ```
 
-Pulsa **Run** (⌘R). La app muestra una línea azul con los últimos siete días; toca la línea (o pasa el cursor por encima en el Mac) para ver la fecha y el número de pasos.
+Pulsa **Run** (⌘R). La app muestra una línea azul con los últimos siete días; toca la línea (o pasa el puntero por encima en el Mac) para ver la fecha y el número de pasos.
 
 ## Instalación
 
