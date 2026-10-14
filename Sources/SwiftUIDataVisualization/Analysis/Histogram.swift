@@ -53,8 +53,8 @@ public struct Histogram: Hashable, Sendable {
     /// The number of values that were counted (non-finite values are skipped).
     public var totalCount: Int { bins.reduce(0) { $0 + $1.count } }
 
-    /// The most bins a histogram makes, so a tiny width cannot exhaust memory. Values past the
-    /// last of them are counted in it.
+    /// The most bins a histogram makes, so a tiny width cannot exhaust memory. When a width
+    /// would need more, the last bin is widened to reach the largest value.
     public static let maximumBinCount = 10_000
 
     /// The most bins the rule-based binnings make on their own.
@@ -68,79 +68,112 @@ public struct Histogram: Hashable, Sendable {
             return
         }
         guard minimum < maximum else {
-            bins = [Bin(lowerBound: minimum - 0.5, upperBound: minimum + 0.5, count: finite.count)]
+            let margin = max(0.5, abs(minimum) / 10)
+            bins = [Bin(
+                lowerBound: max(minimum - margin, -.greatestFiniteMagnitude),
+                upperBound: min(minimum + margin, .greatestFiniteMagnitude),
+                count: finite.count
+            )]
             return
         }
-        let layout = Self.layout(sorted: finite, binning: binning)
-        bins = Self.count(sorted: finite, layout: layout)
+        bins = Self.count(sorted: finite, edges: Self.edges(sorted: finite, binning: binning))
     }
 
-    private struct Layout {
-        let start: Double
-        let step: Double
-        let binCount: Int
-        /// Decimal places to round edges to when the step has a short decimal form (0.1, 2.5),
-        /// so edges do not drift; `nil` for steps such as 10 / 3.
-        let decimals: Int?
-
-        func edge(_ index: Int) -> Double {
-            let raw = start + Double(index) * step
-            guard let decimals else { return raw }
-            let factor = pow(10, Double(decimals))
-            return (raw * factor).rounded() / factor
-        }
-    }
-
-    private static func layout(sorted: [Double], binning: Binning) -> Layout {
+    /// The bin edges for `binning`: ascending, finite, at least two, and from at most the
+    /// smallest to at least the largest value.
+    private static func edges(sorted: [Double], binning: Binning) -> [Double] {
         let minimum = sorted[0]
         let maximum = sorted[sorted.count - 1]
-        let range = maximum - minimum
         switch binning {
         case .count(let count):
-            let binCount = min(max(count, 1), maximumBinCount)
-            // The edges start at the data minimum, so rounding them to the step would move them.
-            return Layout(start: minimum, step: range / Double(binCount), binCount: binCount, decimals: nil)
+            return evenEdges(minimum: minimum, maximum: maximum, binCount: min(max(count, 1), maximumBinCount))
         case .width(let width) where width > 0 && width.isFinite:
-            return alignedLayout(minimum: minimum, maximum: maximum, step: width)
+            return alignedEdges(minimum: minimum, maximum: maximum, step: width)
         case .width, .automatic:
             let count = max(sturgesCount(sorted.count), freedmanDiaconisCount(sorted: sorted) ?? 0)
-            return niceLayout(minimum: minimum, maximum: maximum, desiredCount: count)
+            return niceEdges(minimum: minimum, maximum: maximum, desiredCount: count)
         case .sturges:
-            return niceLayout(minimum: minimum, maximum: maximum, desiredCount: sturgesCount(sorted.count))
+            return niceEdges(minimum: minimum, maximum: maximum, desiredCount: sturgesCount(sorted.count))
         case .freedmanDiaconis:
             let count = freedmanDiaconisCount(sorted: sorted) ?? sturgesCount(sorted.count)
-            return niceLayout(minimum: minimum, maximum: maximum, desiredCount: count)
+            return niceEdges(minimum: minimum, maximum: maximum, desiredCount: count)
         }
     }
 
-    private static func niceLayout(minimum: Double, maximum: Double, desiredCount: Int) -> Layout {
-        let count = min(max(desiredCount, 1), maximumAutomaticBinCount)
-        let step = NiceScale.niceNumber((maximum - minimum) / Double(count), rounded: true)
-        return alignedLayout(minimum: minimum, maximum: maximum, step: step)
+    /// `binCount` equal bins from `minimum` to `maximum`. Each edge interpolates between the two,
+    /// which cannot overflow even when `maximum - minimum` does.
+    private static func evenEdges(minimum: Double, maximum: Double, binCount: Int) -> [Double] {
+        (0...binCount).map { index in
+            if index == 0 { return minimum }
+            if index == binCount { return maximum }
+            let fraction = Double(index) / Double(binCount)
+            return minimum * (1 - fraction) + maximum * fraction
+        }
     }
 
-    private static func alignedLayout(minimum: Double, maximum: Double, step: Double) -> Layout {
+    private static func niceEdges(minimum: Double, maximum: Double, desiredCount: Int) -> [Double] {
+        let count = min(max(desiredCount, 1), maximumAutomaticBinCount)
+        // Dividing each value first keeps the width finite when the range overflows.
+        let step = NiceScale.niceNumber(maximum / Double(count) - minimum / Double(count), rounded: true)
+        guard step.isFinite, step > 0 else {
+            return evenEdges(minimum: minimum, maximum: maximum, binCount: count)
+        }
+        return alignedEdges(minimum: minimum, maximum: maximum, step: step)
+    }
+
+    /// Edges at multiples of `step`, from the one at or below `minimum` past `maximum`.
+    private static func alignedEdges(minimum: Double, maximum: Double, step: Double) -> [Double] {
         let decimals = decimalPlaces(of: step)
         var start = (minimum / step).rounded(.down) * step
-        if let decimals {
-            let factor = pow(10, Double(decimals))
-            start = (start * factor).rounded() / factor
+        if !start.isFinite || start > minimum { start = minimum }
+        if let decimals { start = roundedEdge(start, decimals: decimals, fallback: start) }
+        let binCount = clampedCount(maximum / step - start / step, upTo: maximumBinCount)
+        var edges = (0...binCount).map { index in
+            var raw = start + Double(index) * step
+            // index × step can overflow on its own when the edges straddle zero near
+            // Double.greatestFiniteMagnitude; counting in steps from start/step does not.
+            if !raw.isFinite { raw = (start / step + Double(index)) * step }
+            return decimals.map { roundedEdge(raw, decimals: $0, fallback: raw) } ?? raw
         }
-        let binCount = min(max(Int(((maximum - start) / step).rounded(.up)), 1), maximumBinCount)
-        return Layout(start: start, step: step, binCount: binCount, decimals: decimals)
+        // Too many bins for the width, or an edge past Double's range: the last bin reaches the
+        // largest value instead.
+        if !(edges[binCount] >= maximum) || !edges[binCount].isFinite {
+            edges[binCount] = maximum
+        }
+        return edges
+    }
+
+    private static func roundedEdge(_ value: Double, decimals: Int, fallback: Double) -> Double {
+        let factor = pow(10, Double(decimals))
+        let rounded = (value * factor).rounded() / factor
+        return rounded.isFinite ? rounded : fallback
+    }
+
+    /// `value` rounded up to a whole count in `1...limit`, without trapping: `nan` (from an
+    /// overflowing range) and values beyond `limit` give `limit`.
+    static func clampedCount(_ value: Double, upTo limit: Int) -> Int {
+        if value.isNaN { return limit }
+        let rounded = value.rounded(.up)
+        if rounded <= 1 { return 1 }
+        if rounded >= Double(limit) { return limit }
+        return Int(rounded)
     }
 
     /// The fewest decimal places (up to 12) that write `step` exactly, or `nil`.
+    ///
+    /// A whole number of zero never counts, so a step of `1e-10` needs 10 places instead of
+    /// passing as `0` at 0 places. The tolerance only absorbs the rounding error of the scaling.
     static func decimalPlaces(of step: Double) -> Int? {
         for places in 0...12 {
             let scaled = step * pow(10, Double(places))
-            if abs(scaled - scaled.rounded()) <= 1e-9 * max(1, abs(scaled)) { return places }
+            let whole = scaled.rounded()
+            if whole != 0, abs(scaled - whole) <= 1e-6 { return places }
         }
         return nil
     }
 
     static func sturgesCount(_ sampleSize: Int) -> Int {
-        Int(log2(Double(sampleSize)).rounded(.up)) + 1
+        Int(log2(Double(max(sampleSize, 1))).rounded(.up)) + 1
     }
 
     /// The bin count for the Freedman–Diaconis width, or `nil` when the IQR is zero.
@@ -149,22 +182,22 @@ public struct Histogram: Hashable, Sendable {
             let firstQuartile = Statistics.quantile(sorted: sorted, 0.25),
             let thirdQuartile = Statistics.quantile(sorted: sorted, 0.75)
         else { return nil }
-        let width = 2 * (thirdQuartile - firstQuartile) / cbrt(Double(sorted.count))
+        let cubeRoot = cbrt(Double(sorted.count))
+        let width = 2 * (thirdQuartile / cubeRoot - firstQuartile / cubeRoot)
         guard width > 0 else { return nil }
-        let range = sorted[sorted.count - 1] - sorted[0]
-        return Int((range / width).rounded(.up))
+        let minimum = sorted[0]
+        let maximum = sorted[sorted.count - 1]
+        return clampedCount(maximum / width - minimum / width, upTo: maximumAutomaticBinCount)
     }
 
-    private static func count(sorted: [Double], layout: Layout) -> [Bin] {
-        let edges = (0...layout.binCount).map(layout.edge)
-        var counts = Array(repeating: 0, count: layout.binCount)
-        let last = layout.binCount - 1
+    /// Counts sorted values into the bins between `edges`. A value equal to an edge belongs to
+    /// the bin that starts there; the last bin also counts its upper edge.
+    private static func count(sorted: [Double], edges: [Double]) -> [Bin] {
+        let last = edges.count - 2
+        var counts = Array(repeating: 0, count: last + 1)
+        var index = 0
         for value in sorted {
-            var index = min(max(Int(((value - layout.start) / layout.step).rounded(.down)), 0), last)
-            // Division can land just below an edge (0.3 / 0.1 = 2.9999999999999996); the
-            // rounded edges decide.
-            if index < last, value >= edges[index + 1] { index += 1 }
-            if index > 0, value < edges[index] { index -= 1 }
+            while index < last, value >= edges[index + 1] { index += 1 }
             counts[index] += 1
         }
         return counts.indices.map { index in

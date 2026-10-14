@@ -70,6 +70,15 @@ struct HistogramTests {
         #expect(histogram.totalCount == 3)
     }
 
+    @Test func tinyFixedWidthsKeepTheirDecimals() {
+        #expect(Histogram.decimalPlaces(of: 1e-10) == 10)
+        #expect(Histogram.decimalPlaces(of: 0.25) == 2)
+        #expect(Histogram.decimalPlaces(of: 10.0 / 3) == nil)
+        let histogram = Histogram(values: [0, 2.5e-10], binning: .width(1e-10))
+        #expect(histogram.bins.map(\.lowerBound) == [0, 1e-10, 2e-10])
+        #expect(histogram.bins.map(\.count) == [1, 0, 1])
+    }
+
     @Test func identicalValuesShareOneBin() {
         let histogram = Histogram(values: [4, 4, 4])
         #expect(histogram.bins == [.init(lowerBound: 3.5, upperBound: 4.5, count: 3)])
