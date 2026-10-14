@@ -53,9 +53,12 @@ public struct TimeSeriesChart: View {
     ///     points is drawn over each series.
     ///   - maximumPointsPerSeries: The most points each series is drawn with (at least 2).
     ///   - selection: The date under the pointer, `nil` when nothing is selected. Pass a binding
-    ///     to react to the selection or to select a date from code.
+    ///     to react to the selection or to select a date from code. A date before
+    ///     `Date.distantPast` or after `Date.distantFuture` is not marked.
     ///   - visibleDuration: How many seconds of data the chart shows at once. When set, the
-    ///     chart scrolls horizontally and opens at the newest data; `nil` shows everything.
+    ///     chart scrolls horizontally and opens at the newest data; `nil` shows everything. A
+    ///     duration longer than the 4,000 years from `Date.distantPast` to `Date.distantFuture`
+    ///     is shortened to that.
     public init(
         _ series: [TimeSeries],
         style: Style = .line,
@@ -123,7 +126,7 @@ public struct TimeSeriesChart: View {
                     .lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3]))
                 }
             }
-            if let selectedDate = selection.wrappedValue {
+            if let selectedDate = selection.wrappedValue, ChartDates.contains(selectedDate) {
                 RuleMark(x: .value("Selected", selectedDate))
                     .foregroundStyle(.secondary.opacity(0.6))
                     .annotation(position: .top, spacing: 4, overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
@@ -137,7 +140,9 @@ public struct TimeSeriesChart: View {
     }
 
     /// The visible length and the date the chart opens at, or `nil` when it should not scroll:
-    /// no positive, finite duration was given, or no point is drawn.
+    /// no positive, finite duration was given, or no point is drawn. The length is at most
+    /// ``ChartDates/longestDuration`` and the opening date is not before `Date.distantPast`, so
+    /// both stay far inside the dates Swift Charts can draw.
     nonisolated static func scrollWindow(
         for plotted: [PlottedSeries],
         visibleDuration: TimeInterval?
@@ -146,7 +151,8 @@ public struct TimeSeriesChart: View {
             let length = visibleDuration, length > 0, length.isFinite,
             let newest = plotted.compactMap({ $0.points.last?.date }).max()
         else { return nil }
-        return (length, newest.addingTimeInterval(-length))
+        let capped = min(length, ChartDates.longestDuration)
+        return (capped, max(newest.addingTimeInterval(-capped), Date.distantPast))
     }
 
     private func readout(at date: Date, in plotted: [PlottedSeries]) -> some View {

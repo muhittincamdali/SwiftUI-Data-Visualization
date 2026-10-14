@@ -28,10 +28,12 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// Whether the period closed at or above its open.
     public var isRising: Bool { close >= open }
 
-    /// Whether the candle can be drawn: all four values are finite, and the low and the high
-    /// enclose the open and the close.
+    /// Whether the candle can be drawn: the date lies between `Date.distantPast` and
+    /// `Date.distantFuture`, all four values are finite, and the low and the high enclose the
+    /// open and the close.
     public var isValid: Bool {
-        [open, high, low, close].allSatisfy(\.isFinite)
+        ChartDates.contains(date)
+            && [open, high, low, close].allSatisfy(\.isFinite)
             && low <= min(open, close)
             && high >= max(open, close)
     }
@@ -41,8 +43,9 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// Periods start at multiples of `interval` counted from the reference date (1 January 2001,
     /// UTC), so `interval: 60` gives candles that start on the minute. The ticks may come in any
     /// order; they are sorted by date first, and ticks with equal dates keep their order. Periods
-    /// without a tick get no candle. Ticks whose value or date is not finite are skipped, and an
-    /// interval that is not positive and finite gives no candles.
+    /// without a tick get no candle. Ticks whose value is not finite, or whose date lies before
+    /// `Date.distantPast` or after `Date.distantFuture`, are skipped, and an interval that is not
+    /// positive and finite gives no candles.
     ///
     /// ```swift
     /// let minuteCandles = Candle.aggregate(trades, interval: 60)
@@ -51,7 +54,7 @@ public struct Candle: Identifiable, Hashable, Sendable {
         guard interval > 0, interval.isFinite else { return [] }
         let ordered = ticks
             .enumerated()
-            .filter { $0.element.value.isFinite && $0.element.date.timeIntervalSinceReferenceDate.isFinite }
+            .filter { $0.element.value.isFinite && ChartDates.contains($0.element.date) }
             .sorted { ($0.element.date, $0.offset) < ($1.element.date, $1.offset) }
             .map(\.element)
 
@@ -59,8 +62,10 @@ public struct Candle: Identifiable, Hashable, Sendable {
         for tick in ordered {
             let time = tick.date.timeIntervalSinceReferenceDate
             let start = (time / interval).rounded(.down) * interval
-            // An interval so small that the division overflows puts each tick in its own period.
-            let periodStart = Date(timeIntervalSinceReferenceDate: start.isFinite ? start : time)
+            // An interval so small that the division overflows puts each tick in its own period,
+            // and so does one so large that the period would start outside the supported dates.
+            let rounded = Date(timeIntervalSinceReferenceDate: start)
+            let periodStart = ChartDates.contains(rounded) ? rounded : tick.date
             if let last = candles.last, last.date == periodStart {
                 candles[candles.count - 1].high = max(last.high, tick.value)
                 candles[candles.count - 1].low = min(last.low, tick.value)

@@ -17,9 +17,9 @@ public struct TimeSeriesPoint: Hashable, Sendable {
 /// A named sequence of ``TimeSeriesPoint`` values, such as one line in a ``TimeSeriesChart``.
 ///
 /// The initializer sorts the points by date, so charts, downsampling and
-/// ``nearestPoint(to:)`` can rely on the order. Points whose date is not a finite time (a `Date`
-/// built from `nan` or infinity) are dropped, because they cannot be ordered or placed on an
-/// axis.
+/// ``nearestPoint(to:)`` can rely on the order. Points dated before `Date.distantPast` or after
+/// `Date.distantFuture` (the years 1 to 4001), including a `Date` built from `nan` or infinity,
+/// are dropped: they cannot be ordered, or Swift Charts cannot place them on an axis.
 public struct TimeSeries: Identifiable, Hashable, Sendable {
     /// The series name, shown in the chart legend. It also identifies the series, so names in
     /// one chart should be unique.
@@ -34,7 +34,7 @@ public struct TimeSeries: Identifiable, Hashable, Sendable {
     public init(name: String, points: [TimeSeriesPoint]) {
         self.name = name
         self.points = points
-            .filter { $0.date.timeIntervalSinceReferenceDate.isFinite }
+            .filter { ChartDates.contains($0.date) }
             .sorted { $0.date < $1.date }
     }
 
