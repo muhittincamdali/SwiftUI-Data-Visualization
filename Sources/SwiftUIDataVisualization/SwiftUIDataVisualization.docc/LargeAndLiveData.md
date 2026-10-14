@@ -75,5 +75,10 @@ any input can cause:
 - ``Histogram`` makes at most ``Histogram/maximumBinCount`` bins, even for a width of `1e-300`;
 - ``RingBuffer`` reserves memory for at most 4,096 elements up front, so a capacity of
   `Int.max` costs nothing until values arrive;
+- ``TimeSeriesChart`` scrolls through at most ``TimeSeriesChart/maximumScrolledWindows``
+  windows, and lengthens a `visibleDuration` that would need more;
+- ``MovingAverage/simple(_:window:)`` runs in O(n) even when the sums overflow;
+- dates before `Date.distantPast` or after `Date.distantFuture` are left out of time series and
+  candles, because Swift Charts stops the app on a date axis that reaches about 1e19 seconds;
 - ranges near `Double.greatestFiniteMagnitude` and subnormal ranges are computed in a rescaled
   space, so no chart produces `nan` coordinates or traps on an integer conversion.

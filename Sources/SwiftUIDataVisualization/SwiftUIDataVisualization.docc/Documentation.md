@@ -28,9 +28,10 @@ struct StepsView: View {
 ```
 
 Every chart takes its colors from a ``ChartPalette`` in the environment and accepts any input
-without crashing: values that are not finite are left out, ranges near
-`Double.greatestFiniteMagnitude` stay finite, and limits such as ``NiceScale/tickCountRange``
-and ``Histogram/maximumBinCount`` bound the memory a chart can use.
+without crashing: values that are not finite and dates outside the years 1 to 4001 are left
+out, ranges near `Double.greatestFiniteMagnitude` stay finite, and limits such as
+``NiceScale/tickCountRange``, ``Histogram/maximumBinCount`` and
+``TimeSeriesChart/maximumScrolledWindows`` bound the memory and time a chart can use.
 
 ## Topics
 
