@@ -7,6 +7,7 @@ public struct TreemapItem: Identifiable, Hashable, Sendable {
     /// The size of the tile; values that are not positive and finite get no tile.
     public var value: Double
 
+    /// The item label.
     public var id: String { label }
 
     /// Creates an item.

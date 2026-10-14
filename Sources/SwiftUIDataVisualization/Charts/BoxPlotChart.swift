@@ -22,6 +22,7 @@ public struct BoxPlotChart: View {
         /// The values to summarize.
         public var values: [Double]
 
+        /// The group name.
         public var id: String { name }
 
         /// Creates a group.

@@ -21,16 +21,19 @@ public struct RingBuffer<Element>: RandomAccessCollection {
 
     /// Creates an empty buffer. A capacity below 1 counts as 1.
     ///
-    /// Memory is reserved for at most ``maximumReservedCapacity`` elements, so a very large
+    /// Memory is reserved for at most 4,096 elements, so a very large
     /// capacity (`Int.max` from a configuration value, say) costs nothing until elements arrive.
     public init(capacity: Int) {
         self.capacity = Swift.max(capacity, 1)
         storage.reserveCapacity(Swift.min(self.capacity, Self.maximumReservedCapacity))
     }
 
+    /// The position of the oldest element, always 0.
     public var startIndex: Int { 0 }
+    /// The position after the newest element, equal to `count`.
     public var endIndex: Int { storage.count }
 
+    /// The element at `position`, counted from the oldest (0) to the newest (`count - 1`).
     public subscript(position: Int) -> Element {
         precondition(indices.contains(position), "RingBuffer index out of range")
         // Both are below storage.count, so subtracting once wraps without a remainder.

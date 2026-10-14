@@ -19,6 +19,7 @@ public struct Histogram: Hashable, Sendable {
         /// How many values fell into the bin.
         public let count: Int
 
+        /// The lower bound, which no other bin of the histogram shares.
         public var id: Double { lowerBound }
 
         /// Creates a bin.

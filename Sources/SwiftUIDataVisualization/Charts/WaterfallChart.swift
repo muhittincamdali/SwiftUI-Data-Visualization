@@ -44,7 +44,12 @@ public struct WaterfallChart: View {
     public struct Bar: Hashable, Sendable {
         /// What a bar shows.
         public enum Kind: Hashable, Sendable {
-            case increase, decrease, total
+            /// A change of zero or more.
+            case increase
+            /// A negative change.
+            case decrease
+            /// A running total drawn from zero.
+            case total
         }
 
         /// The step's label.

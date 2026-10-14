@@ -70,6 +70,8 @@ public struct AudioGraphDescriptor: AXChartDescriptorRepresentable {
         return low < high ? low...high : (low - 1)...(high + 1)
     }
 
+    /// Builds the descriptor VoiceOver reads: a categorical x axis when ``categories`` is set,
+    /// otherwise positions numbered from 1, and a value axis over ``valueRange``.
     public func makeChartDescriptor() -> AXChartDescriptor {
         let valueAxis = AXNumericDataAxisDescriptor(
             title: valueAxisTitle,

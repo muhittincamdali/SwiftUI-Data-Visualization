@@ -23,6 +23,7 @@ public struct RadarChart: View {
         /// One value per axis, in the order of the axes.
         public var values: [Double]
 
+        /// The series name.
         public var id: String { name }
 
         /// Creates a series.

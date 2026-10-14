@@ -13,6 +13,7 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// The last value of the period.
     public var close: Double
 
+    /// The start of the period; one candle per period.
     public var id: Date { date }
 
     /// Creates a candle.

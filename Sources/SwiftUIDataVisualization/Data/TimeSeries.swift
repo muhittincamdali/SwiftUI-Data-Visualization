@@ -27,6 +27,7 @@ public struct TimeSeries: Identifiable, Hashable, Sendable {
     /// The points, oldest first.
     public private(set) var points: [TimeSeriesPoint]
 
+    /// The series name.
     public var id: String { name }
 
     /// Creates a series and sorts its points by date.
