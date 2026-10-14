@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ece7cb3e7fa54e87d5352d3b54f37e863a76405d status=reviewed -->
+<!-- i18n-source: README.md@7e1879f34add14a3e8d846468c9c8ae900e7b38d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg" alt="SwiftUI Data Visualization: Статистические, финансовые и живые графики для SwiftUI на iOS и macOS на основе Swift Charts."></picture></p>
@@ -39,15 +39,16 @@ Swift-пакет с представлениями графиков для Swift
 - **Анализ открыт** — `Histogram` (Sturges, Freedman–Diaconis, фиксированная ширина или фиксированное число),
   `BoxPlotSummary` (усы Тьюки), `Statistics`, `LinearRegression`, `MovingAverage`,
   деления осей `NiceScale`, `TreemapLayout` (squarified), `Candle.aggregate` и `Downsampling`.
-- **Безопасность при любых входных данных** — нечисловые и бесконечные значения отбрасываются, диапазоны
-  около `Double.greatestFiniteMagnitude` и субнормальные диапазоны остаются конечными, а число делений,
-  интервалов (bin), буферов и экспортов ограничено сверху. Отдельный набор тестов подаёт в каждое
-  вычисление `nan`, бесконечность, `Int.max` и экстремальные диапазоны.
+- **Безопасность при любых входных данных** — нечисловые и бесконечные значения, а также даты вне
+  диапазона от 1 до 4001 года отбрасываются, диапазоны около `Double.greatestFiniteMagnitude` и
+  субнормальные диапазоны остаются конечными, а число делений, интервалов (bin), буферов, окон
+  прокрутки и экспортов ограничено сверху. Отдельный набор тестов подаёт в типы анализа и в
+  графики `nan`, бесконечность, `Int.max`, экстремальные диапазоны и экстремальные даты.
 - **Доступность** — представления на основе Swift Charts получают навигацию VoiceOver и Audio Graphs
   с понятными подписями для интервалов, ящиков, свечей и шагов; представления на основе Canvas
   (радар, treemap, лента) добавляют `AudioGraphDescriptor`. Встроена палитра, безопасная для людей с
   нарушением цветового зрения.
-- **Протестировано** — 160 тестов Swift Testing в 31 наборе, которые выполняются на macOS и в симуляторе
+- **Протестировано** — 180 тестов Swift Testing в 32 наборах, которые выполняются на macOS и в симуляторе
   iPhone, включая внеэкранный рендеринг каждого примера из README в светлой и тёмной темах.
 - **Примеры использования, которые компилируются** — каждый пример ниже взят из
   [примера приложения](Examples/ChartGallery), которое CI собирает для iOS и macOS.

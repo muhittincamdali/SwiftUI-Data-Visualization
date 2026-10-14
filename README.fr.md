@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ece7cb3e7fa54e87d5352d3b54f37e863a76405d status=reviewed -->
+<!-- i18n-source: README.md@7e1879f34add14a3e8d846468c9c8ae900e7b38d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-light.svg" alt="SwiftUI Data Visualization: Graphiques statistiques, financiers et en direct pour SwiftUI sur iOS et macOS, basés sur Swift Charts."></picture></p>
@@ -39,15 +39,17 @@ Un paquet Swift de vues de graphiques pour SwiftUI sur iOS 17+ et macOS 14+, con
 - **L’analyse est publique** — `Histogram` (Sturges, Freedman–Diaconis, largeur fixe ou nombre fixe),
   `BoxPlotSummary` (moustaches de Tukey), `Statistics`, `LinearRegression`, `MovingAverage`,
   les graduations d’axe de `NiceScale`, `TreemapLayout` (squarified), `Candle.aggregate` et `Downsampling`.
-- **Sûr avec toute entrée** — les valeurs non finies sont écartées, les plages proches de
-  `Double.greatestFiniteMagnitude` et les plages subnormales restent finies, et le nombre de graduations,
-  les classes (bins), les tampons et les exports ont des limites supérieures. Une suite de tests dédiée
-  fournit `nan`, l’infini, `Int.max` et des plages extrêmes à chaque calcul.
+- **Sûr avec toute entrée** — les valeurs non finies et les dates hors des années 1 à 4001 sont
+  écartées, les plages proches de `Double.greatestFiniteMagnitude` et les plages subnormales
+  restent finies, et le nombre de graduations, les classes (bins), les tampons, les fenêtres de
+  défilement et les exports ont des limites supérieures. Une suite de tests dédiée fournit `nan`,
+  l’infini, `Int.max`, des plages extrêmes et des dates extrêmes aux types d’analyse et aux
+  graphiques.
 - **Accessible** — les vues basées sur Swift Charts bénéficient de la navigation VoiceOver et des
   Audio Graphs, avec des libellés lisibles pour les classes, les boîtes, les chandeliers et les étapes ;
   les vues basées sur Canvas (radar, treemap, cotations) joignent un `AudioGraphDescriptor`. Une palette
   adaptée au daltonisme est intégrée.
-- **Testé** — 160 tests Swift Testing répartis en 31 suites, exécutés sur macOS et dans un simulateur
+- **Testé** — 180 tests Swift Testing répartis en 32 suites, exécutés sur macOS et dans un simulateur
   d’iPhone, y compris des rendus hors écran de chaque exemple du README en mode clair et sombre.
 - **Des exemples d’utilisation qui compilent** — chaque exemple ci-dessous provient de l’[app d’exemple](Examples/ChartGallery),
   que la CI compile pour iOS et macOS.
