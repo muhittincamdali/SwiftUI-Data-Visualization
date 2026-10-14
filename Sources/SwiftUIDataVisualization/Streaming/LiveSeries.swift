@@ -10,7 +10,7 @@ import Observation
 ///     @State private var load = LiveSeries(capacity: 120)
 ///
 ///     var body: some View {
-///         LiveTickerChart(dataPoints: load.values)
+///         LiveTickerChart(values: load.values)
 ///             .frame(height: 80)
 ///             .task {
 ///                 while !Task.isCancelled {
