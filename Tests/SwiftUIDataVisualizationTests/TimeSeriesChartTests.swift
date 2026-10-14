@@ -41,6 +41,27 @@ struct TimeSeriesChartTests {
         #expect(TimeSeriesChart.plottedSeries([series], movingAverageWindow: .min, maximumPointsPerSeries: 10)[0].average.isEmpty)
     }
 
+    @Test func scrollWindowOpensAtTheNewestData() throws {
+        let older = TimeSeries(name: "A", values: [1, 2, 3], start: start, interval: 100)
+        let newer = TimeSeries(name: "B", values: [1, 2], start: start.addingTimeInterval(500), interval: 100)
+        let plotted = TimeSeriesChart.plottedSeries([older, newer], movingAverageWindow: nil, maximumPointsPerSeries: 10)
+        let window = try #require(TimeSeriesChart.scrollWindow(for: plotted, visibleDuration: 250))
+        #expect(window.length == 250)
+        #expect(window.start == start.addingTimeInterval(350))
+    }
+
+    @Test(arguments: [nil, 0, -60, .infinity, .nan] as [TimeInterval?])
+    func unusableDurationsDoNotScroll(_ duration: TimeInterval?) {
+        let series = TimeSeries(name: "A", values: [1, 2], start: start, interval: 60)
+        let plotted = TimeSeriesChart.plottedSeries([series], movingAverageWindow: nil, maximumPointsPerSeries: 10)
+        #expect(TimeSeriesChart.scrollWindow(for: plotted, visibleDuration: duration) == nil)
+    }
+
+    @Test func emptySeriesDoNotScroll() {
+        let plotted = TimeSeriesChart.plottedSeries([TimeSeries(name: "A", points: [])], movingAverageWindow: nil, maximumPointsPerSeries: 10)
+        #expect(TimeSeriesChart.scrollWindow(for: plotted, visibleDuration: 60) == nil)
+    }
+
     @Test func readoutUsesTheNearestDrawnPoint() {
         let series = TimeSeries(name: "A", values: [10, 20, 30], start: start, interval: 100)
         let plotted = TimeSeriesChart.plottedSeries([series], movingAverageWindow: nil, maximumPointsPerSeries: 10)[0]
