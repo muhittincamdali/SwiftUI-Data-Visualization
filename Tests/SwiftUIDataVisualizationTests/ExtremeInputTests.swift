@@ -110,3 +110,46 @@ struct HistogramExtremeTests {
         #expect(Histogram.clampedCount(3.2, upTo: 10) == 4)
     }
 }
+
+@Suite("Extreme inputs: statistics and trends")
+struct StatisticsExtremeTests {
+    @Test func meanOfHugeValuesDoesNotOverflow() {
+        #expect(Statistics.mean([huge, huge]) == huge)
+        #expect(Statistics.mean([huge, -huge]) == 0)
+    }
+
+    @Test func quantileBetweenOppositeExtremesIsFinite() throws {
+        #expect(Statistics.median([-huge, huge]) == 0)
+        let upperQuartile = try #require(Statistics.quantile([-huge, huge], 0.75))
+        #expect(abs(upperQuartile - huge / 2) <= huge * 1e-15)
+    }
+
+    @Test func boxPlotOfExtremeValuesIsFinite() throws {
+        let summary = try #require(BoxPlotSummary(values: [-huge, 0, huge]))
+        #expect(summary.median == 0)
+        #expect(summary.lowerWhisker.isFinite && summary.upperWhisker.isFinite)
+    }
+
+    @Test func regressionThatOverflowsGivesNil() {
+        #expect(LinearRegression(points: [.init(x: -huge, y: -huge), .init(x: huge, y: huge)]) == nil)
+    }
+
+    @Test func regressionOnLargeButSafeValuesStaysExact() throws {
+        let fit = try #require(LinearRegression(points: [.init(x: 0, y: 1e150), .init(x: 1e150, y: 3e150)]))
+        #expect(abs(fit.slope - 2) < 1e-12)
+        #expect(fit.rSquared == 1)
+    }
+
+    @Test func simpleAverageSkipsWindowsWithNonFiniteValues() {
+        let averages = MovingAverage.simple([1, 2, .nan, 4, 5, 6, .infinity, 8], window: 2)
+        #expect(averages == [nil, 1.5, nil, nil, 4.5, 5.5, nil, nil])
+    }
+
+    @Test func simpleAverageOfHugeValuesDoesNotOverflow() {
+        #expect(MovingAverage.simple([huge, huge, huge], window: 2) == [nil, huge, huge])
+    }
+
+    @Test func exponentialAverageIgnoresNonFiniteValues() {
+        #expect(MovingAverage.exponential([.nan, 10, .infinity, 20], smoothing: 0.5) == [nil, 10, 10, 15])
+    }
+}

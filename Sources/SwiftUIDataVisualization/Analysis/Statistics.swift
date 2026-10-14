@@ -6,10 +6,15 @@ import Foundation
 /// when no value is left, so an empty data set never turns into a misleading zero.
 public enum Statistics {
     /// The arithmetic mean.
+    ///
+    /// When the plain sum overflows (values near `Double.greatestFiniteMagnitude`), each value
+    /// is divided by the count before adding, so the mean stays finite.
     public static func mean(_ values: [Double]) -> Double? {
         let finite = values.filter(\.isFinite)
         guard !finite.isEmpty else { return nil }
-        return finite.reduce(0, +) / Double(finite.count)
+        let count = Double(finite.count)
+        let sum = finite.reduce(0, +)
+        return sum.isFinite ? sum / count : finite.reduce(0) { $0 + $1 / count }
     }
 
     /// The median, the 0.5 quantile.
@@ -49,7 +54,11 @@ public enum Statistics {
         let lowerIndex = Int(position.rounded(.down))
         let upperIndex = min(lowerIndex + 1, sorted.count - 1)
         let fraction = position - Double(lowerIndex)
-        return sorted[lowerIndex] + fraction * (sorted[upperIndex] - sorted[lowerIndex])
+        let lower = sorted[lowerIndex]
+        let upper = sorted[upperIndex]
+        let difference = upper - lower
+        // A weighted sum avoids the difference when it overflows (-1e308 and 1e308).
+        return difference.isFinite ? lower + fraction * difference : lower * (1 - fraction) + upper * fraction
     }
 }
 
