@@ -150,6 +150,20 @@ struct StatisticsExtremeTests {
         #expect(summary.lowerWhisker.isFinite && summary.upperWhisker.isFinite)
     }
 
+    @Test func standardDeviationOfHugeValuesStaysFinite() throws {
+        let sample = try #require(Statistics.standardDeviation([1e200, -1e200]))
+        #expect(abs(sample - 2.squareRoot() * 1e200) <= 1e200 * 1e-15)
+        #expect(Statistics.standardDeviation([1e200, -1e200], sample: false) == 1e200)
+        #expect(Statistics.standardDeviation([huge, -huge], sample: false) == huge)
+    }
+
+    @Test func varianceBeyondDoubleIsNilAndFittingVarianceIsExact() {
+        #expect(Statistics.variance([1e200, -1e200]) == nil)
+        #expect(Statistics.variance([huge, -huge], sample: false) == nil)
+        // The squared deviations add up to 4e308, which overflows; the variance is 1e308.
+        #expect(Statistics.variance([1e154, -1e154, 1e154, -1e154], sample: false) == 1e308)
+    }
+
     @Test func regressionThatOverflowsGivesNil() {
         #expect(LinearRegression(points: [.init(x: -huge, y: -huge), .init(x: huge, y: huge)]) == nil)
     }

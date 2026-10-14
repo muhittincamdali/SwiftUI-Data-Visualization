@@ -33,17 +33,41 @@ public enum Statistics {
 
     /// The variance. `sample` divides by `n - 1` (the default, for a sample of a larger
     /// population); `false` divides by `n`. A sample variance needs at least two values.
+    ///
+    /// Returns `nil` as well when the variance is larger than `Double.greatestFiniteMagnitude`
+    /// (values near ±1e154 and beyond); ``standardDeviation(_:sample:)`` is still available
+    /// then.
     public static func variance(_ values: [Double], sample: Bool = true) -> Double? {
-        let finite = values.filter(\.isFinite)
-        let divisor = Double(finite.count - (sample ? 1 : 0))
-        guard divisor > 0, let mean = mean(finite) else { return nil }
-        let squaredDeviations = finite.reduce(0) { $0 + ($1 - mean) * ($1 - mean) }
-        return squaredDeviations / divisor
+        guard let spread = spread(values, sample: sample) else { return nil }
+        let variance = spread.scaledVariance * spread.scale * spread.scale
+        return variance.isFinite ? variance : nil
     }
 
-    /// The standard deviation, the square root of ``variance(_:sample:)``.
+    /// The standard deviation, the square root of ``variance(_:sample:)``. It is computed on
+    /// scaled values when the squared deviations overflow, so it stays finite for any finite
+    /// input.
     public static func standardDeviation(_ values: [Double], sample: Bool = true) -> Double? {
-        variance(values, sample: sample).map { $0.squareRoot() }
+        spread(values, sample: sample).map { $0.scaledVariance.squareRoot() * $0.scale }
+    }
+
+    /// The variance of the finite values after dividing them by `scale`.
+    ///
+    /// `scale` is 1 unless the sum of squared deviations overflows; then it is the largest
+    /// magnitude, so every scaled value lies in `-1...1` and the sum stays finite.
+    private static func spread(_ values: [Double], sample: Bool) -> (scale: Double, scaledVariance: Double)? {
+        let finite = values.filter(\.isFinite)
+        let divisor = Double(finite.count - (sample ? 1 : 0))
+        guard divisor > 0 else { return nil }
+        let plain = sumOfSquaredDeviations(finite)
+        if plain.isFinite { return (1, plain / divisor) }
+        let scale = finite.reduce(0) { max($0, abs($1)) }
+        return (scale, sumOfSquaredDeviations(finite.map { $0 / scale }) / divisor)
+    }
+
+    /// The sum of the squared distances from the mean; 0 for no values.
+    private static func sumOfSquaredDeviations(_ values: [Double]) -> Double {
+        guard let mean = mean(values) else { return 0 }
+        return values.reduce(0) { $0 + ($1 - mean) * ($1 - mean) }
     }
 
     /// The quantile of values that are already sorted and finite.
