@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@5307a07778c46b7b0b0dfbd0a75b40a96a09d513 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg" alt="SwiftUI Data Visualization: Статистические, финансовые и живые графики для SwiftUI на iOS и macOS на основе Swift Charts."></picture></p>
@@ -46,7 +46,7 @@ Swift-пакет с представлениями графиков для Swift
   прокрутки и экспортов ограничено сверху. Отдельный набор тестов подаёт в типы анализа и в
   графики `nan`, бесконечность, `Int.max`, экстремальные диапазоны и экстремальные даты.
 - **Доступность** — представления на основе Swift Charts получают навигацию VoiceOver и Audio Graphs
-  с понятными подписями для интервалов, ящиков, свечей и шагов; представления на основе Canvas
+  с понятными подписями для интервалов, ящиков, свечей и шагов; представления, нарисованные без Swift Charts
   (радар, treemap, лента) добавляют `AudioGraphDescriptor`. Встроена палитра, безопасная для людей с
   нарушением цветового зрения.
 - **Протестировано** — 188 тестов Swift Testing в 33 наборах, которые выполняются на macOS и в симуляторе
@@ -75,7 +75,7 @@ Swift-пакет с представлениями графиков для Swift
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-Вставьте его в поле поиска в правом верхнем углу окна. Оставьте **Dependency Rule** равным **Up to Next Major Version** от `2.0.0` и нажмите **Add Package**. В следующем окне выберите таргет вашего приложения рядом с **SwiftUIDataVisualization** и снова нажмите **Add Package**.
+Вставьте его в поле поиска в правом верхнем углу окна. Оставьте **Dependency Rule** равным **Up to Next Major Version** от `2.0.1` и нажмите **Add Package**. В следующем окне выберите таргет вашего приложения рядом с **SwiftUIDataVisualization** и снова нажмите **Add Package**.
 
 **2. Импортируйте модуль**
 
@@ -125,7 +125,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [

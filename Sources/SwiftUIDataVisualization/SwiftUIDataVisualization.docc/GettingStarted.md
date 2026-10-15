@@ -6,14 +6,14 @@ Add the package, draw a first chart, and give it your data.
 
 In Xcode choose **File > Add Package Dependencies…**, paste
 `https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git` into the search field at the
-top right, leave **Dependency Rule** at **Up to Next Major Version** from `2.0.0`, choose
+top right, leave **Dependency Rule** at **Up to Next Major Version** from `2.0.1`, choose
 **Add Package**, and in the next sheet add the **SwiftUIDataVisualization** library to your app
 target. Use 2.0.0 or later: the charts in this documentation arrived in 2.0.0, and the earlier
 1.0.0 release has a different API. In a package, add it to `Package.swift` instead:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "MyApp", dependencies: [

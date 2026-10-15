@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@5307a07778c46b7b0b0dfbd0a75b40a96a09d513 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg" alt="SwiftUI Data Visualization: Swift Charts 기반의 iOS·macOS SwiftUI용 통계, 금융, 실시간 차트."></picture></p>
@@ -45,7 +45,7 @@ iOS 17+와 macOS 14+의 SwiftUI에서 쓸 수 있는, Swift Charts 기반 차트
   구간(bin), 버퍼, 스크롤 창 수, 내보내기에는 상한이 있습니다. 전용 테스트 스위트가 분석 타입과 차트에 `nan`, 무한대,
   `Int.max`, 극단적인 범위, 극단적인 날짜를 입력합니다.
 - **접근성** — Swift Charts 기반 뷰는 VoiceOver 탐색과 Audio Graphs를 지원하며, 구간, 상자, 캔들, 단계에
-  읽을 수 있는 레이블이 붙습니다. Canvas 기반 뷰(레이더, 트리맵, 티커)에는 `AudioGraphDescriptor`가
+  읽을 수 있는 레이블이 붙습니다. Swift Charts를 쓰지 않는 뷰(레이더, 트리맵, 티커)에는 `AudioGraphDescriptor`가
   연결됩니다. 색각 이상 사용자를 위한 팔레트가 기본으로 들어 있습니다.
 - **테스트 완료** — 33개 스위트에 걸친 Swift Testing 테스트 188개를 macOS와 iPhone 시뮬레이터에서
   실행하며, README의 모든 예제를 라이트 모드와 다크 모드로 화면 밖에서 렌더링하는 테스트도 포함됩니다.
@@ -73,7 +73,7 @@ Xcode에서 **File › Add Package Dependencies…**를 선택하고 저장소 U
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-창 오른쪽 위의 검색란에 붙여 넣으세요. **Dependency Rule**은 `2.0.0`부터 **Up to Next Major Version**으로 그대로 두고 **Add Package**를 클릭하세요. 다음 창에서 **SwiftUIDataVisualization** 옆에서 앱 타깃을 선택하고 **Add Package**를 다시 클릭하세요.
+창 오른쪽 위의 검색란에 붙여 넣으세요. **Dependency Rule**은 `2.0.1`부터 **Up to Next Major Version**으로 그대로 두고 **Add Package**를 클릭하세요. 다음 창에서 **SwiftUIDataVisualization** 옆에서 앱 타깃을 선택하고 **Add Package**를 다시 클릭하세요.
 
 **2. 모듈 가져오기**
 
@@ -123,7 +123,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [
