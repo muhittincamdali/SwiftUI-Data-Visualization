@@ -112,8 +112,10 @@ public struct BoxPlotChart: View {
         var text = "median \(summary.median.formatted(format)), "
             + "quartiles \(summary.firstQuartile.formatted(format)) to \(summary.thirdQuartile.formatted(format)), "
             + "range \(summary.lowerWhisker.formatted(format)) to \(summary.upperWhisker.formatted(format))"
-        if !summary.outliers.isEmpty {
-            text += ", \(summary.outliers.count) outliers"
+        switch summary.outliers.count {
+        case 0: break
+        case 1: text += ", 1 outlier"
+        case let count: text += ", \(count) outliers"
         }
         return text
     }
