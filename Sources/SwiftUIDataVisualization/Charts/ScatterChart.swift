@@ -10,7 +10,8 @@ import SwiftUI
 ///
 /// The trend line is the ``LinearRegression`` of the points, drawn across their x range in the
 /// palette's ``ChartPalette/neutral`` color; its equation and r² are part of the chart's
-/// accessibility label. Points with a coordinate that is not finite are left out.
+/// accessibility label. Points with a coordinate that is not finite are left out, and
+/// coordinates beyond ±1e307 are drawn at that limit.
 public struct ScatterChart: View {
     private let points: [PlotPoint]
     private let xLabel: String
@@ -38,12 +39,16 @@ public struct ScatterChart: View {
         let trend = showsTrendLine ? Self.trendSegment(for: finite) : nil
         Chart {
             ForEach(Array(finite.enumerated()), id: \.offset) { _, point in
-                PointMark(x: .value(xLabel, point.x), y: .value(yLabel, point.y))
+                PointMark(x: .value(xLabel, ChartValues.clamped(point.x)), y: .value(yLabel, ChartValues.clamped(point.y)))
                     .foregroundStyle(palette.color(at: 0).opacity(0.8))
             }
             if let trend {
                 ForEach([trend.start, trend.end], id: \.self) { point in
-                    LineMark(x: .value(xLabel, point.x), y: .value(yLabel, point.y), series: .value("Line", "Trend"))
+                    LineMark(
+                        x: .value(xLabel, ChartValues.clamped(point.x)),
+                        y: .value(yLabel, ChartValues.clamped(point.y)),
+                        series: .value("Line", "Trend")
+                    )
                         .foregroundStyle(palette.neutral)
                         .lineStyle(StrokeStyle(lineWidth: 2))
                 }

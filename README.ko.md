@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg" alt="SwiftUI Data Visualization: Swift Charts 기반의 iOS·macOS SwiftUI용 통계, 금융, 실시간 차트."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="CI 상태"></a>
-<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="최신 버전: v2.0.0"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="최신 버전: v2.0.1"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="지원 플랫폼: iOS 17+ · macOS 14+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="언어 버전: Swift 6.2+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="라이선스: MIT"></picture></a>
@@ -40,13 +40,14 @@ iOS 17+와 macOS 14+의 SwiftUI에서 쓸 수 있는, Swift Charts 기반 차트
   `BoxPlotSummary`(Tukey 수염), `Statistics`, `LinearRegression`, `MovingAverage`,
   `NiceScale` 축 눈금, `TreemapLayout`(squarified), `Candle.aggregate`, `Downsampling`.
 - **어떤 입력에도 안전** — 유한하지 않은 값과 1년부터 4001년 밖의 날짜는 제외되고,
+  절댓값이 1e307을 넘는 유한한 값은 ±1e307 위치에 그려지며,
   `Double.greatestFiniteMagnitude`에 가까운 범위와 비정규 수 범위도 유한한 값으로 유지되며, 눈금 수,
   구간(bin), 버퍼, 스크롤 창 수, 내보내기에는 상한이 있습니다. 전용 테스트 스위트가 분석 타입과 차트에 `nan`, 무한대,
   `Int.max`, 극단적인 범위, 극단적인 날짜를 입력합니다.
 - **접근성** — Swift Charts 기반 뷰는 VoiceOver 탐색과 Audio Graphs를 지원하며, 구간, 상자, 캔들, 단계에
   읽을 수 있는 레이블이 붙습니다. Canvas 기반 뷰(레이더, 트리맵, 티커)에는 `AudioGraphDescriptor`가
   연결됩니다. 색각 이상 사용자를 위한 팔레트가 기본으로 들어 있습니다.
-- **테스트 완료** — 32개 스위트에 걸친 Swift Testing 테스트 180개를 macOS와 iPhone 시뮬레이터에서
+- **테스트 완료** — 33개 스위트에 걸친 Swift Testing 테스트 188개를 macOS와 iPhone 시뮬레이터에서
   실행하며, README의 모든 예제를 라이트 모드와 다크 모드로 화면 밖에서 렌더링하는 테스트도 포함됩니다.
 - **컴파일되는 사용 예제** — 아래의 모든 예제는 CI가 iOS와 macOS용으로 빌드하는
   [예제 앱](Examples/ChartGallery)에서 가져온 것입니다.

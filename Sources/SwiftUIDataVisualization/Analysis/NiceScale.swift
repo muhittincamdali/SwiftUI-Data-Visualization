@@ -36,6 +36,9 @@ public struct NiceScale: Hashable, Sendable {
     /// Spans below this are computed in a space 10²⁰ times larger, so the power of ten in
     /// ``niceNumber(_:rounded:)`` does not underflow to zero.
     private static let smallSpan = 1e-290
+    /// The largest step of the form 1, 2 or 5 times a power of ten that `Double` holds; used
+    /// when the nice step for a span near `Double.greatestFiniteMagnitude` overflows.
+    private static let largestStep = 1e308
 
     /// Creates a scale that covers `lower...upper` with about `desiredTickCount` ticks.
     ///
@@ -73,15 +76,24 @@ public struct NiceScale: Hashable, Sendable {
         // A step below the smallest subnormal rounds to zero; the smallest step there is
         // still covers the data.
         if step == 0 { step = .leastNonzeroMagnitude }
+        // With two or three ticks over a span near 1e308 the nice step (2e308 or 5e308) does
+        // not fit in a Double.
+        if step == .infinity { step = Self.largestStep }
         guard step > 0, step.isFinite else {
             self = .unit
             return
         }
-        // At the edge of Double's range the outward bound can overflow; it is clamped to the
-        // largest finite value, which still covers the data.
+        // A bound whose quotient by the step underflows to zero lands on zero, inside the data
+        // (-1e-300 next to 1e31 gave a lower bound of -0.0); it moves out by one step. At the
+        // edge of Double's range the outward bound can overflow; it is clamped to the largest
+        // finite value, which still covers the data.
+        var lowerBound = (low / step).rounded(.down) * step
+        if lowerBound > low { lowerBound -= step }
+        var upperBound = (high / step).rounded(.up) * step
+        if upperBound < high { upperBound += step }
         self.init(
-            lowerBound: max((low / step).rounded(.down) * step, -.greatestFiniteMagnitude),
-            upperBound: min((high / step).rounded(.up) * step, .greatestFiniteMagnitude),
+            lowerBound: max(lowerBound, -.greatestFiniteMagnitude),
+            upperBound: min(upperBound, .greatestFiniteMagnitude),
             step: step
         )
     }

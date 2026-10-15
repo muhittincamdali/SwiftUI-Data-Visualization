@@ -9,7 +9,8 @@ import SwiftUI
 /// ```
 ///
 /// Each bar spans its bin on the horizontal axis, so uneven or wide ranges read correctly, and
-/// its height is the number of values in the bin. A small gap separates the bars.
+/// its height is the number of values in the bin. A small gap separates the bars. Bin edges
+/// beyond ±1e307 are drawn at that limit.
 public struct HistogramChart: View {
     private let histogram: Histogram
     private let valueLabel: String
@@ -47,11 +48,14 @@ public struct HistogramChart: View {
         .chartYAxisLabel("Count")
     }
 
-    /// The horizontal extent of the bar for `bin`, inset by ``gapFraction`` of its width.
+    /// The horizontal extent of the bar for `bin`, inset by ``gapFraction`` of its width and
+    /// kept within ``ChartValues/supported``.
     nonisolated static func barRange(for bin: Histogram.Bin) -> ClosedRange<Double> {
         let inset = (bin.upperBound / 2 - bin.lowerBound / 2) * gapFraction
-        guard inset.isFinite, inset > 0 else { return bin.lowerBound...bin.upperBound }
-        return (bin.lowerBound + inset)...(bin.upperBound - inset)
+        guard inset.isFinite, inset > 0 else {
+            return ChartValues.clamped(bin.lowerBound)...ChartValues.clamped(bin.upperBound)
+        }
+        return ChartValues.clamped(bin.lowerBound + inset)...ChartValues.clamped(bin.upperBound - inset)
     }
 
     /// The bin's range as VoiceOver reads it.

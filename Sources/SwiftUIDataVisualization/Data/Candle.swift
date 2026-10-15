@@ -13,7 +13,9 @@ public struct Candle: Identifiable, Hashable, Sendable {
     /// The last value of the period.
     public var close: Double
 
-    /// The start of the period; one candle per period.
+    /// The start of the period. ``aggregate(_:interval:)`` makes one candle per period, so its
+    /// candles have distinct ids; ``CandlestickChart`` does not rely on them and also draws
+    /// candles that share a date.
     public var id: Date { date }
 
     /// Creates a candle.

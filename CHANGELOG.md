@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-10-15
+
+### Fixed
+
+- Finite values near `±Double.greatestFiniteMagnitude` (such as `-1.6e308`, or `1.7e308` next to
+  `-1`) no longer stop the app inside Swift Charts. `TimeSeriesChart`, `ScatterChart`,
+  `HistogramChart`, `BoxPlotChart`, `HeatmapChart`, `CandlestickChart` and `WaterfallChart` draw
+  values beyond ±1e307 at that limit; readouts and VoiceOver keep the original value.
+- `NiceScale` covers the data with two or three ticks over a span near 1e308, where it fell back
+  to `0...1`, and no longer returns a bound of `-0.0` or `0.0` inside the data when a tiny value
+  divided by the step underflows.
+- `CandlestickChart` draws every candle; of several candles with the same date, only the first
+  was drawn.
+- `BoxPlotChart` reads "1 outlier" instead of "1 outliers" to VoiceOver.
+
 ## [2.0.0] - 2026-10-15
 
 A new package built on Swift Charts. The 1.0.0 sources did not build with current Xcode
@@ -82,6 +97,7 @@ were carried over. Its other charts were not, and none of them had tests there:
 First release: line, bar, pie, area, scatter, candlestick, heatmap and radar chart views with a
 `ChartDataPoint` model.
 
-[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases/tag/v1.0.0

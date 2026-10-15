@@ -27,6 +27,8 @@ struct BoxPlotChartTests {
         let plain = try #require(BoxPlotSummary(values: [1, 2, 3, 4, 5]))
         #expect(!BoxPlotChart.describe(plain).contains("outlier"))
         let withOutlier = try #require(BoxPlotSummary(values: [1, 2, 3, 4, 100]))
-        #expect(BoxPlotChart.describe(withOutlier).hasSuffix("1 outliers"))
+        #expect(BoxPlotChart.describe(withOutlier).hasSuffix(", 1 outlier"))
+        let withTwo = try #require(BoxPlotSummary(values: [-100, 1, 2, 3, 4, 100]))
+        #expect(BoxPlotChart.describe(withTwo).hasSuffix(", 2 outliers"))
     }
 }

@@ -80,5 +80,8 @@ any input can cause:
 - ``MovingAverage/simple(_:window:)`` runs in O(n) even when the sums overflow;
 - dates before `Date.distantPast` or after `Date.distantFuture` are left out of time series and
   candles, because Swift Charts stops the app on a date axis that reaches about 1e19 seconds;
+- finite values beyond ±1e307 are drawn at that limit (readouts and VoiceOver keep the original
+  value), because Swift Charts also stops the app on a value axis that spans more than about
+  1.6e308 or reaches below about -1.5e308;
 - ranges near `Double.greatestFiniteMagnitude` and subnormal ranges are computed in a rescaled
   space, so no chart produces `nan` coordinates or traps on an integer conversion.

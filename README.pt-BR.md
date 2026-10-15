@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-light.svg" alt="SwiftUI Data Visualization: Gráficos estatísticos, financeiros e ao vivo para SwiftUI no iOS e macOS, feitos com Swift Charts."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="Status da CI"></a>
-<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Versão mais recente: v2.0.0"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Versão mais recente: v2.0.1"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="Plataformas compatíveis: iOS 17+ · macOS 14+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="Versão da linguagem: Swift 6.2+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="Licença: MIT"></picture></a>
@@ -40,7 +40,8 @@ Um pacote Swift de views de gráficos para SwiftUI no iOS 17+ e macOS 14+, feito
   `BoxPlotSummary` (bigodes de Tukey), `Statistics`, `LinearRegression`, `MovingAverage`,
   as marcas de eixo do `NiceScale`, `TreemapLayout` (squarified), `Candle.aggregate` e `Downsampling`.
 - **Seguro com qualquer entrada** — valores não finitos e datas fora dos anos 1 a 4001 são
-  deixados de fora, intervalos próximos de `Double.greatestFiniteMagnitude` e intervalos
+  deixados de fora, valores finitos além de ±1e307 são desenhados nesse limite,
+  intervalos próximos de `Double.greatestFiniteMagnitude` e intervalos
   subnormais continuam finitos, e a quantidade de marcas, os intervalos (bins), os buffers, as
   janelas de rolagem e as exportações têm limites superiores. Uma suíte de testes dedicada envia
   `nan`, infinito, `Int.max`, intervalos extremos e datas extremas aos tipos de análise e aos
@@ -48,7 +49,7 @@ Um pacote Swift de views de gráficos para SwiftUI no iOS 17+ e macOS 14+, feito
 - **Acessível** — as views baseadas em Swift Charts têm navegação com VoiceOver e Audio Graphs, com
   rótulos legíveis para intervalos, caixas, candles e etapas; as views baseadas em Canvas (radar,
   treemap, ticker) anexam um `AudioGraphDescriptor`. Uma paleta segura para daltonismo já vem incluída.
-- **Testado** — 180 testes de Swift Testing em 32 suítes, executados no macOS e em um simulador de
+- **Testado** — 188 testes de Swift Testing em 33 suítes, executados no macOS e em um simulador de
   iPhone, incluindo renderizações fora da tela de cada exemplo do README nos modos claro e escuro.
 - **Exemplos de uso que compilam** — todos os exemplos abaixo vêm do
   [app de exemplo](Examples/ChartGallery), que o CI compila para iOS e macOS.

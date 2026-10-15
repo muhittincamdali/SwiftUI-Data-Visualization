@@ -11,7 +11,8 @@ import SwiftUI
 ///
 /// Long series are reduced with ``Downsampling`` to ``defaultMaximumPointsPerSeries`` points
 /// (or the number you pass) before they are drawn, so a year of minute data scrolls as smoothly
-/// as a week of daily data. Points whose value is not finite are left out. Touching or hovering
+/// as a week of daily data. Points whose value is not finite are left out, and values beyond
+/// ±1e307 are drawn at that limit; the readout shows the original value. Touching or hovering
 /// over the plot shows the date and each series' nearest value; pass a `selection` binding to
 /// read or set that date yourself. With a `visibleDuration`, the chart shows that much time and
 /// scrolls horizontally, starting at the newest data. Colors come from the ``ChartPalette`` in
@@ -114,20 +115,20 @@ public struct TimeSeriesChart: View {
                     if style == .area {
                         AreaMark(
                             x: .value("Date", point.date),
-                            y: .value("Value", point.value),
+                            y: .value("Value", ChartValues.clamped(point.value)),
                             series: .value("Series", line.name),
                             stacking: .unstacked
                         )
                         .foregroundStyle(palette.color(at: index).opacity(0.25))
                     }
-                    LineMark(x: .value("Date", point.date), y: .value("Value", point.value))
+                    LineMark(x: .value("Date", point.date), y: .value("Value", ChartValues.clamped(point.value)))
                         .foregroundStyle(by: .value("Series", line.name))
                         .interpolationMethod(.monotone)
                 }
                 ForEach(Array(line.average.enumerated()), id: \.offset) { _, point in
                     LineMark(
                         x: .value("Date", point.date),
-                        y: .value("Average", point.value),
+                        y: .value("Average", ChartValues.clamped(point.value)),
                         series: .value("Average", "\(line.name) average")
                     )
                     .foregroundStyle(palette.color(at: index))

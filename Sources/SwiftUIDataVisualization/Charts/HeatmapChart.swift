@@ -31,7 +31,7 @@ public struct HeatmapCell: Identifiable, Hashable, Sendable {
 /// Cell colors blend through the palette's ``ChartPalette/gradient`` from the smallest to the
 /// largest value, and the chart shows that scale as its legend. Rows and columns appear in the
 /// order their labels first occur. Cells whose value is not finite are left out, so they show
-/// as gaps.
+/// as gaps; values beyond ±1e307 take the color at that limit.
 public struct HeatmapChart: View {
     private let cells: [HeatmapCell]
     private let valueLabel: String
@@ -61,7 +61,7 @@ public struct HeatmapChart: View {
                 width: .ratio(0.94),
                 height: .ratio(0.9)
             )
-                .foregroundStyle(by: .value(valueLabel, cell.value))
+                .foregroundStyle(by: .value(valueLabel, ChartValues.clamped(cell.value)))
                 .annotation(position: .overlay) {
                     if showsValues {
                         Text(cell.value, format: .number.precision(.significantDigits(1...3)))

@@ -54,4 +54,37 @@ struct NiceScaleTests {
     @Test func tickCountBelowTwoCountsAsTwo() {
         #expect(NiceScale(lower: 0, upper: 100, desiredTickCount: 0) == NiceScale(lower: 0, upper: 100, desiredTickCount: 2))
     }
+
+    @Test(arguments: [2, 3])
+    func fewTicksOverASpanNear1e308CoverTheData(_ count: Int) {
+        // The nice step was 2e308, which overflowed and gave the unit scale 0...1.
+        let scale = NiceScale(lower: -6e74, upper: 1e308, desiredTickCount: count)
+        #expect(scale.step == 1e308)
+        #expect(scale.lowerBound <= -6e74 && scale.upperBound >= 1e308)
+    }
+
+    @Test func boundsThatUnderflowToZeroMoveOutByOneStep() {
+        // -1e-300 / 1e31 underflows to -0.0, which used to become the lower bound.
+        let negative = NiceScale(lower: -1e-300, upper: 1e31)
+        #expect(negative.lowerBound == -negative.step)
+        let positive = NiceScale(lower: -1e31, upper: 1e-300)
+        #expect(positive.upperBound == positive.step)
+    }
+
+    /// Every pair of these bounds, at every tick count, gives a finite scale that covers both.
+    @Test(arguments: [2, 3, 4, 5, 100])
+    func everyPairOfExtremeBoundsIsCovered(_ count: Int) {
+        let huge = Double.greatestFiniteMagnitude
+        let bounds: [Double] = [
+            -huge, -1.5e308, -1e308, -6e74, -1, -1e-300, -5e-324, 0, 5e-324, 1e-300, 1, 1e31, 1e300, 1e308, huge,
+        ]
+        for lower in bounds {
+            for upper in bounds {
+                let scale = NiceScale(lower: lower, upper: upper, desiredTickCount: count)
+                #expect(scale.step > 0 && scale.step.isFinite, "\(lower)...\(upper)")
+                #expect(scale.lowerBound <= min(lower, upper) && scale.upperBound >= max(lower, upper), "\(lower)...\(upper)")
+                #expect(scale.ticks.allSatisfy { $0.isFinite }, "\(lower)...\(upper)")
+            }
+        }
+    }
 }
