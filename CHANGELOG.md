@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-10-15
+
 ### Fixed
 
 - Finite values near `±Double.greatestFiniteMagnitude` (such as `-1.6e308`, or `1.7e308` next to
@@ -95,6 +97,7 @@ were carried over. Its other charts were not, and none of them had tests there:
 First release: line, bar, pie, area, scatter, candlestick, heatmap and radar chart views with a
 `ChartDataPoint` model.
 
-[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases/tag/v1.0.0
