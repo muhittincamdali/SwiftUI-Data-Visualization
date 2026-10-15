@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@a0927e461cd2c1c9614e7b64e10615258019dc9e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-fr-light.svg" alt="SwiftUI Data Visualization: Graphiques statistiques, financiers et en direct pour SwiftUI sur iOS et macOS, basés sur Swift Charts."></picture></p>
@@ -40,7 +40,8 @@ Un paquet Swift de vues de graphiques pour SwiftUI sur iOS 17+ et macOS 14+, con
   `BoxPlotSummary` (moustaches de Tukey), `Statistics`, `LinearRegression`, `MovingAverage`,
   les graduations d’axe de `NiceScale`, `TreemapLayout` (squarified), `Candle.aggregate` et `Downsampling`.
 - **Sûr avec toute entrée** — les valeurs non finies et les dates hors des années 1 à 4001 sont
-  écartées, les plages proches de `Double.greatestFiniteMagnitude` et les plages subnormales
+  écartées, les valeurs finies au-delà de ±1e307 sont dessinées à cette limite,
+  les plages proches de `Double.greatestFiniteMagnitude` et les plages subnormales
   restent finies, et le nombre de graduations, les classes (bins), les tampons, les fenêtres de
   défilement et les exports ont des limites supérieures. Une suite de tests dédiée fournit `nan`,
   l’infini, `Int.max`, des plages extrêmes et des dates extrêmes aux types d’analyse et aux
@@ -49,7 +50,7 @@ Un paquet Swift de vues de graphiques pour SwiftUI sur iOS 17+ et macOS 14+, con
   Audio Graphs, avec des libellés lisibles pour les classes, les boîtes, les chandeliers et les étapes ;
   les vues basées sur Canvas (radar, treemap, cotations) joignent un `AudioGraphDescriptor`. Une palette
   adaptée au daltonisme est intégrée.
-- **Testé** — 180 tests Swift Testing répartis en 32 suites, exécutés sur macOS et dans un simulateur
+- **Testé** — 188 tests Swift Testing répartis en 33 suites, exécutés sur macOS et dans un simulateur
   d’iPhone, y compris des rendus hors écran de chaque exemple du README en mode clair et sombre.
 - **Des exemples d’utilisation qui compilent** — chaque exemple ci-dessous provient de l’[app d’exemple](Examples/ChartGallery),
   que la CI compile pour iOS et macOS.

@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@a0927e461cd2c1c9614e7b64e10615258019dc9e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-light.svg" alt="SwiftUI Data Visualization: iOS ve macOS'ta SwiftUI için Swift Charts tabanlı istatistik, finans ve canlı veri grafikleri."></picture></p>
@@ -40,7 +40,8 @@ iOS 17+ ve macOS 14+ üzerinde SwiftUI için, Swift Charts tabanlı bir Swift pa
   `BoxPlotSummary` (Tukey bıyıkları), `Statistics`, `LinearRegression`, `MovingAverage`,
   `NiceScale` eksen işaretleri, `TreemapLayout` (squarified), `Candle.aggregate` ve `Downsampling`.
 - **Her girdiyle güvenli** — sonlu olmayan değerler ve 1 ile 4001 yılları dışındaki tarihler
-  dışarıda bırakılır, `Double.greatestFiniteMagnitude` yakınındaki ve denormal aralıklar sonlu
+  dışarıda bırakılır, ±1e307'nin ötesindeki sonlu değerler bu sınırda çizilir,
+  `Double.greatestFiniteMagnitude` yakınındaki ve denormal aralıklar sonlu
   kalır; işaret sayıları, aralıklar (bin), tamponlar, kaydırma pencereleri ve dışa aktarmalar için
   üst sınırlar vardır. Ayrı bir test paketi, analiz tiplerine ve grafiklere `nan`, sonsuz,
   `Int.max`, uç aralıklar ve uç tarihler verir.
@@ -48,7 +49,7 @@ iOS 17+ ve macOS 14+ üzerinde SwiftUI için, Swift Charts tabanlı bir Swift pa
   alır; aralıklar, kutular, mumlar ve adımlar için okunabilir etiketler sunar. Canvas tabanlı
   görünümler (radar, treemap, ticker) bir `AudioGraphDescriptor` ekler. Renk körlerine uygun bir
   palet yerleşik gelir.
-- **Test edilmiş** — 32 suite içinde 180 Swift Testing testi, macOS'ta ve bir iPhone
+- **Test edilmiş** — 33 suite içinde 188 Swift Testing testi, macOS'ta ve bir iPhone
   simülatöründe çalışır; README'deki her örneğin açık ve koyu modda ekran dışı çizimleri de
   dahildir.
 - **Derlenen kullanım örnekleri** — aşağıdaki her örnek, CI'ın iOS ve macOS için derlediği

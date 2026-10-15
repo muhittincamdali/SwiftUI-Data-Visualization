@@ -41,14 +41,15 @@ treemaps and live tickers — and makes the analysis behind them public, so you 
   `BoxPlotSummary` (Tukey whiskers), `Statistics`, `LinearRegression`, `MovingAverage`,
   `NiceScale` axis ticks, `TreemapLayout` (squarified), `Candle.aggregate` and `Downsampling`.
 - **Safe with any input** — values that are not finite and dates outside the years 1 to 4001 are
-  left out, ranges near `Double.greatestFiniteMagnitude` and subnormal ranges stay finite, and
+  left out, finite values beyond ±1e307 are drawn at that limit, ranges near
+  `Double.greatestFiniteMagnitude` and subnormal ranges stay finite, and
   tick counts, bins, buffers, scroll windows and exports have upper limits. A dedicated test
   suite feeds `nan`, infinity, `Int.max`, extreme ranges and extreme dates to the analysis types
   and the charts.
 - **Accessible** — the Swift Charts based views get VoiceOver navigation and Audio Graphs, with
   readable labels for bins, boxes, candles and steps; the Canvas based views (radar, treemap,
   ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
-- **Tested** — 180 Swift Testing tests in 32 suites, run on macOS and an iPhone simulator,
+- **Tested** — 188 Swift Testing tests in 33 suites, run on macOS and an iPhone simulator,
   including off-screen renders of every README sample in light and dark mode.
 - **Usage samples that compile** — every sample below comes from the
   [example app](Examples/ChartGallery), which CI builds for iOS and macOS.

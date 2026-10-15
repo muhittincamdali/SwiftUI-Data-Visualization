@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@a0927e461cd2c1c9614e7b64e10615258019dc9e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ru-light.svg" alt="SwiftUI Data Visualization: Статистические, финансовые и живые графики для SwiftUI на iOS и macOS на основе Swift Charts."></picture></p>
@@ -40,7 +40,8 @@ Swift-пакет с представлениями графиков для Swift
   `BoxPlotSummary` (усы Тьюки), `Statistics`, `LinearRegression`, `MovingAverage`,
   деления осей `NiceScale`, `TreemapLayout` (squarified), `Candle.aggregate` и `Downsampling`.
 - **Безопасность при любых входных данных** — нечисловые и бесконечные значения, а также даты вне
-  диапазона от 1 до 4001 года отбрасываются, диапазоны около `Double.greatestFiniteMagnitude` и
+  диапазона от 1 до 4001 года отбрасываются, конечные значения за пределами ±1e307 рисуются
+  на этой границе, диапазоны около `Double.greatestFiniteMagnitude` и
   субнормальные диапазоны остаются конечными, а число делений, интервалов (bin), буферов, окон
   прокрутки и экспортов ограничено сверху. Отдельный набор тестов подаёт в типы анализа и в
   графики `nan`, бесконечность, `Int.max`, экстремальные диапазоны и экстремальные даты.
@@ -48,7 +49,7 @@ Swift-пакет с представлениями графиков для Swift
   с понятными подписями для интервалов, ящиков, свечей и шагов; представления на основе Canvas
   (радар, treemap, лента) добавляют `AudioGraphDescriptor`. Встроена палитра, безопасная для людей с
   нарушением цветового зрения.
-- **Протестировано** — 180 тестов Swift Testing в 32 наборах, которые выполняются на macOS и в симуляторе
+- **Протестировано** — 188 тестов Swift Testing в 33 наборах, которые выполняются на macOS и в симуляторе
   iPhone, включая внеэкранный рендеринг каждого примера из README в светлой и тёмной темах.
 - **Примеры использования, которые компилируются** — каждый пример ниже взят из
   [примера приложения](Examples/ChartGallery), которое CI собирает для iOS и macOS.

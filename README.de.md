@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@69011c8b6d643339c9e331508a59707873f41d9d status=reviewed -->
+<!-- i18n-source: README.md@a0927e461cd2c1c9614e7b64e10615258019dc9e status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-de-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-de-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-de-light.svg" alt="SwiftUI Data Visualization: Statistik-, Finanz- und Live-Diagramme für SwiftUI auf iOS und macOS, aufgebaut auf Swift Charts."></picture></p>
@@ -40,7 +40,8 @@ Ein Swift-Paket mit Diagramm-Views für SwiftUI auf iOS 17+ und macOS 14+, aufge
   feste Anzahl), `BoxPlotSummary` (Tukey-Whisker), `Statistics`, `LinearRegression`, `MovingAverage`,
   `NiceScale`-Achsenmarkierungen, `TreemapLayout` (squarified), `Candle.aggregate` und `Downsampling`.
 - **Sicher bei jeder Eingabe** – nicht endliche Werte und Datumsangaben außerhalb der Jahre 1 bis
-  4001 werden ausgelassen, Bereiche nahe `Double.greatestFiniteMagnitude` und subnormale Bereiche
+  4001 werden ausgelassen, endliche Werte jenseits von ±1e307 werden an dieser Grenze
+  gezeichnet, Bereiche nahe `Double.greatestFiniteMagnitude` und subnormale Bereiche
   bleiben endlich, und Markierungsanzahl, Klassen (Bins), Puffer, Scroll-Fenster und Exporte haben
   Obergrenzen. Eine eigene Testsuite füttert die Analysetypen und die Diagramme mit `nan`,
   Unendlich, `Int.max`, Extrembereichen und extremen Datumsangaben.
@@ -48,7 +49,7 @@ Ein Swift-Paket mit Diagramm-Views für SwiftUI auf iOS 17+ und macOS 14+, aufge
   mit lesbaren Beschriftungen für Klassen, Boxen, Kerzen und Schritte; die auf Canvas basierenden Views
   (Radar, Treemap, Ticker) hängen einen `AudioGraphDescriptor` an. Eine farbenblindheitsfreundliche
   Palette ist eingebaut.
-- **Getestet** – 180 Swift-Testing-Tests in 32 Suites, ausgeführt auf macOS und in einem
+- **Getestet** – 188 Swift-Testing-Tests in 33 Suites, ausgeführt auf macOS und in einem
   iPhone-Simulator, einschließlich Offscreen-Renderings jedes README-Beispiels im hellen und dunklen Modus.
 - **Beispiele, die kompilieren** – Jedes Beispiel unten stammt aus der
   [Beispiel-App](Examples/ChartGallery), die die CI für iOS und macOS baut.
