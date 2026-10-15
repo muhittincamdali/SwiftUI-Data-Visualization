@@ -15,8 +15,11 @@ timeout = 20
 # contents cannot point at a renamed heading.
 include_fragments = "anchor-only"
 
-# 403/429 from rate limiting are not broken links; everything else outside 2xx is.
-accept = ["200..=299", "403", "429"]
+# Only 2xx counts as a working link. A 403 or 429 can just as well come from a removed page or a
+# host that turns the checker away, so accepting them would hide broken links. Rate limits are
+# met by the retries and the daily cache; a site that always refuses automated requests belongs
+# in `exclude` below, with the reason.
+accept = ["200..=299"]
 
 exclude_loopback = true
 exclude_private = true
