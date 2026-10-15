@@ -38,7 +38,8 @@ public struct WaterfallStep: Hashable, Sendable {
 ///
 /// Each change floats from the running total before it to the one after it, in the palette's
 /// ``ChartPalette/positive`` or ``ChartPalette/negative`` color; totals rise from zero in
-/// ``ChartPalette/neutral``. Changes that are not finite are left out.
+/// ``ChartPalette/neutral``. Changes that are not finite are left out, and running totals beyond
+/// ±1e307 are drawn at that limit.
 public struct WaterfallChart: View {
     /// A bar as drawn: where it starts and ends, and what it shows.
     public struct Bar: Hashable, Sendable {
@@ -77,8 +78,8 @@ public struct WaterfallChart: View {
         Chart(Array(Self.bars(for: steps).enumerated()), id: \.offset) { _, bar in
             BarMark(
                 x: .value("Step", bar.label),
-                yStart: .value(valueLabel, bar.start),
-                yEnd: .value(valueLabel, bar.end),
+                yStart: .value(valueLabel, ChartValues.clamped(bar.start)),
+                yEnd: .value(valueLabel, ChartValues.clamped(bar.end)),
                 width: .ratio(0.6)
             )
             .foregroundStyle(color(for: bar.kind))

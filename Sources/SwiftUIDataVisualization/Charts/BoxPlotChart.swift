@@ -13,7 +13,7 @@ import SwiftUI
 /// Each box runs from the first to the third quartile with a line at the median; the whiskers
 /// reach the most extreme values within 1.5 interquartile ranges, and the values beyond them are
 /// drawn as points. See ``BoxPlotSummary`` for the rules. Groups without a finite value are left
-/// out.
+/// out, and values beyond ±1e307 are drawn at that limit.
 public struct BoxPlotChart: View {
     /// A named list of values that becomes one box.
     public struct Group: Identifiable, Hashable, Sendable {
@@ -52,20 +52,20 @@ public struct BoxPlotChart: View {
                 // Two whiskers, so neither line shows through the translucent box.
                 RuleMark(
                     x: .value("Group", box.name),
-                    yStart: .value(valueLabel, summary.lowerWhisker),
-                    yEnd: .value(valueLabel, summary.firstQuartile)
+                    yStart: .value(valueLabel, ChartValues.clamped(summary.lowerWhisker)),
+                    yEnd: .value(valueLabel, ChartValues.clamped(summary.firstQuartile))
                 )
                 .foregroundStyle(color)
                 RuleMark(
                     x: .value("Group", box.name),
-                    yStart: .value(valueLabel, summary.thirdQuartile),
-                    yEnd: .value(valueLabel, summary.upperWhisker)
+                    yStart: .value(valueLabel, ChartValues.clamped(summary.thirdQuartile)),
+                    yEnd: .value(valueLabel, ChartValues.clamped(summary.upperWhisker))
                 )
                 .foregroundStyle(color)
                 BarMark(
                     x: .value("Group", box.name),
-                    yStart: .value(valueLabel, summary.firstQuartile),
-                    yEnd: .value(valueLabel, summary.thirdQuartile),
+                    yStart: .value(valueLabel, ChartValues.clamped(summary.firstQuartile)),
+                    yEnd: .value(valueLabel, ChartValues.clamped(summary.thirdQuartile)),
                     width: .ratio(0.5)
                 )
                 .foregroundStyle(color.opacity(0.35))
@@ -73,13 +73,13 @@ public struct BoxPlotChart: View {
                 .accessibilityValue(Self.describe(summary))
                 RectangleMark(
                     x: .value("Group", box.name),
-                    y: .value(valueLabel, summary.median),
+                    y: .value(valueLabel, ChartValues.clamped(summary.median)),
                     width: .ratio(0.5),
                     height: 2
                 )
                 .foregroundStyle(color)
                 ForEach(Array(summary.outliers.enumerated()), id: \.offset) { _, outlier in
-                    PointMark(x: .value("Group", box.name), y: .value(valueLabel, outlier))
+                    PointMark(x: .value("Group", box.name), y: .value(valueLabel, ChartValues.clamped(outlier)))
                         .foregroundStyle(color)
                         .symbolSize(24)
                 }
@@ -90,11 +90,12 @@ public struct BoxPlotChart: View {
     }
 
     /// The value axis: from the lowest to the highest whisker or outlier, rounded outward by
-    /// ``NiceScale``. Bars would otherwise pull the axis down to zero.
+    /// ``NiceScale`` and kept within ``ChartValues/supported``. Bars would otherwise pull the axis
+    /// down to zero.
     nonisolated static func valueDomain(_ summaries: [BoxPlotSummary]) -> ClosedRange<Double> {
         let values = summaries.flatMap { [$0.lowerWhisker, $0.upperWhisker] + $0.outliers }
         guard let low = values.min(), let high = values.max() else { return 0...1 }
-        let scale = NiceScale(lower: low, upper: high)
+        let scale = NiceScale(lower: ChartValues.clamped(low), upper: ChartValues.clamped(high))
         return scale.lowerBound...scale.upperBound
     }
 

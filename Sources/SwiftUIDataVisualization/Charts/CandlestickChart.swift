@@ -12,8 +12,8 @@ import SwiftUI
 /// in the palette's ``ChartPalette/positive`` color when the period closed at or above its open
 /// and ``ChartPalette/negative`` otherwise. Bodies are 60% as wide as the usual gap between
 /// candles, so minute, hourly and daily candles all read well without configuration. Candles
-/// that are not ``Candle/isValid`` are left out, and the value axis fits the data instead of
-/// starting at zero.
+/// that are not ``Candle/isValid`` are left out, values beyond ±1e307 are drawn at that limit,
+/// and the value axis fits the data instead of starting at zero.
 public struct CandlestickChart: View {
     private let candles: [Candle]
 
@@ -34,15 +34,15 @@ public struct CandlestickChart: View {
             let color = candle.isRising ? palette.positive : palette.negative
             RuleMark(
                 x: .value("Date", candle.date),
-                yStart: .value("Low", candle.low),
-                yEnd: .value("High", candle.high)
+                yStart: .value("Low", ChartValues.clamped(candle.low)),
+                yEnd: .value("High", ChartValues.clamped(candle.high))
             )
             .foregroundStyle(color)
             RectangleMark(
                 xStart: .value("Date", candle.date.addingTimeInterval(-halfWidth)),
                 xEnd: .value("Date", candle.date.addingTimeInterval(halfWidth)),
-                yStart: .value("Open", candle.open),
-                yEnd: .value("Close", candle.close)
+                yStart: .value("Open", ChartValues.clamped(candle.open)),
+                yEnd: .value("Close", ChartValues.clamped(candle.close))
             )
             .foregroundStyle(color)
             .accessibilityLabel(candle.date.formatted(date: .abbreviated, time: .shortened))
