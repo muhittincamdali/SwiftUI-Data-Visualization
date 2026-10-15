@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@5307a07778c46b7b0b0dfbd0a75b40a96a09d513 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-ko-light.svg" alt="SwiftUI Data Visualization: Swift Charts 기반의 iOS·macOS SwiftUI용 통계, 금융, 실시간 차트."></picture></p>
@@ -73,7 +73,7 @@ Xcode에서 **File › Add Package Dependencies…**를 선택하고 저장소 U
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-창 오른쪽 위의 검색란에 붙여 넣으세요. **Dependency Rule**은 `2.0.0`부터 **Up to Next Major Version**으로 그대로 두고 **Add Package**를 클릭하세요. 다음 창에서 **SwiftUIDataVisualization** 옆에서 앱 타깃을 선택하고 **Add Package**를 다시 클릭하세요.
+창 오른쪽 위의 검색란에 붙여 넣으세요. **Dependency Rule**은 `2.0.1`부터 **Up to Next Major Version**으로 그대로 두고 **Add Package**를 클릭하세요. 다음 창에서 **SwiftUIDataVisualization** 옆에서 앱 타깃을 선택하고 **Add Package**를 다시 클릭하세요.
 
 **2. 모듈 가져오기**
 
@@ -123,7 +123,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [

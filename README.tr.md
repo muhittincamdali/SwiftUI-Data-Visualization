@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@5307a07778c46b7b0b0dfbd0a75b40a96a09d513 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-tr-light.svg" alt="SwiftUI Data Visualization: iOS ve macOS'ta SwiftUI için Swift Charts tabanlı istatistik, finans ve canlı veri grafikleri."></picture></p>
@@ -76,7 +76,7 @@ Xcode'da **File › Add Package Dependencies…** menüsünü seçin ve depo adr
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-Adresi pencerenin sağ üstündeki arama alanına yapıştırın. **Dependency Rule** ayarını `2.0.0` sürümünden itibaren **Up to Next Major Version** olarak bırakın, ardından **Add Package**'a tıklayın. Açılan pencerede **SwiftUIDataVisualization** yanından uygulama hedefinizi seçin ve yeniden **Add Package**'a tıklayın.
+Adresi pencerenin sağ üstündeki arama alanına yapıştırın. **Dependency Rule** ayarını `2.0.1` sürümünden itibaren **Up to Next Major Version** olarak bırakın, ardından **Add Package**'a tıklayın. Açılan pencerede **SwiftUIDataVisualization** yanından uygulama hedefinizi seçin ve yeniden **Add Package**'a tıklayın.
 
 **2. Modülü içe aktarın**
 
@@ -126,7 +126,7 @@ Ya da `Package.swift` dosyanızdaki `dependencies` listesine ekleyin:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [

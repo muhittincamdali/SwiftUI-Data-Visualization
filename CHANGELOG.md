@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The README, its translations, the Accessible Charts article and the `AudioGraphDescriptor`
   documentation no longer say `TreemapChart` draws with `Canvas`; it draws its tiles with plain
   views.
+- `SwiftUIDataVisualization.version` reads `2.0.1`; the 2.0.1 tag still reported `2.0.0`.
+
+### Changed
+
+- The installation instructions start from 2.0.1, the first release with the extreme-value fixes.
 
 ## [2.0.1] - 2026-10-15
 

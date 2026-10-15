@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@5307a07778c46b7b0b0dfbd0a75b40a96a09d513 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-light.svg" alt="SwiftUI Data Visualization: 基于 Swift Charts、适用于 iOS 和 macOS 上 SwiftUI 的统计、金融和实时图表。"></picture></p>
@@ -58,7 +58,7 @@
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-将地址粘贴到窗口右上角的搜索框中。保持 **Dependency Rule** 为 **Up to Next Major Version**，起始版本为 `2.0.0`，然后点击 **Add Package**。在下一个窗口中，在 **SwiftUIDataVisualization** 旁选择你的应用 target，再次点击 **Add Package**。
+将地址粘贴到窗口右上角的搜索框中。保持 **Dependency Rule** 为 **Up to Next Major Version**，起始版本为 `2.0.1`，然后点击 **Add Package**。在下一个窗口中，在 **SwiftUIDataVisualization** 旁选择你的应用 target，再次点击 **Add Package**。
 
 **2. 导入模块**
 
@@ -108,7 +108,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [
