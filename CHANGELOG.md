@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Finite values near `±Double.greatestFiniteMagnitude` (such as `-1.6e308`, or `1.7e308` next to
+  `-1`) no longer stop the app inside Swift Charts. `TimeSeriesChart`, `ScatterChart`,
+  `HistogramChart`, `BoxPlotChart`, `HeatmapChart`, `CandlestickChart` and `WaterfallChart` draw
+  values beyond ±1e307 at that limit; readouts and VoiceOver keep the original value.
+- `NiceScale` covers the data with two or three ticks over a span near 1e308, where it fell back
+  to `0...1`, and no longer returns a bound of `-0.0` or `0.0` inside the data when a tiny value
+  divided by the step underflows.
+- `CandlestickChart` draws every candle; of several candles with the same date, only the first
+  was drawn.
+- `BoxPlotChart` reads "1 outlier" instead of "1 outliers" to VoiceOver.
+
 ## [2.0.0] - 2026-10-15
 
 A new package built on Swift Charts. The 1.0.0 sources did not build with current Xcode
