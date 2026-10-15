@@ -13,7 +13,8 @@ import SwiftUI
 /// and ``ChartPalette/negative`` otherwise. Bodies are 60% as wide as the usual gap between
 /// candles, so minute, hourly and daily candles all read well without configuration. Candles
 /// that are not ``Candle/isValid`` are left out, values beyond ±1e307 are drawn at that limit,
-/// and the value axis fits the data instead of starting at zero.
+/// and the value axis fits the data instead of starting at zero. Candles that share a date are
+/// all drawn, on top of each other.
 public struct CandlestickChart: View {
     private let candles: [Candle]
 
@@ -30,7 +31,9 @@ public struct CandlestickChart: View {
     public var body: some View {
         let valid = candles.filter(\.isValid)
         let halfWidth = Self.bodyHalfWidth(for: valid)
-        Chart(valid) { candle in
+        // By position, not by `Candle.id`: candles that share a date would share an id, and
+        // Swift Charts draws only one mark per id.
+        Chart(Array(valid.enumerated()), id: \.offset) { _, candle in
             let color = candle.isRising ? palette.positive : palette.negative
             RuleMark(
                 x: .value("Date", candle.date),

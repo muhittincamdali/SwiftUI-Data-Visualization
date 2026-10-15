@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import Testing
 @testable import SwiftUIDataVisualization
 
@@ -33,6 +34,24 @@ struct CandlestickChartTests {
         #expect(CandlestickChart.bodyHalfWidth(for: single) == 86_400 * 0.6 / 2)
         #expect(CandlestickChart.bodyHalfWidth(for: single + single) == 86_400 * 0.6 / 2)
         #expect(CandlestickChart.bodyHalfWidth(for: []) == 86_400 * 0.6 / 2)
+    }
+
+    /// Candles that share a date have the same `id`; the chart identifies them by position, so
+    /// each one is drawn.
+    @MainActor
+    @Test func candlesThatShareADateAreAllDrawn() throws {
+        let low = Candle(date: date, open: 1, high: 2, low: 0, close: 2)
+        let high = Candle(date: date, open: 9, high: 10, low: 8, close: 8.5)
+        let next = Candle(date: date.addingTimeInterval(86_400), open: 4, high: 6, low: 3, close: 5)
+        let both = try pixels(CandlestickChart([low, high, next]))
+        #expect(both != (try pixels(CandlestickChart([low, next]))))
+        #expect(both != (try pixels(CandlestickChart([high, next]))))
+    }
+
+    @MainActor
+    private func pixels(_ chart: CandlestickChart) throws -> Data {
+        let image = try #require(ImageRenderer(content: chart.frame(width: 200, height: 120)).cgImage)
+        return try #require(image.dataProvider?.data as Data?)
     }
 
     @Test func descriptionReadsAllFourValues() {
