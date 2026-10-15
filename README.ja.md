@@ -33,7 +33,7 @@ iOS 17+ と macOS 14+ の SwiftUI 向けに、Swift Charts をベースに作ら
 - **大規模データとライブデータ**：`TimeSeriesChart` は Largest-Triangle-Three-Buckets で各系列を 1,000 点にダウンサンプリングするため、系列あたり 50,000 件の測定値でも滑らかに動作します。時間ウィンドウ内でのスクロールと、選択された日付の通知にも対応しています。`LiveSeries` は最新の値をリングバッファに保持し、`LiveTickerChart` に渡します。
 - **分析処理を公開**：`Histogram`（Sturges、Freedman–Diaconis、固定幅または固定数）、`BoxPlotSummary`（Tukey のひげ）、`Statistics`、`LinearRegression`、`MovingAverage`、`NiceScale` の軸目盛り、`TreemapLayout`（squarified）、`Candle.aggregate`、`Downsampling`。
 - **どんな入力でも安全**：有限でない値と西暦 1 年から 4001 年の範囲外の日付は除外され、絶対値が 1e307 を超える有限の値は ±1e307 の位置に描画され、`Double.greatestFiniteMagnitude` に近い範囲や非正規化数の範囲も有限のままで、目盛りの数、ビン、バッファ、スクロールのウィンドウ数、エクスポートには上限があります。専用のテストスイートが、分析用の型とチャートに `nan`、無限大、`Int.max`、極端な範囲、極端な日付を与えます。
-- **アクセシビリティ対応**：Swift Charts ベースのビューは VoiceOver によるナビゲーションと Audio Graphs に対応し、ビン、箱、ローソク足、ステップには読み上げ用のラベルが付きます。Canvas ベースのビュー（レーダー、ツリーマップ、ティッカー）には `AudioGraphDescriptor` が付きます。色覚多様性に配慮したパレットも組み込まれています。
+- **アクセシビリティ対応**：Swift Charts ベースのビューは VoiceOver によるナビゲーションと Audio Graphs に対応し、ビン、箱、ローソク足、ステップには読み上げ用のラベルが付きます。Swift Charts を使わないビュー（レーダー、ツリーマップ、ティッカー）には `AudioGraphDescriptor` が付きます。色覚多様性に配慮したパレットも組み込まれています。
 - **テスト済み**：33 スイートにわたる 188 件の Swift Testing テストを macOS と iPhone シミュレーターで実行します。README のすべてのサンプルをライトモードとダークモードでオフスクリーン描画するテストも含まれます。
 - **コンパイルできる使用例**：以下のサンプルはすべて、CI が iOS と macOS 向けにビルドしている [サンプルアプリ](Examples/ChartGallery)のものです。
 

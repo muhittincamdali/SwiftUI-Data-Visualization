@@ -46,7 +46,7 @@ Ein Swift-Paket mit Diagramm-Views für SwiftUI auf iOS 17+ und macOS 14+, aufge
   Obergrenzen. Eine eigene Testsuite füttert die Analysetypen und die Diagramme mit `nan`,
   Unendlich, `Int.max`, Extrembereichen und extremen Datumsangaben.
 - **Barrierefrei** – Die auf Swift Charts basierenden Views bieten VoiceOver-Navigation und Audio Graphs
-  mit lesbaren Beschriftungen für Klassen, Boxen, Kerzen und Schritte; die auf Canvas basierenden Views
+  mit lesbaren Beschriftungen für Klassen, Boxen, Kerzen und Schritte; die ohne Swift Charts gezeichneten Views
   (Radar, Treemap, Ticker) hängen einen `AudioGraphDescriptor` an. Eine farbenblindheitsfreundliche
   Palette ist eingebaut.
 - **Getestet** – 188 Swift-Testing-Tests in 33 Suites, ausgeführt auf macOS und in einem

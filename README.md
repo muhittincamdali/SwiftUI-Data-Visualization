@@ -47,8 +47,8 @@ treemaps and live tickers — and makes the analysis behind them public, so you 
   suite feeds `nan`, infinity, `Int.max`, extreme ranges and extreme dates to the analysis types
   and the charts.
 - **Accessible** — the Swift Charts based views get VoiceOver navigation and Audio Graphs, with
-  readable labels for bins, boxes, candles and steps; the Canvas based views (radar, treemap,
-  ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
+  readable labels for bins, boxes, candles and steps; the views drawn without Swift Charts
+  (radar, treemap, ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
 - **Tested** — 188 Swift Testing tests in 33 suites, run on macOS and an iPhone simulator,
   including off-screen renders of every README sample in light and dark mode.
 - **Usage samples that compile** — every sample below comes from the

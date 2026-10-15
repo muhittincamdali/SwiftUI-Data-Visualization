@@ -5,9 +5,9 @@ import SwiftUI
 /// Describes a chart's data for VoiceOver's Audio Graphs, which play a series as rising and
 /// falling tones and read out its values.
 ///
-/// Swift Charts builds this description by itself. The charts in this package that draw with
-/// `Canvas` instead (``RadarChart``, ``TreemapChart`` and ``LiveTickerChart``) attach one of
-/// these, and you can do the same for a chart of your own:
+/// Swift Charts builds this description by itself. The charts in this package that draw without
+/// it (``RadarChart`` and ``LiveTickerChart`` with `Canvas`, ``TreemapChart`` with plain views)
+/// attach one of these, and you can do the same for a chart of your own:
 ///
 /// ```swift
 /// MyGauge(values: weekly)

@@ -48,7 +48,7 @@ Un paquet Swift de vues de graphiques pour SwiftUI sur iOS 17+ et macOS 14+, con
   graphiques.
 - **Accessible** — les vues basées sur Swift Charts bénéficient de la navigation VoiceOver et des
   Audio Graphs, avec des libellés lisibles pour les classes, les boîtes, les chandeliers et les étapes ;
-  les vues basées sur Canvas (radar, treemap, cotations) joignent un `AudioGraphDescriptor`. Une palette
+  les vues dessinées sans Swift Charts (radar, treemap, cotations) joignent un `AudioGraphDescriptor`. Une palette
   adaptée au daltonisme est intégrée.
 - **Testé** — 188 tests Swift Testing répartis en 33 suites, exécutés sur macOS et dans un simulateur
   d’iPhone, y compris des rendus hors écran de chaque exemple du README en mode clair et sombre.

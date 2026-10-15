@@ -47,7 +47,7 @@ Un paquete de Swift con vistas de gráficos para SwiftUI en iOS 17+ y macOS 14+,
   pasa `nan`, infinito, `Int.max`, rangos extremos y fechas extremas a los tipos de análisis y a
   los gráficos.
 - **Accesible**: las vistas basadas en Swift Charts incluyen navegación con VoiceOver y Audio Graphs,
-  con etiquetas legibles para intervalos, cajas, velas y pasos; las vistas basadas en Canvas (radar,
+  con etiquetas legibles para intervalos, cajas, velas y pasos; las vistas dibujadas sin Swift Charts (radar,
   treemap, teletipo) adjuntan un `AudioGraphDescriptor`. Incluye una paleta apta para personas con
   daltonismo.
 - **Probado**: 188 pruebas de Swift Testing en 33 suites, que se ejecutan en macOS y en un simulador

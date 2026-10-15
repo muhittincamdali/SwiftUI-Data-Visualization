@@ -46,8 +46,8 @@ iOS 17+ ve macOS 14+ üzerinde SwiftUI için, Swift Charts tabanlı bir Swift pa
   üst sınırlar vardır. Ayrı bir test paketi, analiz tiplerine ve grafiklere `nan`, sonsuz,
   `Int.max`, uç aralıklar ve uç tarihler verir.
 - **Erişilebilir** — Swift Charts tabanlı görünümler VoiceOver gezintisi ve Audio Graphs desteği
-  alır; aralıklar, kutular, mumlar ve adımlar için okunabilir etiketler sunar. Canvas tabanlı
-  görünümler (radar, treemap, ticker) bir `AudioGraphDescriptor` ekler. Renk körlerine uygun bir
+  alır; aralıklar, kutular, mumlar ve adımlar için okunabilir etiketler sunar. Swift Charts
+  kullanmayan görünümler (radar, treemap, ticker) bir `AudioGraphDescriptor` ekler. Renk körlerine uygun bir
   palet yerleşik gelir.
 - **Test edilmiş** — 33 suite içinde 188 Swift Testing testi, macOS'ta ve bir iPhone
   simülatöründe çalışır; README'deki her örneğin açık ve koyu modda ekran dışı çizimleri de

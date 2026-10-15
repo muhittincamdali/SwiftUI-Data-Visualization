@@ -45,7 +45,7 @@ iOS 17+와 macOS 14+의 SwiftUI에서 쓸 수 있는, Swift Charts 기반 차트
   구간(bin), 버퍼, 스크롤 창 수, 내보내기에는 상한이 있습니다. 전용 테스트 스위트가 분석 타입과 차트에 `nan`, 무한대,
   `Int.max`, 극단적인 범위, 극단적인 날짜를 입력합니다.
 - **접근성** — Swift Charts 기반 뷰는 VoiceOver 탐색과 Audio Graphs를 지원하며, 구간, 상자, 캔들, 단계에
-  읽을 수 있는 레이블이 붙습니다. Canvas 기반 뷰(레이더, 트리맵, 티커)에는 `AudioGraphDescriptor`가
+  읽을 수 있는 레이블이 붙습니다. Swift Charts를 쓰지 않는 뷰(레이더, 트리맵, 티커)에는 `AudioGraphDescriptor`가
   연결됩니다. 색각 이상 사용자를 위한 팔레트가 기본으로 들어 있습니다.
 - **테스트 완료** — 33개 스위트에 걸친 Swift Testing 테스트 188개를 macOS와 iPhone 시뮬레이터에서
   실행하며, README의 모든 예제를 라이트 모드와 다크 모드로 화면 밖에서 렌더링하는 테스트도 포함됩니다.

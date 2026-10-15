@@ -16,8 +16,8 @@ little:
 - a waterfall step reads its signed change and the total it leads to;
 - a scatter chart with a trend line reads the line's equation and r².
 
-``RadarChart``, ``TreemapChart`` and ``LiveTickerChart`` draw with `Canvas`, which VoiceOver
-sees as a single image. Each of them attaches an ``AudioGraphDescriptor``, so VoiceOver users
+``RadarChart`` and ``LiveTickerChart`` draw with `Canvas`, which VoiceOver sees as a single
+image, and ``TreemapChart`` draws its tiles with plain views. Each of the three attaches an ``AudioGraphDescriptor``, so VoiceOver users
 can still play and explore the data, and ``TreemapChart`` also makes every tile its own element
 with its label and value. Pass a `title` to name the chart:
 

@@ -33,7 +33,7 @@
 - **大规模数据与实时数据**：`TimeSeriesChart` 使用 Largest-Triangle-Three-Buckets 将每个序列降采样到 1,000 个点，因此每个序列 50,000 条读数仍然流畅；它可以在时间窗口内滚动，并报告所选日期。`LiveSeries` 将最新的值保存在环形缓冲区中，供 `LiveTickerChart` 使用。
 - **分析逻辑完全公开**：`Histogram`（Sturges、Freedman–Diaconis、固定宽度或固定数量）、`BoxPlotSummary`（Tukey 须线）、`Statistics`、`LinearRegression`、`MovingAverage`、`NiceScale` 坐标轴刻度、`TreemapLayout`（squarified）、`Candle.aggregate` 和 `Downsampling`。
 - **任何输入都安全**：非有限值以及公元 1 年至 4001 年范围之外的日期会被排除；绝对值超过 1e307 的有限值绘制在 ±1e307 处；接近 `Double.greatestFiniteMagnitude` 的范围以及次正规数范围仍保持有限；刻度数量、分箱、缓冲区、滚动窗口数量和导出都设有上限。专门的测试套件会向分析类型和图表输入 `nan`、无穷大、`Int.max`、极端范围和极端日期。
-- **无障碍**：基于 Swift Charts 的视图支持 VoiceOver 导航和 Audio Graphs，并为分箱、箱体、K 线和步骤提供可读的标签；基于 Canvas 的视图（雷达图、树状图、行情图）附带 `AudioGraphDescriptor`。内置对色盲友好的配色。
+- **无障碍**：基于 Swift Charts 的视图支持 VoiceOver 导航和 Audio Graphs，并为分箱、箱体、K 线和步骤提供可读的标签；不使用 Swift Charts 的视图（雷达图、树状图、行情图）附带 `AudioGraphDescriptor`。内置对色盲友好的配色。
 - **经过测试**：33 个测试套件中的 188 个 Swift Testing 测试，在 macOS 和 iPhone 模拟器上运行，其中包括在浅色和深色模式下对 README 中每个示例进行的离屏渲染。
 - **可编译的使用示例**：下面的每个示例都来自[示例应用](Examples/ChartGallery)，CI 会为 iOS 和 macOS 构建它。
 
