@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@9c3004eb1f2fbd823bedb2aacba752257f750bb5 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-pt-BR-light.svg" alt="SwiftUI Data Visualization: Gráficos estatísticos, financeiros e ao vivo para SwiftUI no iOS e macOS, feitos com Swift Charts."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="Status da CI"></a>
-<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Versão mais recente: v2.0.1"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Versão mais recente: v2.0.2"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="Plataformas compatíveis: iOS 17+ · macOS 14+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="Versão da linguagem: Swift 6.2+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="Licença: MIT"></picture></a>
@@ -47,7 +47,7 @@ Um pacote Swift de views de gráficos para SwiftUI no iOS 17+ e macOS 14+, feito
   `nan`, infinito, `Int.max`, intervalos extremos e datas extremas aos tipos de análise e aos
   gráficos.
 - **Acessível** — as views baseadas em Swift Charts têm navegação com VoiceOver e Audio Graphs, com
-  rótulos legíveis para intervalos, caixas, candles e etapas; as views baseadas em Canvas (radar,
+  rótulos legíveis para intervalos, caixas, candles e etapas; as views desenhadas sem Swift Charts (radar,
   treemap, ticker) anexam um `AudioGraphDescriptor`. Uma paleta segura para daltonismo já vem incluída.
 - **Testado** — 188 testes de Swift Testing em 33 suítes, executados no macOS e em um simulador de
   iPhone, incluindo renderizações fora da tela de cada exemplo do README nos modos claro e escuro.
@@ -75,7 +75,7 @@ No Xcode, escolha **File › Add Package Dependencies…** e informe a URL do re
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-Cole-a no campo de busca no canto superior direito da janela. Deixe **Dependency Rule** em **Up to Next Major Version** a partir de `2.0.0` e clique em **Add Package**. Na janela seguinte, escolha o target do seu app ao lado de **SwiftUIDataVisualization** e clique em **Add Package** de novo.
+Cole-a no campo de busca no canto superior direito da janela. Deixe **Dependency Rule** em **Up to Next Major Version** a partir de `2.0.2` e clique em **Add Package**. Na janela seguinte, escolha o target do seu app ao lado de **SwiftUIDataVisualization** e clique em **Add Package** de novo.
 
 **2. Importe o módulo**
 
@@ -125,7 +125,7 @@ Ou adicione-o às `dependencies` do seu `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.2")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [

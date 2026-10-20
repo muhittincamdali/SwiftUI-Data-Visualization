@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
-<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Latest version: v2.0.1"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="Latest version: v2.0.2"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="Supported platforms: iOS 17+ · macOS 14+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="Language version: Swift 6.2+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="License: MIT"></picture></a>
@@ -47,8 +47,8 @@ treemaps and live tickers — and makes the analysis behind them public, so you 
   suite feeds `nan`, infinity, `Int.max`, extreme ranges and extreme dates to the analysis types
   and the charts.
 - **Accessible** — the Swift Charts based views get VoiceOver navigation and Audio Graphs, with
-  readable labels for bins, boxes, candles and steps; the Canvas based views (radar, treemap,
-  ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
+  readable labels for bins, boxes, candles and steps; the views drawn without Swift Charts
+  (radar, treemap, ticker) attach an `AudioGraphDescriptor`. A color-blind safe palette is built in.
 - **Tested** — 188 Swift Testing tests in 33 suites, run on macOS and an iPhone simulator,
   including off-screen renders of every README sample in light and dark mode.
 - **Usage samples that compile** — every sample below comes from the
@@ -76,7 +76,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
 Paste it into the search field at the top right of the window. Leave **Dependency Rule** at
-**Up to Next Major Version** from `2.0.0`, then click **Add Package**. In the next window,
+**Up to Next Major Version** from `2.0.2`, then click **Add Package**. In the next window,
 choose your app target next to **SwiftUIDataVisualization** and click **Add Package** again.
 
 **2. Import the module**
@@ -129,7 +129,7 @@ Or add it to the `dependencies` in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.2")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [

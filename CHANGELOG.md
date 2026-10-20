@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-10-20
+
+### Fixed
+
+- `SwiftUIDataVisualization.version` reads `2.0.2`. The 2.0.1 release still reported `2.0.0`;
+  a released tag cannot change, so the corrected value ships in this release.
+
+### Documentation
+
+- The README, its translations, the Accessible Charts article and the `AudioGraphDescriptor`
+  documentation no longer say `TreemapChart` draws with `Canvas`; it draws its tiles with plain
+  views. `RadarChart` and `LiveTickerChart` do draw with `Canvas`.
+- The installation instructions start from 2.0.2.
+
 ## [2.0.1] - 2026-10-15
 
 ### Fixed
@@ -97,7 +111,8 @@ were carried over. Its other charts were not, and none of them had tests there:
 First release: line, bar, pie, area, scatter, candlestick, heatmap and radar chart views with a
 `ChartDataPoint` model.
 
-[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases/tag/v1.0.0

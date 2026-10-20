@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@1f4728c25cb15374fc4d6b3a791d4d4c9651548e status=reviewed -->
+<!-- i18n-source: README.md@9c3004eb1f2fbd823bedb2aacba752257f750bb5 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/banner-zh-CN-light.svg" alt="SwiftUI Data Visualization: 基于 Swift Charts、适用于 iOS 和 macOS 上 SwiftUI 的统计、金融和实时图表。"></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/actions/workflows/ci.yml/badge.svg" alt="CI 状态"></a>
-<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="最新版本: v2.0.1"></picture></a>
+<a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-version-light.svg" alt="最新版本: v2.0.2"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-platforms-light.svg" alt="支持的平台: iOS 17+ · macOS 14+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/Package.swift"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-language-light.svg" alt="语言版本: Swift 6.2+"></picture></a>
 <a href="https://github.com/muhittincamdali/SwiftUI-Data-Visualization/blob/master/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-Data-Visualization/master/.github/brand/badge-license-light.svg" alt="许可证: MIT"></picture></a>
@@ -33,7 +33,7 @@
 - **大规模数据与实时数据**：`TimeSeriesChart` 使用 Largest-Triangle-Three-Buckets 将每个序列降采样到 1,000 个点，因此每个序列 50,000 条读数仍然流畅；它可以在时间窗口内滚动，并报告所选日期。`LiveSeries` 将最新的值保存在环形缓冲区中，供 `LiveTickerChart` 使用。
 - **分析逻辑完全公开**：`Histogram`（Sturges、Freedman–Diaconis、固定宽度或固定数量）、`BoxPlotSummary`（Tukey 须线）、`Statistics`、`LinearRegression`、`MovingAverage`、`NiceScale` 坐标轴刻度、`TreemapLayout`（squarified）、`Candle.aggregate` 和 `Downsampling`。
 - **任何输入都安全**：非有限值以及公元 1 年至 4001 年范围之外的日期会被排除；绝对值超过 1e307 的有限值绘制在 ±1e307 处；接近 `Double.greatestFiniteMagnitude` 的范围以及次正规数范围仍保持有限；刻度数量、分箱、缓冲区、滚动窗口数量和导出都设有上限。专门的测试套件会向分析类型和图表输入 `nan`、无穷大、`Int.max`、极端范围和极端日期。
-- **无障碍**：基于 Swift Charts 的视图支持 VoiceOver 导航和 Audio Graphs，并为分箱、箱体、K 线和步骤提供可读的标签；基于 Canvas 的视图（雷达图、树状图、行情图）附带 `AudioGraphDescriptor`。内置对色盲友好的配色。
+- **无障碍**：基于 Swift Charts 的视图支持 VoiceOver 导航和 Audio Graphs，并为分箱、箱体、K 线和步骤提供可读的标签；不使用 Swift Charts 的视图（雷达图、树状图、行情图）附带 `AudioGraphDescriptor`。内置对色盲友好的配色。
 - **经过测试**：33 个测试套件中的 188 个 Swift Testing 测试，在 macOS 和 iPhone 模拟器上运行，其中包括在浅色和深色模式下对 README 中每个示例进行的离屏渲染。
 - **可编译的使用示例**：下面的每个示例都来自[示例应用](Examples/ChartGallery)，CI 会为 iOS 和 macOS 构建它。
 
@@ -58,7 +58,7 @@
 https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 ```
 
-将地址粘贴到窗口右上角的搜索框中。保持 **Dependency Rule** 为 **Up to Next Major Version**，起始版本为 `2.0.0`，然后点击 **Add Package**。在下一个窗口中，在 **SwiftUIDataVisualization** 旁选择你的应用 target，再次点击 **Add Package**。
+将地址粘贴到窗口右上角的搜索框中。保持 **Dependency Rule** 为 **Up to Next Major Version**，起始版本为 `2.0.2`，然后点击 **Add Package**。在下一个窗口中，在 **SwiftUIDataVisualization** 旁选择你的应用 target，再次点击 **Add Package**。
 
 **2. 导入模块**
 
@@ -108,7 +108,7 @@ https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-Data-Visualization.git", from: "2.0.2")
 ],
 targets: [
     .target(name: "YourApp", dependencies: [
