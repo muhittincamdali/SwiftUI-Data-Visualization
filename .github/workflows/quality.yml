@@ -20,7 +20,7 @@ jobs:
   hygiene:
     permissions:
       contents: read
-    uses: muhittincamdali/.github/.github/workflows/hygiene.yml@85ec2fa95f3607e09168f14b744bd3154fdc7d43 # v1.1.0
+    uses: muhittincamdali/.github/.github/workflows/hygiene.yml@59e72703c617cfab0c12482c477e706c485ed683 # v1.1.1
 
   translations:
     permissions:
